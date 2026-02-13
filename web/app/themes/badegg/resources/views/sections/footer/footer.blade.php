@@ -1,8 +1,8 @@
 <footer class="content-info">
-  <div class="section-angle section-angle-top-right bg-primary bg-blur bg-blur-blue">
+  <div class="section-angle section-angle-top-right bg-primary-dark bg-blur bg-blur-blue">
     <div class="bg-blur-image lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
   </div>
-  <div class="footer bg-primary knockout bg-blur bg-blur-blue">
+  <div class="footer bg-primary-dark knockout bg-blur bg-blur-blue">
     <div class="section container container-larger">
       @if (has_nav_menu('footer_navigation'))
         <nav class="footer-nav" aria-label="{{ wp_get_nav_menu_name('footer_navigation') }}">
@@ -11,7 +11,7 @@
       @endif
     </div>
 
-    <div class="footer-copyright inner-small inner-zero-x bg-primary-dark">
+    <div class="footer-copyright inner-small inner-zero-x bg-primary-darker">
       <div class="container container-larger">
         <div class="footer-copyright-col">
           <p>
