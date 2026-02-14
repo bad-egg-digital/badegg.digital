@@ -96,6 +96,12 @@
             width: 7.5em;
             margin: auto;
           }
+
+          &:last-of-type {
+            > a {
+              display: none;
+            }
+          }
         }
 
         > a {
@@ -104,7 +110,7 @@
           font-size: 1.25em;
 
           @media (min-width: #{variables.$screen-lg}) {
-            font-size: 1.875em;
+            font-size: 1.5em;
           }
         }
       }
@@ -112,7 +118,7 @@
       li {
         &.current-menu-item {
           > a {
-            color: variables.$tertiary-light;
+            color: variables.$tertiary-lighter;
           }
         }
       }

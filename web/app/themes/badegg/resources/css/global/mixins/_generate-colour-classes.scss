@@ -25,10 +25,10 @@
         background: color.invert($hex);
         @if($name == "white") {
           color: variables.$white;
-          background: variables.$primary;
+          background: variables.$tertiary;
         } @else if($name == "black") {
           color: variables.$white;
-          background: variables.$primary-lighter;
+          background: variables.$tertiary-lighter;
         } @else {
           @include text-contrast.text_contrast(color.invert($hex));
           background: color.invert($hex);
