@@ -125,9 +125,12 @@
   }
 }
 
-.menu-item-logo {
-  transition: all 300ms ease;
-  transform-origin: 75% 100%;
+.menu-item-logo,
+.menu-item-logo-footer {
+  .logo-bad-egg-digital {
+    transition: all 300ms ease;
+    transform-origin: 75% 100%;
+  }
 
   * {
     transition: all 300ms ease;
@@ -138,7 +141,9 @@
   }
 
   &:hover {
-    transform: rotate(-2deg);
+    .logo-bad-egg-digital {
+      transform: rotate(-2deg);
+    }
 
     .fill-secondary-lighter { animation: flicker 1.5s infinite; }
     .fill-secondary { animation: flicker 1.5s infinite; }
@@ -168,18 +173,4 @@
       .logo-wordmark { fill: variables.$secondary-lightest; }
     }
   }
-}
-
-@keyframes flicker {
-    0% { opacity: 1.0; }
-   10% { opacity: 0.5; }
-   20% { opacity: 0.8; }
-   30% { opacity: 0.3; }
-   40% { opacity: 0.9; }
-   50% { opacity: 0.1; }
-   60% { opacity: 0.7; }
-   70% { opacity: 0.4; }
-   80% { opacity: 0;   }
-   90% { opacity: 0.6; }
-  100% { opacity: 0.2; }
 }

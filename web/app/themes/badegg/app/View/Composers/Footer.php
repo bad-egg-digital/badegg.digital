@@ -12,7 +12,7 @@ class Footer extends Composer
      * @var array
      */
     protected static $views = [
-        'sections.footer.footer',
+        'sections.footer.*',
         'partials.contact-info',
     ];
 
@@ -31,6 +31,8 @@ class Footer extends Composer
             'tel',
             'email',
         ];
+
+        $props['sticker_shape'] = @file_get_contents(get_stylesheet_directory() . '/resources/images/sticker.svg');
 
         foreach($fields as $field) {
             $props['company_' . $field] = get_field('badegg_company_' . $field, 'option');

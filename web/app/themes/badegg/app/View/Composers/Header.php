@@ -13,6 +13,7 @@ class Header extends Composer
      */
     protected static $views = [
         'sections.header.*',
+        'sections.footer.footer-brand',
     ];
 
     /**

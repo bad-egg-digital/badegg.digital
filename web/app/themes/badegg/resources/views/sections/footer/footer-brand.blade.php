@@ -1,10 +1,5 @@
-<img
-  class="lazy"
-  src="{{ Vite::asset('resources/images/bad-egg-digital-sticker-lazy.png') }}"
-  data-src="{{ Vite::asset('resources/images/bad-egg-digital-sticker-1x.png') }}"
-  data-srcset="{{ Vite::asset('resources/images/bad-egg-digital-sticker-1x.png') }} 1x, {{ Vite::asset('resources/images/bad-egg-digital-sticker-2x.png') }} 2x"
-  width="220"
-  height="222"
-  alt="Bad Egg Digital Sticker"
-  loading="lazy"
-/>
+<div class="menu-item-logo-footer bg-black knockout">
+  {!! $logo !!}
+  {!! $sticker_shape !!}
+  <div class="menu-item-logo-footer-bg lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-texture-square-2x.jpg') }}"></div>
+</div>

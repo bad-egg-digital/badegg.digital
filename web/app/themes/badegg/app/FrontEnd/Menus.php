@@ -11,44 +11,6 @@ class Menus
         add_filter( 'wp_nav_menu_items', [$this, 'footer'], 10, 2);
     }
 
-    // public function modifications($items, $args)
-    // {
-    //     $dom = new \DomDocument();
-    //     $dom->strictErrorChecking = false;
-    //     @$dom->loadHTML($items);
-
-    //     $wrapper = @$dom->getElementsByTagName('div');
-    //     $listItems = @$dom->getElementsByTagName('li');
-
-    //     if(!$wrapper || !$listItems) return $Items;
-
-    //     foreach($listItems as $listItem):
-    //         $menuID = str_replace('menu-item-', '', $listItem->getAttribute('id'));
-    //         $iconName = get_field('fontawesome_solid', $menuID);
-
-    //         if($iconName):
-    //             $icon = $dom->createDocumentFragment();
-    //             $icon->appendXML('<i class="fa fa-' . $iconName . '"></i>');
-
-    //             $anchor = $listItem->childNodes->item(0);
-    //             $anchorInner = $anchor->childNodes[0];
-    //             $anchorInnerHTML = $anchorInner->ownerDocument->saveHTML($anchorInner);
-
-    //             $anchorSpan = $dom->createDocumentFragment();
-    //             $anchorSpan->appendXML('<span>' . $anchorInnerHTML . '</span>');
-
-    //             $anchor->removeChild($anchorInner);
-    //             $anchor->appendChild($icon);
-    //             $anchor->appendChild($anchorSpan);
-
-    //             $html = $dom->saveHTML($wrapper[0]);
-
-    //         endif;
-    //     endforeach;
-
-    //     return $dom->saveHTML($wrapper[0]);
-    // }
-
     public function header($items, $args)
     {
         if($args->theme_location != 'primary_navigation') return $items;
@@ -79,8 +41,6 @@ class Menus
 
         endforeach;
 
-        // echo '<pre>',print_r($items),'</pre>';
-
         return $items;
     }
 
@@ -104,7 +64,9 @@ class Menus
         $dom->strictErrorChecking = false;
         @$dom->loadHTML($items);
 
-        $wrapper = @$dom->getElementsByTagName('div');
+        $finder = new \DomXPath($dom);
+
+        $wrapper = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' footer-nav ')]");
         $listItems = @$dom->getElementsByTagName('li');
 
         if(!$wrapper || !$listItems) return $Items;
@@ -119,7 +81,7 @@ class Menus
         $lastItem = $listItems[count($listItems) - 1];
 
         $firstItemClass = $firstItem->getAttribute('class');
-        $firstItem->setAttribute('class', $firstItemClass . ' menu-item-has-children');
+        $firstItem->setAttribute('class', $firstItemClass . ' menu-item-has-children menu-item-logo-footer');
 
         $firstAnchor = $firstItem->childNodes->item(0);
         $firstAnchorInner = $firstAnchor->childNodes[0];
