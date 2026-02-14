@@ -13,6 +13,7 @@ import allowedBlocks from '../../../json/block-core-whitelist.json';
 import { containerClassNames, sectionClassNames } from '../../../js/blocks/lib/classNames';
 import BackgroundImage from '../../../js/blocks/components/BackgroundImage';
 import BlockSettings from '../../../js/blocks/components/BlockSettings';
+import BlockAngle from '../../../js/blocks/components/BlockAngle';
 
 registerBlockType(metadata.name, {
   edit({ attributes, setAttributes, clientId }) {
@@ -51,7 +52,8 @@ registerBlockType(metadata.name, {
         </div>
 
         <BackgroundImage { ...attributes } />
-
+        <BlockAngle attributes={ attributes } position="top" />
+        <BlockAngle attributes={ attributes } position="bottom" />
       </div>
     );
   },
@@ -66,6 +68,8 @@ registerBlockType(metadata.name, {
         </div>
 
         <BackgroundImage { ...attributes } />
+        <BlockAngle attributes={ attributes } position="top" />
+        <BlockAngle attributes={ attributes } position="bottom" />
 
       </div>
     )

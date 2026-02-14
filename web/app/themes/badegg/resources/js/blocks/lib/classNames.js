@@ -49,6 +49,12 @@ export function sectionClassNames(attributes, defaultClasses = '', extraClasses 
   if('background_contrast' in attributes && attributes.background_contrast)
     classNames.push('knockout');
 
+  if('angle_top_colour' in attributes && attributes.angle_top_colour)
+    classNames.push('has-top-angle');
+
+  if('angle_bottom_colour' in attributes && attributes.angle_bottom_colour)
+    classNames.push('has-bottom-angle');
+
   // combine arrays
   classNames = classNames.concat(defaultClasses).concat(extraClasses);
 

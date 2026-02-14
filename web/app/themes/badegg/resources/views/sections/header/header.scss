@@ -2,6 +2,7 @@
 
 .menu-fixed {
   position: relative;
+  z-index: 1000;
   transition: all 300ms ease;
 
   @media (min-width: #{variables.$screen-md}) {

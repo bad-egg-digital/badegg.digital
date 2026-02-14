@@ -160,3 +160,16 @@ figure {
     border-bottom-width: 0;
   }
 }
+
+.has-bottom-angle,
+.has-top-angle {
+  position: relative;
+
+  .section-angle {
+    position: absolute;
+    inset: 0;
+
+    &-top-right, &-top-left { top: auto; }
+    &-bottom-right, &-bottom-left { bottom: auto; }
+  }
+}

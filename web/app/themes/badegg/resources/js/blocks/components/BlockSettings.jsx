@@ -82,6 +82,7 @@ export default function BlockSettings({ attributes, setAttributes }) {
 		container_width,
 		padding_top,
 		padding_bottom,
+    background_colour,
 		background_hex,
 		background_tint,
 		background_image,
@@ -91,6 +92,17 @@ export default function BlockSettings({ attributes, setAttributes }) {
 		background_opacity,
 		background_contrast,
 		background_fixed,
+		background_gradient,
+    angle_top,
+    angle_top_direction,
+    angle_top_colour,
+    angle_top_hex,
+    angle_top_tint,
+    angle_bottom,
+    angle_bottom_direction,
+    angle_bottom_colour,
+    angle_bottom_hex,
+    angle_bottom_tint
 	} = attributes;
 
 	return (
@@ -124,7 +136,156 @@ export default function BlockSettings({ attributes, setAttributes }) {
               onChange={(value) => setAttributes({ padding_bottom: value }) }
               __nextHasNoMarginBottom
             />
+            <ToggleControl
+              label={ __('Top angle', 'badegg') }
+              checked={ angle_bottom }
+              onChange={(value) => setAttributes({ angle_bottom: value }) }
+              __nextHasNoMarginBottom
+            />
+            <ToggleControl
+              label={ __('Bottom Angle', 'badegg') }
+              checked={ angle_top }
+              onChange={(value) => setAttributes({ angle_top: value }) }
+              __nextHasNoMarginBottom
+            />
           </PanelBody>
+
+          { angle_bottom && (
+            <PanelBody title={ __("Bottom Angle", "badegg") }>
+              <p style={{ textTransform: 'uppercase', fontSize: '11px' }} className="components-truncate components-text components-input-control__label">
+                { __('Colour', 'badegg') }
+              </p>
+
+              <ColorPalette
+                colors={ configOptions.colours }
+                value={ angle_bottom_hex }
+                clearable={ false }
+                disableCustomColors={ true }
+                style={{ marginBottom: '16px' }}
+                onChange={ ( value ) => {
+                  let slug, hex, selected = '';
+
+                  if(value) {
+                    selected = configOptions.colours.find(
+                      ( c ) => c.color === value
+                    );
+
+                    hex = value;
+                  }
+
+                  if(selected) {
+                    slug = selected.slug;
+                  }
+
+                  let colourAttributes = {
+                    angle_bottom_colour: slug,
+                    angle_bottom_hex: hex,
+                  };
+
+                  if(!slug || [0, '0', 'white', 'black'].includes(slug)) {
+                    colourAttributes.angle_bottom_tint = '0';
+                  }
+
+                  setAttributes( colourAttributes );
+
+                } }
+              />
+
+              { 'angle_bottom_colour' in attributes && attributes.angle_bottom_colour && ![0, '0', 'white', 'black'].includes(attributes.angle_bottom_colour) ? (
+                <SelectControl
+                  label={ __("Tint", "badegg") }
+                  value={ angle_bottom_tint }
+                  options={ configOptions.tints }
+                  onChange={ (value) => setAttributes({ angle_bottom_tint: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+              ) : null }
+
+              { angle_bottom_colour && (
+                <SelectControl
+                  label={ __("Direction", "badegg") }
+                  value={ angle_bottom_direction }
+                  options={[
+                    { "label": "Left", "value": "left" },
+                    { "label": "Right", "value": "right" },
+                  ]}
+                  onChange={ (value) => setAttributes({ angle_bottom_direction: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+              )}
+            </PanelBody>
+          )}
+
+          { angle_top && (
+            <PanelBody title={ __("Top Angle", "badegg") }>
+              <p style={{ textTransform: 'uppercase', fontSize: '11px' }} className="components-truncate components-text components-input-control__label">
+                { __('Colour', 'badegg') }
+              </p>
+
+              <ColorPalette
+                colors={ configOptions.colours }
+                value={ angle_top_hex }
+                clearable={ false }
+                disableCustomColors={ true }
+                style={{ marginBottom: '16px' }}
+                onChange={ ( value ) => {
+                  let slug, hex, selected = '';
+
+                  if(value) {
+                    selected = configOptions.colours.find(
+                      ( c ) => c.color === value
+                    );
+
+                    hex = value;
+                  }
+
+                  if(selected) {
+                    slug = selected.slug;
+                  }
+
+                  let colourAttributes = {
+                    angle_top_colour: slug,
+                    angle_top_hex: hex,
+                  };
+
+                  if(!slug || [0, '0', 'white', 'black'].includes(slug)) {
+                    colourAttributes.angle_top_tint = '0';
+                  }
+
+                  setAttributes( colourAttributes );
+
+                } }
+              />
+
+              { 'angle_top_colour' in attributes && attributes.angle_top_colour && ![0, '0', 'white', 'black'].includes(attributes.angle_top_colour) ? (
+                <SelectControl
+                  label={ __("Tint", "badegg") }
+                  value={ angle_top_tint }
+                  options={ configOptions.tints }
+                  onChange={ (value) => setAttributes({ angle_top_tint: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+              ) : null }
+
+              { angle_top_colour && (
+                <SelectControl
+                  label={ __("Direction", "badegg") }
+                  value={ angle_top_direction }
+                  options={[
+                    { "label": "Left", "value": "left" },
+                    { "label": "Right", "value": "right" },
+                  ]}
+                  onChange={ (value) => setAttributes({ angle_top_direction: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+              )}
+            </PanelBody>
+          )}
+
           <PanelBody title={ __("Background", "badegg") }>
             <p style={{ textTransform: 'uppercase', fontSize: '11px' }} className="components-truncate components-text components-input-control__label">
               { __('Colour', 'badegg') }
@@ -165,14 +326,23 @@ export default function BlockSettings({ attributes, setAttributes }) {
             />
 
             { 'background_colour' in attributes && attributes.background_colour && ![0, '0', 'white', 'black'].includes(attributes.background_colour) ? (
-              <SelectControl
-                label={ __("Tint", "badegg") }
-                value={ background_tint }
-                options={ configOptions.tints }
-                onChange={ (value) => setAttributes({ background_tint: value }) }
-                __next40pxDefaultSize={ true }
-                __nextHasNoMarginBottom={ true }
-              />
+              <>
+                <SelectControl
+                  label={ __("Tint", "badegg") }
+                  value={ background_tint }
+                  options={ configOptions.tints }
+                  onChange={ (value) => setAttributes({ background_tint: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+
+                <ToggleControl
+                  label={ __('Gradient', 'badegg') }
+                  checked={ background_gradient }
+                  onChange={(value) => setAttributes({ background_gradient: value }) }
+                  __nextHasNoMarginBottom
+                />
+              </>
             ) : null }
 
             <ToggleControl

@@ -60,5 +60,49 @@
   "background_contrast": {
       "type": "boolean",
       "default": false
+  },
+  "background_gradient": {
+      "type": "boolean",
+      "default": false
+  },
+  "angle_top": {
+      "type": "boolean",
+      "default": false
+  },
+  "angle_top_direction": {
+      "type": "string",
+      "default": "left"
+  },
+  "angle_top_colour": {
+      "type": "string",
+      "default": ""
+  },
+  "angle_top_hex": {
+      "type": "string",
+      "default": ""
+  },
+  "angle_top_tint": {
+      "type": "string",
+      "default": "0"
+  },
+  "angle_bottom": {
+      "type": "boolean",
+      "default": false
+  },
+  "angle_bottom_direction": {
+      "type": "string",
+      "default": "right"
+  },
+  "angle_bottom_colour": {
+      "type": "string",
+      "default": ""
+  },
+  "angle_bottom_hex": {
+      "type": "string",
+      "default": ""
+  },
+  "angle_bottom_tint": {
+      "type": "string",
+      "default": "0"
   }
 }
