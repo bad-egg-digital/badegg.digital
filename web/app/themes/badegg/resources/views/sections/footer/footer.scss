@@ -87,20 +87,27 @@
               transform-origin: 100% 55%;
               transition: all 300ms linear;
             }
-
-            &:hover {
-              &::before {
-                animation: rotisserie 1s infinite;
-              }
-            }
           }
 
-          &:hover,
           &.current-menu-item {
             > a {
               &::before {
                 opacity: 1;
                 transform: none;
+              }
+            }
+          }
+
+          &:hover {
+            > a {
+              color: variables.$white;
+
+              &:hover {
+                &::before {
+                  transform: none;
+                  opacity: 1;
+                  animation: rotisserie 1s infinite;
+                }
               }
             }
           }
