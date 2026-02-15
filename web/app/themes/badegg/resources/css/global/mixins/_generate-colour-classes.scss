@@ -34,6 +34,14 @@
           background: color.invert($hex);
         }
       }
+
+      &.has-gradient {
+        background: linear-gradient(0deg, $hex 0%, variables.$white 100%);
+
+        &.knockout {
+          background: linear-gradient(0deg, $hex 0%, variables.$black 100%);
+        }
+      }
     }
   }
 }

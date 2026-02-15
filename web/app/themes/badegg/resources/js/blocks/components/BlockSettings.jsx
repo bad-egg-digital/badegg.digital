@@ -335,14 +335,16 @@ export default function BlockSettings({ attributes, setAttributes }) {
                   __next40pxDefaultSize={ true }
                   __nextHasNoMarginBottom={ true }
                 />
-
-                <ToggleControl
-                  label={ __('Gradient', 'badegg') }
-                  checked={ background_gradient }
-                  onChange={(value) => setAttributes({ background_gradient: value }) }
-                  __nextHasNoMarginBottom
-                />
               </>
+            ) : null }
+
+            { 'background_colour' in attributes && attributes.background_colour && ![0, '0', 'white'].includes(attributes.background_colour) ? (
+              <ToggleControl
+                label={ __('Gradient', 'badegg') }
+                checked={ background_gradient }
+                onChange={(value) => setAttributes({ background_gradient: value }) }
+                __nextHasNoMarginBottom
+              />
             ) : null }
 
             <ToggleControl

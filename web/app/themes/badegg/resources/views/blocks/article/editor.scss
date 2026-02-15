@@ -13,6 +13,7 @@
     display: block;
     position: absolute;
     inset: 0;
+    z-index: 2;
     background: transparent;
     border: none;
     padding: 0;
@@ -30,7 +31,7 @@
   &:hover {
     > .container {
       border-color: variables.$wpblue;
-      background: inherit;
+      background-color: rgba(variables.$white, 0.3);
 
       > * {
         opacity: 0.7;
@@ -53,15 +54,15 @@
       }
     }
 
-    // &:hover {
-    //   > .container {
-    //     background: variables.$black;
+    &:hover {
+      > .container {
+        background-color: rgba(variables.$black, 0.3);
 
-    //     &:hover {
-    //       background: transparent;
-    //     }
-    //   }
-    // }
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
   }
 
   .block-editor-block-list {
