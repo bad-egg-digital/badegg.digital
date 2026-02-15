@@ -1,11 +1,11 @@
-@use "../../../css/global/variables/spacing";
+@use "../../../css/global/variables";
 
 .wp-block-badegg-article {
   position: relative;
 
   .wp-block-pullquote {
     padding: 0;
-    margin: spacing.$innerLarge auto;
+    margin: variables.$innerLarge auto;
   }
 
   .badegg-article-select-parent {
@@ -15,6 +15,53 @@
     inset: 0;
     background: transparent;
     border: none;
+    padding: 0;
+    cursor:e-resize;
+
+    &:hover {
+      background: rgba(variables.$black, 0.1);
+    }
+  }
+
+  > .container {
+    border: 2px transparent dashed;
+  }
+
+  &:hover {
+    > .container {
+      border-color: variables.$wpblue;
+      background: inherit;
+
+      > * {
+        opacity: 0.7;
+      }
+
+      &:hover {
+        background: transparent;
+
+        > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.knockout {
+    .badegg-article-select-parent {
+      &:hover {
+        background: rgba(variables.$white, 0.1);
+      }
+    }
+
+    // &:hover {
+    //   > .container {
+    //     background: variables.$black;
+
+    //     &:hover {
+    //       background: transparent;
+    //     }
+    //   }
+    // }
   }
 
   .block-editor-block-list {
