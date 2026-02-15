@@ -13,6 +13,6 @@
 }
 
 @keyframes rotisserie {
-  0% { rotate: x 0; }
-  100% { rotate: x 359deg; }
+  from { rotate: x 0; }
+  to { rotate: x 359deg; }
 }

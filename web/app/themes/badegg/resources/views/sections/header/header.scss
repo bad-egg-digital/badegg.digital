@@ -42,8 +42,7 @@
         a {
           &::before,
           &::after {
-            content: 'x';
-            color: variables.$tertiary;
+            color: variables.$secondary;
             position: absolute;
             top: calc(50% - 0.9em);
             font-size: 0.8em;
@@ -77,6 +76,15 @@
           &::after {
             opacity: 1;
             transform: none;
+          }
+        }
+      }
+
+      &.current-menu-item {
+        a {
+          &::before,
+          &::after {
+            color: variables.$tertiary-light;
           }
         }
       }
