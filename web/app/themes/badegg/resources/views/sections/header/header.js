@@ -4,7 +4,7 @@ export default function Header() {
   document.addEventListener("scroll", () => {
     const scrolled = document.scrollingElement.scrollTop;
     const position = body.offsetTop;
-    const header = document.querySelector(".site-header");
+    const header = document.querySelector(".menu-fixed");
 
     if(!header) return;
 

@@ -6,4 +6,5 @@
       </nav>
     @endif
   </div>
+  <div class="menu-fixed-progress"></div>
 </header>

@@ -1,4 +1,5 @@
 <footer class="content-info">
+  <div class="section-angle section-angle-bottom-left bg-white"></div>
   <div class="section-angle section-angle-bottom-left bg-primary-dark bg-blur bg-blur-blue">
     <div class="bg-blur-image lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
   </div>

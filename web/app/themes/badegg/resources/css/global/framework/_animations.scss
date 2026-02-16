@@ -16,3 +16,9 @@
   from { rotate: x 0; }
   to { rotate: x 359deg; }
 }
+
+@keyframes grow {
+  to {
+    width: 100%;
+  }
+}

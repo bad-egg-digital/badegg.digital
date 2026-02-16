@@ -4,6 +4,8 @@
   position: relative;
   z-index: 1000;
   transition: all 300ms ease;
+  background: linear-gradient(0deg, variables.$white, rgba(variables.$white, 0.4));
+  backdrop-filter: blur(1em);
 
   @media (min-width: #{variables.$screen-md}) {
     position: sticky;
@@ -13,6 +15,28 @@
   @media (max-width: #{variables.$screen-sm-max}) {
     .menu-open & {
       transform: translateX((variables.$offCanvasWidth * -1));
+    }
+  }
+
+  &-progress {
+    position: absolute;
+    inset: 0;
+    top: auto;
+    height: 0.125em;
+    transition: all 300ms ease;
+
+    .scrolled & {
+      background: variables.$grey-lightest;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 100%;
+      background: variables.$secondary-lighter;
+      animation: grow linear forwards;
+      animation-timeline: scroll();
     }
   }
 }
@@ -36,6 +60,7 @@
         font-weight: 700;
         color: variables.$grey-dark;
         text-transform: lowercase;
+        text-decoration: none;
       }
 
       &:not(.menu-item-logo) {
