@@ -14,6 +14,7 @@ class Footer extends Composer
     protected static $views = [
         'sections.footer.*',
         'partials.contact-info',
+        'blocks.contact-cards.render',
     ];
 
     /**
@@ -30,6 +31,9 @@ class Footer extends Composer
             'number',
             'tel',
             'email',
+            'address',
+            'address_mailing',
+            'mailing_list',
         ];
 
         $props['sticker_shape'] = @file_get_contents(get_stylesheet_directory() . '/resources/images/sticker.svg');

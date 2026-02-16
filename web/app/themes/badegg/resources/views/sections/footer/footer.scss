@@ -18,10 +18,23 @@
       }
   }
 
-  &-nav {
-    container-name: FooterNav;
-    container-type: inline-size;
+  &-nav,
+  &-copyright {
+    a {
+      .knockout & {
+        @media screen {
+          color: variables.$white;
+          text-decoration: none;
 
+          &:hover {
+            color: variables.$tertiary-lighter;
+          }
+        }
+      }
+    }
+  }
+
+  &-nav {
     &-ul {
       text-align: center;
 

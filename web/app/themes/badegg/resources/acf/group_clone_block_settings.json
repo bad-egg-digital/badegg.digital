@@ -59,7 +59,7 @@
                         "larger": "Larger",
                         "full": "Edge to edge"
                     },
-                    "default_value": "large",
+                    "default_value": "larger",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -214,5 +214,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771246440
+    "modified": 1771270983
 }

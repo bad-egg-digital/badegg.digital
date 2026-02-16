@@ -1,12 +1,15 @@
+@use "sass:math";
+@use "../global/variables";
+
 .card {
   position: relative;
-  margin: 0.5em;
+  margin: math.div(variables.$gap, 2);
   flex: 0 0 calc(100% - 1em);
 
   &-wrap {
     display: flex;
     flex-wrap: wrap;
-    margin: -0.5em;
+    margin: math.div(variables.$gap, 2) * -1;
   }
 }
 

@@ -1,0 +1,44 @@
+@use "sass:math";
+@use "../../../css/global/variables";
+
+.wp-block-badegg-contact-cards {
+  container-name: BadEggContactCards;
+  container-type: inline-size;
+
+  .card {
+    @container BadEggContactCards (min-width: #{variables.$screen-sm}) {
+      flex: 0 0 calc(50% - variables.$gap);
+    }
+
+    @container BadEggContactCards (min-width: #{variables.$screen-lg}) {
+      margin: math.div(variables.$gapLarge, 2);
+      flex: 0 0 calc(33.33% - variables.$gapLarge);
+    }
+
+    &-wrap {
+      justify-content: center;
+
+      @container BadEggContactCards (min-width: #{variables.$screen-lg}) {
+        margin: math.div(variables.$gapLarge, 2) * -1;
+      }
+    }
+  }
+
+  h4 {
+    color: variables.$grey;
+    text-transform: lowercase;
+    font-size: 0.8em;
+
+    @media (min-width: variables.$screen-md) {
+      font-size: 1em;
+    }
+  }
+
+  a {
+    color: variables.$secondary-dark;
+  }
+
+  .socials {
+    font-size: 1.5em;
+  }
+}

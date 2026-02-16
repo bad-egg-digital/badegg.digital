@@ -4,18 +4,55 @@
   display: none;
 }
 
-.wpcf7-response-output {
-  @extend p !optional;
-  @extend .container !optional;
-  @extend .container-narrow !optional;
+.wpcf7 {
+  &-form {
+    position: relative;
 
-  padding: 1em 0 0;
-  margin-top: 2em;
-  border: 1px solid variables.$grey-light;
-  border-width: 1px 0 0;
+    label {
+      display: block;
+      margin: 0 0 1em;
+    }
 
-  .knockout & {
-    border-color: rgba(variables.$white, 0.3);
+    .hidden-fields-container {
+      display: none;
+    }
+  }
+
+  &-spinner {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    margin: 0;
+  }
+
+  &-response-output {
+    font-family: variables.$font;
+    font-weight: 700;
+    background: variables.$alert;
+    color: variables.$black;
+    padding: 1em;
+    margin: 1em 0 0;
+    border-radius: variables.$borderRadius;
+    display: none;
+
+    .invalid & {
+      display: block;
+    }
+
+    .sent & {
+      display: block;
+      background: variables.$success;
+    }
+
+    .knockout & {
+      border-color: rgba(variables.$white, 0.3);
+    }
+  }
+
+  &-not-valid-tip {
+    display: block;
+    color: variables.$error;
+    margin: 0.5em 0 1em;
   }
 }
 

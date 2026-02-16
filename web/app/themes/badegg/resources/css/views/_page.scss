@@ -15,3 +15,15 @@
 .main {
   min-height: 50dvh;
 }
+
+.wp-block-list {
+  > div {
+    &:last-of-type {
+      &::after {
+        content: '';
+        display: block;
+        height: variables.$angleHeight;
+      }
+    }
+  }
+}
