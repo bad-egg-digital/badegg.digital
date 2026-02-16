@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: variables.$primary;
+  color: variables.$secondary-darkest;
   font-weight: 700;
   font-family: variables.$font;
   line-height: 1.1em;
@@ -25,6 +25,14 @@ h6 {
 
   &.section-title {
     margin-top: 0;
+  }
+
+  &.subhead {
+    margin-top: 0;
+
+    &-big {
+      @extend h1;
+    }
   }
 
   @media screen {
@@ -37,6 +45,15 @@ h6 {
 h1 {
   font-size: 1.75em;
   margin-top: 0;
+
+  &.mini {
+    font-size: 1em;
+    margin: 0 0 0.25em;
+
+    @media (min-width: variables.$screen-md) {
+      font-size: 1.25em;
+    }
+  }
 }
 
 h2 { font-size: 1.5em; }
@@ -45,8 +62,8 @@ h3 { font-size: 1.25em; }
 h4,
 h5 { font-size: 1.15em; }
 
-@media (min-width: variables.$screen-sm) {
-  h1 { font-size: 2.5em; }
+@media (min-width: variables.$screen-md) {
+  h1 { font-size: 2.25em; }
   h2 { font-size: 2em; }
   h3 { font-size: 1.5em; }
 
@@ -71,6 +88,12 @@ label {
     .knockout & {
       color: variables.$white;
     }
+  }
+}
+
+p {
+  @media (min-width: variables.$screen-md) {
+    font-size: 1.25em;
   }
 }
 

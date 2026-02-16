@@ -25,7 +25,16 @@ domReady(() => {
     return settings;
   }
 
+  // const customInnerBlocks = (settings, name) => {
+  //   if([
+  //     'badegg/image-text',
+  //   ].includes(name)) {
+  //     console.log(settings.parent);
+  //   }
+  // }
+
   wp.hooks.addFilter( 'blocks.registerBlockType', 'badegg/restrict-parent-blocks', restrictEditorParentBlocks );
   wp.hooks.addFilter( 'blocks.registerBlockType', 'badegg/core-inner-blocks', coreInnerBlocks );
+  // wp.hooks.addFilter( 'blocks.registerBlockType', 'badegg/custom-inner-blocks', customInnerBlocks );
 
 });

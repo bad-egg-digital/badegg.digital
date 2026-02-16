@@ -21,7 +21,7 @@
 .section-angle {
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: calc(100% + 2px) auto;
+  mask-size: calc(100% + 2px) calc(100% + 2px);
   height: variables.$angleHeight;
 
   &-top-left     { mask-image: url("@images/angle-top-left.svg");     mask-position: calc(0% - 1px) calc(100% + 1px);  }

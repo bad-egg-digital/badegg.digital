@@ -65,6 +65,7 @@ class Dynamic
             'small'  => __('Small', 'badegg'),
             'medium' => __('Medium', 'badegg'),
             'large'  => __('Large', 'badegg'),
+            'larger' => __('Larger', 'badegg'),
             'full'   => __('Edge to edge', 'badegg'),
         ];
 

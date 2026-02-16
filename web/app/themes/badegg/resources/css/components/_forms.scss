@@ -26,6 +26,11 @@ textarea {
   }
 }
 
+textarea {
+  min-height: 5em;
+  field-sizing: content;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
   padding: 0;

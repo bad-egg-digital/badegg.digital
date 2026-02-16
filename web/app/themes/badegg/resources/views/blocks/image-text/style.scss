@@ -1,4 +1,68 @@
-// block.json's style, applied in block editor and front end
-.wp-block-acf-demo {
-  display: block;
+@use "../../../css/global/variables";
+
+.wp-block-badegg-image-text {
+  container-name: BadEggImageText;
+  container-type: inline-size;
+}
+
+.image-text {
+  &-cols {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: variables.$gapLarge;
+
+    @container BadEggImageText (min-width: #{variables.$screen-sm}) {
+      flex-wrap: nowrap;
+    }
+
+    @container BadEggImageText (min-width: #{variables.$screen-md}) {
+      gap: (variables.$gap * 1.5);
+    }
+
+    @container BadEggImageText (min-width: #{variables.$screen-lg}) {
+      gap: (variables.$gap * 3);
+    }
+
+        @container BadEggImageText (min-width: #{variables.$screen-xl}) {
+      gap: (variables.$gap * 4);
+    }
+  }
+
+  &-text {
+    @container BadEggImageText (min-width: #{variables.$screen-md}) {
+      @for $x from 3 to 7 {
+        &-#{$x * 10} {
+          max-width: #{$x * 10%};
+        }
+      }
+    }
+  }
+
+  &-image {
+    @container BadEggImageText (max-width: #{variables.$screen-xs-max}) {
+      .stacked-image-first & {
+        order: -1;
+      }
+
+      .stacked-image-hide & {
+        display: none;
+      }
+    }
+
+    @container BadEggImageText (min-width: #{variables.$screen-sm}) {
+      .columns-image-first & {
+        order: -1;
+      }
+    }
+
+    @container BadEggImageText (min-width: #{variables.$screen-md}) {
+      @for $x from 3 to 7 {
+        &-#{$x * 10} {
+          flex: 0 0 #{$x * 10%};
+        }
+      }
+    }
+  }
 }
