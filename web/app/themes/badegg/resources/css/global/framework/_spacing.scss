@@ -77,6 +77,33 @@ figure {
   &-zero-bottom { padding-bottom: unset; }
 }
 
+.section-m {
+  margin: variables.$sectionMedium 0;
+
+  &-small {  margin: variables.$sectionSmall  unset; }
+  &-medium { margin: variables.$sectionMedium unset; }
+  &-large {  margin: variables.$sectionLarge  unset; }
+
+  @container (min-width: #{variables.$screen-md}) {
+    margin: (variables.$sectionMedium * 1.5) unset;
+
+    &-small { margin: (variables.$sectionSmall * 1.5) unset; }
+    &-medium { margin: (variables.$sectionMedium * 1.5) unset; }
+    &-large { margin: (variables.$sectionLarge * 1.5) unset; }
+  }
+
+  @container (min-width: #{variables.$screen-lg}) {
+    margin: (variables.$sectionMedium * 2) 0;
+
+    &-small { margin: (variables.$sectionSmall * 2) 0; }
+    &-medium { margin: (variables.$sectionMedium * 2) 0; }
+    &-large { margin: (variables.$sectionLarge * 2) 0; }
+  }
+
+  &-zero-top {    margin-top:    unset; }
+  &-zero-bottom { margin-bottom: unset; }
+}
+
 .inner {
   padding: variables.$innerMedium;
 
