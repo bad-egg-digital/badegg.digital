@@ -1,0 +1,280 @@
+{
+    "key": "group_clone_angle",
+    "title": "Clone: Angles",
+    "fields": [
+        {
+            "key": "field_69924e01b99c4",
+            "label": "Top Angle",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_699230db7ba15",
+            "label": "Colour",
+            "name": "angle_top_colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "None",
+                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
+                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
+                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
+                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
+                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
+                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
+                "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
+                "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
+                "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6992311b7ba16",
+            "label": "Tint",
+            "name": "angle_top_tint",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lightest": "Lightest",
+                "lighter": "Lighter",
+                "light": "Light",
+                "0": "None",
+                "dark": "Dark",
+                "darker": "Darker",
+                "darkest": "Darkest"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6992313f7ba17",
+            "label": "Direction",
+            "name": "angle_top_direction",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69924e10b99c5",
+            "label": "Bottom Angle",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_69924cdeaaf36",
+            "label": "Colour",
+            "name": "angle_bottom_colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "None",
+                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
+                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
+                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
+                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
+                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
+                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
+                "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
+                "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
+                "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69924cf2aaf37",
+            "label": "Tint",
+            "name": "angle_bottom_tint",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lightest": "Lightest",
+                "lighter": "Lighter",
+                "light": "Light",
+                "0": "None",
+                "dark": "Dark",
+                "darker": "Darker",
+                "darkest": "Darkest"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69924d02aaf38",
+            "label": "Direction",
+            "name": "angle_bottom_direction",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69924e1db99c6",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "widget",
+                "operator": "==",
+                "value": "rss"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1771195942
+}

@@ -137,6 +137,8 @@ class Dynamic
                         'fontawesome_brands',
                         'fontawesome_regular',
                         'fontawesome_solid',
+                        'angle_top_colour',
+                        'angle_bottom_colour',
                     ];
 
                     // do something to the original_value to override the default escaping, then return it.

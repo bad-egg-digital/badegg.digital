@@ -161,7 +161,6 @@ function auto_register() {
             'style'             => "{$slug}-style",
             'script'            => "{$slug}-script",
             'view_script'       => "{$slug}-view-script",
-            'attributes'        => attributes(),
         ];
 
         if(!property_exists($json, 'acf') && \Roots\view()->exists("blocks.{$slug}.render")) {
@@ -174,6 +173,10 @@ function auto_register() {
                     'block' => $block,
                 ]);
             };
+        }
+
+        if(!property_exists($json, 'acf')) {
+            $props['attributes'] = attributes();
         }
 
         register_block_type($block_json, $props);

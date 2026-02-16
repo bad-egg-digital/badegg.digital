@@ -6,5 +6,6 @@
 ])
 
 @section('block-content')
-  {!! the_field('content') !!}
+  @include('components.image', ['id' => get_field('image')])
+  {{--<InnerBlocks template="<?php //echo esc_attr( wp_json_encode( $template ) ); ?>" />--}}
 @overwrite

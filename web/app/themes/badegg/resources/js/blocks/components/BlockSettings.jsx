@@ -137,86 +137,18 @@ export default function BlockSettings({ attributes, setAttributes }) {
               __nextHasNoMarginBottom
             />
             <ToggleControl
-              label={ __('Top angle', 'badegg') }
-              checked={ angle_bottom }
-              onChange={(value) => setAttributes({ angle_bottom: value }) }
-              __nextHasNoMarginBottom
-            />
-            <ToggleControl
-              label={ __('Bottom Angle', 'badegg') }
+              label={ __('Top Angle', 'badegg') }
               checked={ angle_top }
               onChange={(value) => setAttributes({ angle_top: value }) }
               __nextHasNoMarginBottom
             />
+            <ToggleControl
+              label={ __('Bottom angle', 'badegg') }
+              checked={ angle_bottom }
+              onChange={(value) => setAttributes({ angle_bottom: value }) }
+              __nextHasNoMarginBottom
+            />
           </PanelBody>
-
-          { angle_bottom && (
-            <PanelBody title={ __("Bottom Angle", "badegg") }>
-              <p style={{ textTransform: 'uppercase', fontSize: '11px' }} className="components-truncate components-text components-input-control__label">
-                { __('Colour', 'badegg') }
-              </p>
-
-              <ColorPalette
-                colors={ configOptions.colours }
-                value={ angle_bottom_hex }
-                clearable={ false }
-                disableCustomColors={ true }
-                style={{ marginBottom: '16px' }}
-                onChange={ ( value ) => {
-                  let slug, hex, selected = '';
-
-                  if(value) {
-                    selected = configOptions.colours.find(
-                      ( c ) => c.color === value
-                    );
-
-                    hex = value;
-                  }
-
-                  if(selected) {
-                    slug = selected.slug;
-                  }
-
-                  let colourAttributes = {
-                    angle_bottom_colour: slug,
-                    angle_bottom_hex: hex,
-                  };
-
-                  if(!slug || [0, '0', 'white', 'black'].includes(slug)) {
-                    colourAttributes.angle_bottom_tint = '0';
-                  }
-
-                  setAttributes( colourAttributes );
-
-                } }
-              />
-
-              { 'angle_bottom_colour' in attributes && attributes.angle_bottom_colour && ![0, '0', 'white', 'black'].includes(attributes.angle_bottom_colour) ? (
-                <SelectControl
-                  label={ __("Tint", "badegg") }
-                  value={ angle_bottom_tint }
-                  options={ configOptions.tints }
-                  onChange={ (value) => setAttributes({ angle_bottom_tint: value }) }
-                  __next40pxDefaultSize={ true }
-                  __nextHasNoMarginBottom={ true }
-                />
-              ) : null }
-
-              { angle_bottom_colour && (
-                <SelectControl
-                  label={ __("Direction", "badegg") }
-                  value={ angle_bottom_direction }
-                  options={[
-                    { "label": "Left", "value": "left" },
-                    { "label": "Right", "value": "right" },
-                  ]}
-                  onChange={ (value) => setAttributes({ angle_bottom_direction: value }) }
-                  __next40pxDefaultSize={ true }
-                  __nextHasNoMarginBottom={ true }
-                />
-              )}
-            </PanelBody>
-          )}
 
           { angle_top && (
             <PanelBody title={ __("Top Angle", "badegg") }>
@@ -279,6 +211,74 @@ export default function BlockSettings({ attributes, setAttributes }) {
                     { "label": "Right", "value": "right" },
                   ]}
                   onChange={ (value) => setAttributes({ angle_top_direction: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+              )}
+            </PanelBody>
+          )}
+
+          { angle_bottom && (
+            <PanelBody title={ __("Bottom Angle", "badegg") }>
+              <p style={{ textTransform: 'uppercase', fontSize: '11px' }} className="components-truncate components-text components-input-control__label">
+                { __('Colour', 'badegg') }
+              </p>
+
+              <ColorPalette
+                colors={ configOptions.colours }
+                value={ angle_bottom_hex }
+                clearable={ false }
+                disableCustomColors={ true }
+                style={{ marginBottom: '16px' }}
+                onChange={ ( value ) => {
+                  let slug, hex, selected = '';
+
+                  if(value) {
+                    selected = configOptions.colours.find(
+                      ( c ) => c.color === value
+                    );
+
+                    hex = value;
+                  }
+
+                  if(selected) {
+                    slug = selected.slug;
+                  }
+
+                  let colourAttributes = {
+                    angle_bottom_colour: slug,
+                    angle_bottom_hex: hex,
+                  };
+
+                  if(!slug || [0, '0', 'white', 'black'].includes(slug)) {
+                    colourAttributes.angle_bottom_tint = '0';
+                  }
+
+                  setAttributes( colourAttributes );
+
+                } }
+              />
+
+              { 'angle_bottom_colour' in attributes && attributes.angle_bottom_colour && ![0, '0', 'white', 'black'].includes(attributes.angle_bottom_colour) ? (
+                <SelectControl
+                  label={ __("Tint", "badegg") }
+                  value={ angle_bottom_tint }
+                  options={ configOptions.tints }
+                  onChange={ (value) => setAttributes({ angle_bottom_tint: value }) }
+                  __next40pxDefaultSize={ true }
+                  __nextHasNoMarginBottom={ true }
+                />
+              ) : null }
+
+              { angle_bottom_colour && (
+                <SelectControl
+                  label={ __("Direction", "badegg") }
+                  value={ angle_bottom_direction }
+                  options={[
+                    { "label": "Left", "value": "left" },
+                    { "label": "Right", "value": "right" },
+                  ]}
+                  onChange={ (value) => setAttributes({ angle_bottom_direction: value }) }
                   __next40pxDefaultSize={ true }
                   __nextHasNoMarginBottom={ true }
                 />

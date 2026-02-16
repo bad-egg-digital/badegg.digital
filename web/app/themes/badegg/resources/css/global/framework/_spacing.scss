@@ -169,7 +169,7 @@ figure {
     position: absolute;
     inset: 0;
 
-    &-top-right, &-top-left { top: auto; }
-    &-bottom-right, &-bottom-left { bottom: auto; }
+    &-top-right, &-top-left { bottom: auto; }
+    &-bottom-right, &-bottom-left { top: auto; }
   }
 }

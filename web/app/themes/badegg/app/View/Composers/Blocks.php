@@ -15,6 +15,7 @@ class Blocks extends Composer
     protected static $views = [
         'layouts.block-acf',
         'partials.block-*',
+        'components.block-*',
     ];
 
     /**

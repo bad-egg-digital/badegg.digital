@@ -12,15 +12,18 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
-                "class": "",
+                "width": "",
+                "class": "nowrap",
                 "id": ""
             },
             "choices": {
                 "0": "None",
-                "primary": "<i class=\"fas fa-circle\" style=\"color: #dd3333\"><\/i> Punch",
-                "secondary": "<i class=\"fas fa-circle\" style=\"color: #81d742\"><\/i> Atlantis",
-                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #8224e3\"><\/i> Purple Heart",
+                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
+                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
+                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
+                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
+                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
+                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
                 "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
                 "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
                 "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
@@ -68,7 +71,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -93,8 +96,29 @@
             "save_options": 0
         },
         {
+            "key": "field_699227396e521",
+            "label": "Gradient",
+            "name": "bg_gradient",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
             "key": "field_67350f526abf1",
-            "label": "",
+            "label": "Text Contrast",
             "name": "contrast",
             "aria-label": "",
             "type": "true_false",
@@ -102,11 +126,11 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "message": "Text Contrast",
+            "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
             "ui_on_text": "Light",
@@ -133,5 +157,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1767548180
+    "modified": 1771188146
 }

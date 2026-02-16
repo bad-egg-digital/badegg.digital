@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
   "name": "badegg/image-text",
-  "title": "ACF Demo",
+  "title": "Image & Text",
   "category": "badegg",
   "icon": "media-document",
-  "description": "An example block powered by ACF",
-  "keywords": ["acf", "demo"],
+  "description": "Image paired with text",
+  "keywords": ["acf", "image", "text"],
 
   "acf": {
       "mode": "preview",

@@ -25,6 +25,8 @@
   }
 
   > .container {
+    position: relative;
+    z-index: 10;
     border: 2px transparent dashed;
   }
 

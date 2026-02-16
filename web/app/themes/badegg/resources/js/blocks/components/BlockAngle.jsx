@@ -24,8 +24,10 @@ export default function BlockAngle({
   if(colour) colourClass = 'bg-' + colour;
   if(tint != '0') colourClass += '-' + tint;
 
-  return (
-    <div className={ `section-angle section-angle-${ position }-${ direction } ${ colourClass }` }></div>
-  );
+  if(colour) {
+    return (
+      <div className={ `section-angle section-angle-${ position }-${ direction } ${ colourClass }` }></div>
+    );
+  }
 
 }

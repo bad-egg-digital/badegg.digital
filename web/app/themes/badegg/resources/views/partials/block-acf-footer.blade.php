@@ -1,4 +1,4 @@
-@if($props['blurb'] || $props['links'])
+@if(@$props['blurb'] || @$props['links'])
   @php
     $containerProps = [
       'width' => $props['container_width'],

@@ -12,6 +12,9 @@ class CssClasses {
             'bg_tint' => null,
             'contrast' => null,
             'bg_image' => null,
+            'bg_gradient' => false,
+            'angle_top_colour' => '0',
+            'angle_bottom_colour' => '0',
         ];
 
         $props = wp_parse_args($props, $defaults);
@@ -41,6 +44,15 @@ class CssClasses {
 
         if($props['bg_image'])
             $classes[] = "has-bg-image";
+
+        if($props['bg_gradient'])
+            $classes[] = "has-gradient";
+
+        if(@$props['angle_top_colour'])
+            $classes[] = 'has-top-angle';
+
+        if(@$props['angle_bottom_colour'])
+            $classes[] = 'has-bottom-angle';
 
         return $classes;
     }
@@ -140,5 +152,41 @@ class CssClasses {
         else:
             return true;
         endif;
+    }
+
+    public function angleClasses($position = '', $props = [])
+    {
+        if(!$position) return;
+
+        $prefix = 'angle_' . $position . '_';
+
+        $defaults = [
+            $prefix . 'colour' => '0',
+            $prefix . 'tint' => '0',
+            $prefix . 'direction' => 'left',
+        ];
+
+        $props = wp_parse_args($props, $defaults);
+
+        $angleClasses = [
+            'section-angle',
+            'section-angle-' . $position . '-' . $props[$prefix . 'direction'],
+        ];
+
+        $colourClass = '';
+
+        $colour = $props[$prefix . 'colour'];
+        $tint = $props[$prefix . 'tint'];
+
+        if($colour && $colour != '0')
+            $colourClass .= 'bg-' . $colour;
+
+        if($tint)
+            $colourClass .= '-' . $tint;
+
+        if($colourClass)
+            $angleClasses[] = $colourClass;
+
+        return $angleClasses;
     }
 }

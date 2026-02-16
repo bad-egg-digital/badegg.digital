@@ -150,6 +150,28 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_69924d6599379",
+                    "label": "Clone Angles",
+                    "name": "clone_angles",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_clone_angle"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         },
@@ -191,5 +213,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1767548583
+    "modified": 1771198842
 }
