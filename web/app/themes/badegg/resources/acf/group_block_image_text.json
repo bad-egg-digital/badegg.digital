@@ -168,6 +168,27 @@
             "append": "%"
         },
         {
+            "key": "field_6994d5bfe229e",
+            "label": "Lazy load the image",
+            "name": "image_lazy",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Disable this if the image appears at the top of the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
             "key": "field_69947e744bfdf",
             "label": "Rounded Corners",
             "name": "image_rounded",
@@ -544,5 +565,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771348090
+    "modified": 1771361901
 }
