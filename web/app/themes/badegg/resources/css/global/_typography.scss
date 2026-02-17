@@ -23,6 +23,15 @@ h6 {
   margin: 1.5em 0 0.5em;
   padding: 0;
 
+  &.mini {
+    font-size: 1em;
+    margin: 0 0 0.25em;
+
+    @media (min-width: variables.$screen-md) {
+      font-size: 1.25em;
+    }
+  }
+
   &.section-title {
     margin-top: 0;
   }
@@ -45,15 +54,6 @@ h6 {
 h1 {
   font-size: 1.75em;
   margin-top: 0;
-
-  &.mini {
-    font-size: 1em;
-    margin: 0 0 0.25em;
-
-    @media (min-width: variables.$screen-md) {
-      font-size: 1.25em;
-    }
-  }
 }
 
 h2 { font-size: 1.5em; }

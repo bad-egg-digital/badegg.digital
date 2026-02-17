@@ -146,6 +146,160 @@
             "preview_size": "large"
         },
         {
+            "key": "field_6993102ee42a9",
+            "label": "Image Width",
+            "name": "image_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 30,
+            "max": 70,
+            "allow_in_bindings": 0,
+            "step": 10,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_69947e744bfdf",
+            "label": "Rounded Corners",
+            "name": "image_rounded",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69949492ba79b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_69947e964bfe0",
+            "label": "Fill column",
+            "name": "image_fill",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_699492e9adc46",
+                        "operator": "==",
+                        "value": "0"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_69947ef34bfe1",
+            "label": "Focal point",
+            "name": "image_focal",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69947e964bfe0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "Auto",
+                "center": "Centre",
+                "left-top": "Top-left",
+                "top": "Top",
+                "right-top": "Top-right",
+                "right": "Right",
+                "right-bottom": "Bottom-right",
+                "bottom": "Bottom",
+                "left-bottom": "Bottom-left",
+                "left": "Left"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69949492ba79b",
+            "label": "Image Fit",
+            "name": "image_fit",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69947e964bfe0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Cover",
+            "ui_off_text": "Contain",
+            "ui": 1
+        },
+        {
             "key": "field_6993100de42a7",
             "label": "Options",
             "name": "",
@@ -179,18 +333,18 @@
             },
             "default_value": 2,
             "min": 1,
-            "max": 6,
+            "max": 3,
             "allow_in_bindings": 0,
             "step": "",
             "prepend": "&lt;h",
             "append": "&gt;"
         },
         {
-            "key": "field_6993102ee42a9",
-            "label": "Image Width",
-            "name": "image_width",
+            "key": "field_699492e9adc46",
+            "label": "Vertical Alignment",
+            "name": "columns_vertical_align",
             "aria-label": "",
-            "type": "range",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -199,13 +353,22 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 50,
-            "min": 30,
-            "max": 70,
+            "choices": {
+                "0": "Default",
+                "top": "Top",
+                "center": "Centre",
+                "bottom": "Bottom"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
             "allow_in_bindings": 0,
-            "step": 10,
-            "prepend": "",
-            "append": "%"
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_699321e0da22b",
@@ -228,6 +391,27 @@
             "step": 10,
             "prepend": "",
             "append": "%"
+        },
+        {
+            "key": "field_69949798f3faf",
+            "label": "Vertical padding on text column",
+            "name": "text_padding",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_69932211da22c",
@@ -360,5 +544,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771250461
+    "modified": 1771348090
 }

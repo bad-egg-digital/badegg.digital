@@ -9,7 +9,6 @@
   &-cols {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
     gap: variables.$gapLarge;
 
@@ -18,20 +17,38 @@
     }
 
     @container BadEggImageText (min-width: #{variables.$screen-md}) {
-      gap: (variables.$gap * 1.5);
+      gap: (variables.$gapLarge * 1.25);
     }
 
     @container BadEggImageText (min-width: #{variables.$screen-lg}) {
-      gap: (variables.$gap * 3);
+      gap: (variables.$gapLarge * 1.5);
     }
 
-        @container BadEggImageText (min-width: #{variables.$screen-xl}) {
-      gap: (variables.$gap * 4);
+    @container BadEggImageText (min-width: #{variables.$screen-xl}) {
+      gap: (variables.$gapLarge * 2);
+    }
+
+    &-top { align-items: flex-start; }
+    &-center { align-items: center; }
+    &-bottom { align-items: flex-end; }
+  }
+
+  &-col {
+    @container BadEggImageText (min-width: #{variables.$screen-sm}) {
+      flex: 1;
     }
   }
 
   &-text {
+    @container BadEggImageText (max-width: #{variables.$screen-xs-max}) {
+      &.inner {
+        padding: 0;
+      }
+    }
+
     @container BadEggImageText (min-width: #{variables.$screen-md}) {
+      flex: auto;
+
       @for $x from 3 to 7 {
         &-#{$x * 10} {
           max-width: #{$x * 10%};
@@ -41,6 +58,10 @@
   }
 
   &-image {
+    img {
+      display: block;
+    }
+
     @container BadEggImageText (max-width: #{variables.$screen-xs-max}) {
       .stacked-image-first & {
         order: -1;
@@ -64,5 +85,33 @@
         }
       }
     }
+
+    &-fill {
+      @container BadEggImageText (min-width: #{variables.$screen-sm}) {
+        position: relative;
+
+        img {
+          position: absolute;
+          inset: 0;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+
+    &-contain img { object-fit: contain; }
+    &-rounded img { border-radius: 1em; }
+
+    &-focal-center img { object-position: center; }
+    &-focal-left-top img { object-position: left top; }
+    &-focal-top img { object-position: top; }
+    &-focal-right-top img { object-position: right top; }
+    &-focal-right img { object-position: right; }
+    &-focal-right-bottom img { object-position: right bottom; }
+    &-focal-bottom img { object-position: bottom; }
+    &-focal-left-bottom img { object-position: left bottom; }
+    &-focal-left img { object-position: left; }
   }
 }

@@ -6,8 +6,8 @@
 ])
 
 @section('block-content')
-  <div class="image-text-cols{{ get_field('stacked_image_first') ? ' stacked-image-first' : null }}{{ get_field('columns_image_first') ? ' columns-image-first' : null }}{{ get_field('stacked_image_hide') ? ' stacked-image-hide' : null }}">
-    <div class="image-text-col image-text-text inner inner-zero-x image-text-image-{{ get_field('text_width') }}">
+  <div class="{{ implode(' ', $classes) }}">
+    <div class="{{ implode(' ', $textClasses) }}">
       <h{{ get_field('hsize') }} class="mini tertiary-dark">{{ get_field('h1') }}</h{{ get_field('hsize') }}>
       <h{{ ((int)get_field('hsize') + 1) }} class="subhead subhead-big">{{ get_field('h2') }}</h{{ ((int)get_field('hsize') + 1) }}>
       <div class="blurb wysiwyg">
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="image-text-col image-text-image image-text-image-{{ get_field('image_width') }}">
+    <div class="{{ implode(' ', $imageClasses) }}">
       @include('components.image', ['id' => get_field('image')])
     </div>
   </div>
