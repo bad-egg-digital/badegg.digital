@@ -64,7 +64,7 @@
             "label": "Big Subtitle",
             "name": "h2",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "A longer subheading for qualifying or flavour text",
             "required": 0,
             "conditional_logic": 0,
@@ -76,9 +76,9 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": 3,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
             "key": "field_6992fe81b65a8",
@@ -565,5 +565,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771361901
+    "modified": 1771362267
 }
