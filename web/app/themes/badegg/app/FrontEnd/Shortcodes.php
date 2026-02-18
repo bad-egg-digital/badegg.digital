@@ -42,7 +42,7 @@ class Shortcodes
 
             ob_start(); ?>
 
-                <a<?php foreach($attributes as $att => $value) { echo ' ' . $att . '="' . $value . '"'; } ?>><?= $atts['text'] ?></a>
+                <p class="shortcode-btn"><a<?php foreach($attributes as $att => $value) { echo ' ' . $att . '="' . $value . '"'; } ?>><?= $atts['text'] ?></a></p>
 
             <?php $html = ob_get_clean();
 

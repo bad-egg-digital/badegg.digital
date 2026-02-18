@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
-  "name": "badegg/contact-cards",
-  "title": "Contact Cards",
+  "name": "badegg/columned-heading",
+  "title": "Columned Heading",
   "category": "badegg",
-  "icon": "phone",
-  "description": "Dynamically populated contact cards.",
-  "keywords": ["acf", "contact", "card"],
+  "icon": "columns",
+  "description": "Heading displayed in a column and paired with wysiwyg text.",
+  "keywords": ["acf", "heading", "column"],
 
   "acf": {
       "mode": "preview",

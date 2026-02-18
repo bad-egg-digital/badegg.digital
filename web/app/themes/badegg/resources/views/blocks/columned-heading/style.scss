@@ -1,0 +1,69 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-columned-heading {
+  container-name: BadEggColumnedHeading;
+  container-type: inline-size;
+}
+
+.columned-heading {
+  &-cols {
+
+    @container BadEggColumnedHeading (min-width: #{variables.$screen-sm}) {
+      display: flex;
+      align-items: flex-start;
+      gap: variables.$gapLarge;
+    }
+
+    @container BadEggColumnedHeading (min-width: #{variables.$screen-md}) {
+      gap: (variables.$gapLarge * 1.5);
+    }
+
+    @container BadEggColumnedHeading (min-width: #{variables.$screen-lg}) {
+      gap: (variables.$gapLarge * 1.5);
+    }
+
+    @container BadEggColumnedHeading (min-width: #{variables.$screen-xl}) {
+      gap: (variables.$gapLarge * 2);
+    }
+  }
+
+  &-col {
+    flex: 1;
+
+    &-heading {
+      @container BadEggColumnedHeading (min-width: #{variables.$screen-sm}) {
+        text-align: right;
+
+        h1, h2, h3 {
+           transform: translateY(-0.25em);
+        }
+      }
+
+      @container BadEggColumnedHeading (min-width: #{variables.$screen-md}) {
+        flex: auto;
+
+        @for $x from 3 to 7 {
+          &-#{$x * 10} {
+            max-width: #{$x * 1.33 * 10%};
+          }
+        }
+      }
+
+      @container BadEggColumnedHeading (min-width: #{variables.$screen-lg}) {
+        flex: auto;
+
+        @for $x from 3 to 7 {
+          &-#{$x * 10} {
+            max-width: #{$x * 10%};
+          }
+        }
+      }
+    }
+
+    &-editor {
+      @container BadEggColumnedHeading (min-width: #{variables.$screen-md}) {
+        flex: 1 1 10em;
+      }
+    }
+  }
+}
