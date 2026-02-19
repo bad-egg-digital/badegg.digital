@@ -31,5 +31,3 @@
     <div class="bg-blur-image lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
   </div>
 </footer>
-
-<pre>{{ print_r(get_option('autodescription-site-settings')) }}</pre>
