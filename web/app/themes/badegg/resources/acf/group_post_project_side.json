@@ -1,0 +1,84 @@
+{
+    "key": "group_post_project_side",
+    "title": "Settings",
+    "fields": [
+        {
+            "key": "field_6996231f6b60a",
+            "label": "Testimonials",
+            "name": "testimonial_project",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "testimonial"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 1,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_69961ae9059b0"
+            ],
+            "ui": 1
+        },
+        {
+            "key": "field_69962348f4df9",
+            "label": "Services",
+            "name": "service_project",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "service"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 1,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_69962509e2cf8"
+            ],
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1771448767
+}

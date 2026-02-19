@@ -106,6 +106,9 @@ function auto_register() {
 
     foreach ($blocks as $block_json) {
         $json = json_decode(file_get_contents($block_json));
+
+        if(@$json->disabled) continue;
+
         $slug = basename(dirname($block_json));
         $blockPath = "resources/views/blocks/{$slug}";
 

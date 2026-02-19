@@ -2,7 +2,7 @@
 
 namespace App\PostTypes;
 
-class Service
+class Project
 {
     public function __construct()
     {
@@ -12,7 +12,7 @@ class Service
     public function register()
     {
         $td = 'sage';
-        $postType = 'service';
+        $postType = 'project';
 
         register_extended_post_type(
             $postType,
@@ -24,11 +24,11 @@ class Service
                     'editor',
                     'page-attributes',
                 ],
-                'menu_icon' => 'dashicons-editor-code',
+                'menu_icon' => 'dashicons-art',
                 'rewrite' => [
-                    'slug' => 'services',
+                    'slug' => 'work',
                 ],
-                'has_archive' => false,
+                'has_archive' => true,
                 'capability_type' => 'page',
             ],
         );

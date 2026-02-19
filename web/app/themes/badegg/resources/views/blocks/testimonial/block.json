@@ -1,12 +1,11 @@
 {
-  "disabled": true,
   "apiVersion": 3,
-  "name": "badegg/acfdemo",
-  "title": "ACF Demo",
+  "name": "badegg/testimonial",
+  "title": "Testimonial",
   "category": "badegg",
-  "icon": "media-document",
+  "icon": "format-quote",
   "description": "An example block powered by ACF",
-  "keywords": ["acf", "demo"],
+  "keywords": ["acf", "testimonial", "review", "feedback"],
 
   "acf": {
       "mode": "preview",
@@ -15,8 +14,7 @@
   },
   "supports": {
       "anchor": true,
-      "align": false,
-      "jsx": true
+      "align": false
   },
   "example": {
     "attributes": {

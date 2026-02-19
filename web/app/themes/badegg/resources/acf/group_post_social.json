@@ -1,6 +1,6 @@
 {
     "key": "group_post_social",
-    "title": "Social Channel Settings",
+    "title": "Post: Social Channel Settings",
     "fields": [
         {
             "key": "field_664c658853f1b",
@@ -615,5 +615,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770733338
+    "modified": 1771442661
 }
