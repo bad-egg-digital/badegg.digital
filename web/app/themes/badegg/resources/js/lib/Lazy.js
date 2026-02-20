@@ -13,29 +13,8 @@ function LazyLoad() {
     const lazyObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-
         const el = entry.target;
-
-        // Handle <img>
-        if (el.tagName === 'IMG') {
-          el.src = el.dataset.src;
-
-          if (el.dataset.srcset) {
-            el.srcset = el.dataset.srcset;
-          }
-
-          el.classList.remove('lazy');
-        }
-
-        // Handle background images
-        else {
-          if (el.dataset.bg) {
-            el.style.backgroundImage = `url("${el.dataset.bg}")`;
-            el.classList.remove('lazy-bg');
-            el.classList.add('lazy-loaded');
-          }
-        }
-
+        loadLazyElement(el);
         observer.unobserve(el);
       });
     });
@@ -50,5 +29,24 @@ function LazyLoad() {
         el.style.backgroundImage = `url("${el.dataset.bg}")`;
       }
     });
+  }
+}
+
+function loadLazyElement(el, cache = false) {
+  if (el.tagName === 'IMG') {
+    if (el.dataset.src) el.src = el.dataset.src;
+    if (el.dataset.srcset) el.srcset = el.dataset.srcset;
+
+    el.classList.remove('lazy');
+
+  } else if (el.dataset.bg) {
+    el.style.backgroundImage = `url("${el.dataset.bg}")`;
+
+    el.classList.remove('lazy-bg');
+    el.classList.add('lazy-loaded');
+  }
+
+  if(cache) {
+    console.log('loaded lazy img from cache');
   }
 }
