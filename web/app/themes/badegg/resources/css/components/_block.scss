@@ -3,7 +3,8 @@
 .has-bg-image {
   position: relative;
 
-  >.container {
+  > .inner,
+  > .container {
     position: relative;
     z-index: 10;
   }
@@ -12,5 +13,28 @@
     position: absolute;
     z-index: 1;
     inset: 0;
+  }
+}
+
+.block-footer,
+.block-intro {
+  display: flex;
+
+  &.section {
+    @extend .section-small !optional;
+  }
+
+  &.align-left { justify-content: flex-start; }
+  &.align-right { justify-content: flex-end; }
+  &.align-centre { justify-content: center; }
+
+  > .container {
+    width: auto;
+    margin: 0;
+
+    .align-left &,
+    .align-right & {
+      margin: 0;
+    }
   }
 }

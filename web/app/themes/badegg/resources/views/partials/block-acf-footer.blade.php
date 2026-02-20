@@ -1,28 +1,32 @@
 @if(@$props['blurb'] || @$props['links'])
   @php
     $containerProps = [
-      'width' => $props['container_width'],
-      'location' => 'block-footer',
-      'section' => true,
+      'width' => $settings['container_width'],
+      'location' => 'block-intro inner inner-top',
       'align' => $props['align'],
+      'section' => true,
+    ];
+
+    $innerContainerProps = [
+      'width' => $props['container_width'],
+      'location' => 'block-footer-inner',
       'wysiwyg' => true,
     ];
   @endphp
 
   <div class="{{ implode(' ', $CssClasses->container($containerProps, @$settings)) }}">
-    @if($props['blurb']) <p>{{ $props['blurb'] }}</p> @endif
+    <div class="{{ implode(' ', $CssClasses->container($innerContainerProps)) }}">
+      {!! apply_filters('the_content', $props['blurb']) !!}
 
-    @if(@$props['links'])
-      <div class="section-footer inner-top">
-        <div class="container">
-          <div class="btn-wrap">
-            @foreach($props['links'] as $link)
-              @include('components.button', $link)
-            @endforeach
-          </div>
+      @if(@$props['links'])
+        <div class="btn-wrap">
+          @foreach($props['links'] as $link)
+            @include('components.button', $link)
+          @endforeach
         </div>
-      </div>
-    @endif
+      @endif
+
+    </div>
   </div>
 
 @endif

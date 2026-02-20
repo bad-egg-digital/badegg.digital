@@ -1,17 +1,23 @@
 @if(@$props['heading'] || @$props['blurb'])
   @php
     $containerProps = [
-      'width' => $props['container_width'],
-      'location' => 'block-intro',
-      'section' => true,
+      'width' => $settings['container_width'],
+      'location' => 'block-intro inner inner-bottom',
       'align' => $props['align'],
+    ];
+
+    $innerContainerProps = [
+      'width' => $props['container_width'],
+      'location' => 'block-intro-inner',
       'wysiwyg' => true,
     ];
   @endphp
 
   <div class="{{ implode(' ', $CssClasses->container($containerProps, @$settings)) }}">
-    @if($props['heading']) <h2>{{ $props['heading'] }}</h3> @endif
-    @if($props['blurb']) <p>{{ $props['blurb'] }}</p> @endif
+    <div class="{{ implode(' ', $CssClasses->container($innerContainerProps)) }}">
+      @if($props['heading']) <h2>{{ $props['heading'] }}</h3> @endif
+      {!! apply_filters('the_content', $props['blurb']) !!}
+    </div>
   </div>
 
 @endif

@@ -138,9 +138,15 @@ figure {
 
   &-zero-x { padding-left: unset; padding-right: unset; }
   &-zero-y { padding-top:  unset; padding-top:   unset; }
+
+  &-top { padding-left: unset; padding-right: unset; padding-bottom: unset; }
+  &-right { padding-left: unset; padding-top: unset; padding-bottom: unset; }
+  &-bottom { padding-left: unset; padding-right: unset; padding-top: unset; }
+  &-left { padding-top: unset; padding-right: unset; padding-bottom: unset; }
 }
 
 .rounded {
+  overflow: hidden;
   border-radius: variables.$borderRadius;
 
   &-top {

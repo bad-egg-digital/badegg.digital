@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/coloured-cards",
+  "title": "Coloured Cards",
+  "category": "badegg",
+  "icon": "screenoptions",
+  "description": "Basic cards with a heading, short description, and a background colour",
+  "keywords": ["acf", "cards", "colour"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}
