@@ -12,6 +12,18 @@
     top: 0;
   }
 
+  .admin-bar & {
+    top: 32px;
+
+    @media (max-width: 783px) {
+      top: 46px;
+    }
+
+    @media (max-width: 600px) {
+      top: 0;
+    }
+  }
+
   @media (max-width: #{variables.$screen-sm-max}) {
     .menu-open & {
       transform: translateX((variables.$offCanvasWidth * -1));
