@@ -44,9 +44,12 @@
 .menu-primary {
   &-ul {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
     gap: 2em;
+
+    @media (min-width: variables.$screen-md) {
+      justify-content: center;
+    }
 
     li {
       @for $x from 0 through 10 {
@@ -135,7 +138,7 @@
         img,
         svg {
           display: block;
-          width: 5em;
+          width: 7.5em;
         }
 
         a {
@@ -143,11 +146,6 @@
         }
 
         @media (min-width: #{variables.$screen-md}) {
-          img,
-          svg {
-            width: 7.5em;
-          }
-
           a {
             padding: 0 1em 0 3em;
           }

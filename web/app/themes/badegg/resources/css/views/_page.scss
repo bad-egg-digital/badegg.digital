@@ -18,6 +18,14 @@
 
 .wp-block-list {
   > div {
+    &:first-of-type {
+      &.section-zero-top {
+        @media (max-width: variables.$screen-xs-max) {
+          padding-top: variables.$sectionSmall;
+        }
+      }
+    }
+
     &:last-of-type {
       &::after {
         content: '';
