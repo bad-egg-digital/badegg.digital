@@ -204,6 +204,7 @@ class CssClasses {
             'bg_fixed' => false,
             'bg_lazy' => true,
             'bg_width' => 100,
+            'contrast' => false,
         ];
 
         $props = wp_parse_args($props, $default_props);
@@ -220,8 +221,17 @@ class CssClasses {
             'style' => 'background-image: url(\''. $hero .'\');',
         ];
 
-        if($props['bg_filter'])
-            $atts['class'] .= ' bg-filter';
+        if($props['bg_filter']) {
+            $filter = ' bg-filter';
+
+            if($props['contrast']) {
+                $filter .= '-screen';
+            } else {
+                $filter .= '-multiply';
+            }
+
+            $atts['class'] .= $filter;
+        }
 
         if($props['bg_fit'])
             $atts['class'] .= ' bg-contain';

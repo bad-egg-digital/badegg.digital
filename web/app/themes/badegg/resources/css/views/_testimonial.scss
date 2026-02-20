@@ -1,0 +1,96 @@
+@use "../global/variables";
+
+.testimonial {
+  container-name: Testimonial;
+  container-type: inline-size;
+
+  &-wrap {
+    &::before {
+      content: '\201c';
+      position: absolute;
+      top: -0.5em;
+      left: 0;
+      display: block;
+      color: variables.$secondary-light;
+      font-size: 2.5em;
+      font-style: italic;
+      font-weight: bold;
+      transform: translateY(-0.25em);
+      padding-right: 0.125em;
+    }
+
+    @container Testimonial (min-width: #{variables.$screen-xxs}) {
+      display: flex;
+
+      &::before {
+        font-size: 5em;
+        transform: translateY(-0.3em);
+        position: static;
+      }
+    }
+
+    @container Testimonial (min-width: #{variables.$screen-md}) {
+      font-size: 1.25em;
+
+      &::before {
+        font-size: 7.5em;
+        transform: translateY(-0.35em);
+      }
+    }
+
+    @container Testimonial (min-width: #{variables.$screen-lg}) {
+      font-size: 1.5em;
+      padding-right: 5em;
+    }
+  }
+
+  &-inner {
+    p {
+      font-size: 1em;
+    }
+  }
+
+  blockquote {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-intro {
+    font-family: variables.$blockquote;
+    font-size: 1.66666667em;
+  }
+
+  &-body {
+    padding-left: 1em;
+    border-left: 0.25em solid variables.$secondary-light;
+
+    > * {
+      opacity: 0.8;
+    }
+  }
+
+  &-author {
+    margin: 1.5em 0 0;
+
+    &-name {
+      font-weight: 700;
+      margin: 0;
+
+      cite {
+        font-style: normal;
+      }
+    }
+  }
+
+  p.testimonial-author-title {
+    margin: 0.125em 0 0;
+    font-size: 0.8em;
+    color: variables.$tertiary;
+    font-weight: bold;
+
+    .knockout & {
+      color: variables.$tertiary-lighter;
+    }
+  }
+}

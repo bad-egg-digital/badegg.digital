@@ -22,13 +22,20 @@
       background-attachment: fixed;
     }
 
-    &-filter {
-      mix-blend-mode: multiply;
-      filter: grayscale(100);
-    }
-
     &-contain {
       background-size: contain;
+    }
+
+    &-filter {
+      &-screen {
+        mix-blend-mode: screen;
+        filter: grayscale(100);
+      }
+
+      &-multiply {
+        mix-blend-mode: multiply;
+        filter: grayscale(100);
+      }
     }
   }
 }
