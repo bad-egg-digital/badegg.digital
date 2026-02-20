@@ -1,9 +1,9 @@
 <footer class="content-info">
   <div class="section-angle section-angle-bottom-left bg-white"></div>
-  <div class="section-angle section-angle-bottom-left bg-primary-dark bg-blur bg-blur-blue">
-    <div class="bg-blur-image lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
+  <div class="section-angle section-angle-bottom-left bg-primary-dark has-bg-image">
+    <div class="bg-image bg-fixed bg-filter lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
   </div>
-  <div class="footer bg-primary-dark knockout bg-blur bg-blur-blue">
+  <div class="footer bg-primary-dark knockout has-bg-image">
     <div class="section container container-larger">
       @if (has_nav_menu('footer_navigation'))
         <nav class="footer-nav" aria-label="{{ wp_get_nav_menu_name('footer_navigation') }}">
@@ -28,6 +28,6 @@
         @endif
       </div>
     </div>
-    <div class="bg-blur-image lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
+    <div class="bg-image bg-fixed bg-filter lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-blue.jpg') }}"></div>
   </div>
 </footer>

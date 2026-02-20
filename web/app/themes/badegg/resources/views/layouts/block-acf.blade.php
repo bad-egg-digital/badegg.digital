@@ -23,4 +23,12 @@
   @include('components.block-angle', [ 'position' => 'top', 'props' => get_field('settings') ])
   @include('components.block-angle', [ 'position' => 'bottom', 'props' => get_field('settings') ])
 
+  @if(@get_field('settings')['bg_image'])
+    <div @foreach($CssClasses->backgroundAtts(get_field('settings')) as $att => $value) {{ $att }}="{{ $value }}" @endforeach /></div>
+    <!-- <pre>{{ print_r(get_field('settings')) }}</pre> -->
+    <!-- <pre>{{ print_r( $CssClasses->backgroundAtts(get_field('settings')) ) }}</pre> -->
+
+    {{ gettype(get_field('settings')['bg_width']) }}
+  @endif
+
 </div>

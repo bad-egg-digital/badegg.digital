@@ -53,16 +53,16 @@ figure {
 .section {
   padding: variables.$sectionMedium 0;
 
-  &-small {  padding: variables.$sectionSmall  unset; }
-  &-medium { padding: variables.$sectionMedium unset; }
-  &-large {  padding: variables.$sectionLarge  unset; }
+  &-small {  padding: variables.$sectionSmall  0; }
+  &-medium { padding: variables.$sectionMedium 0; }
+  &-large {  padding: variables.$sectionLarge  0; }
 
   @container (min-width: #{variables.$screen-md}) {
-    padding: (variables.$sectionMedium * 1.5) unset;
+    padding: (variables.$sectionMedium * 1.5) 0;
 
-    &-small { padding: (variables.$sectionSmall * 1.5) unset; }
-    &-medium { padding: (variables.$sectionMedium * 1.5) unset; }
-    &-large { padding: (variables.$sectionLarge * 1.5) unset; }
+    &-small { padding: (variables.$sectionSmall * 1.5) 0; }
+    &-medium { padding: (variables.$sectionMedium * 1.5) 0; }
+    &-large { padding: (variables.$sectionLarge * 1.5) 0; }
   }
 
   @container (min-width: #{variables.$screen-lg}) {
@@ -80,16 +80,16 @@ figure {
 .section-m {
   margin: variables.$sectionMedium 0;
 
-  &-small {  margin: variables.$sectionSmall  unset; }
-  &-medium { margin: variables.$sectionMedium unset; }
-  &-large {  margin: variables.$sectionLarge  unset; }
+  &-small {  margin: variables.$sectionSmall  0; }
+  &-medium { margin: variables.$sectionMedium 0; }
+  &-large {  margin: variables.$sectionLarge  0; }
 
   @container (min-width: #{variables.$screen-md}) {
-    margin: (variables.$sectionMedium * 1.5) unset;
+    margin: (variables.$sectionMedium * 1.5) 0;
 
-    &-small { margin: (variables.$sectionSmall * 1.5) unset; }
-    &-medium { margin: (variables.$sectionMedium * 1.5) unset; }
-    &-large { margin: (variables.$sectionLarge * 1.5) unset; }
+    &-small { margin: (variables.$sectionSmall * 1.5) 0; }
+    &-medium { margin: (variables.$sectionMedium * 1.5) 0; }
+    &-large { margin: (variables.$sectionLarge * 1.5) 0; }
   }
 
   @container (min-width: #{variables.$screen-lg}) {

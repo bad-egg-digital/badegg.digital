@@ -13,8 +13,8 @@ class CssClasses {
             'contrast' => null,
             'bg_image' => null,
             'bg_gradient' => false,
-            'angle_top_colour' => '0',
-            'angle_bottom_colour' => '0',
+            'angle_top_colour' => 0,
+            'angle_bottom_colour' => 0,
         ];
 
         $props = wp_parse_args($props, $defaults);
@@ -48,11 +48,14 @@ class CssClasses {
         if($props['bg_gradient'])
             $classes[] = "has-gradient";
 
-        if(@$props['angle_top_colour'])
+        if($props['angle_top_colour'])
             $classes[] = 'has-top-angle';
 
-        if(@$props['angle_bottom_colour'])
+        if($props['angle_bottom_colour'])
             $classes[] = 'has-bottom-angle';
+
+        if($props['bg_image'])
+            $classes[] = 'has-bg-image';
 
         return $classes;
     }
@@ -188,5 +191,71 @@ class CssClasses {
             $angleClasses[] = $colourClass;
 
         return $angleClasses;
+    }
+
+    public function backgroundAtts($props = [])
+    {
+        $default_props = [
+            'bg_image' => false,
+            'bg_filter' => false,
+            'bg_fit' => false,
+            'bg_focal' => 0,
+            'bg_opacity' => 50,
+            'bg_fixed' => false,
+            'bg_lazy' => true,
+            'bg_width' => 100,
+        ];
+
+        $props = wp_parse_args($props, $default_props);
+
+        $leftFocals = [ 'left-top', 'left-bottom', 'left'];
+        $centerFocals = [ 'center', 'top', 'bottom'];
+        $rightFocals = [ 'right-top', 'right', 'right-bottom'];
+
+        $lazy = @wp_get_attachment_image_src($props['bg_image'], 'lazy')[0];
+        $hero = @wp_get_attachment_image_src($props['bg_image'], 'hero')[0];
+
+        $atts = [
+            'class' => 'bg-image',
+            'style' => 'background-image: url(\''. $hero .'\');',
+        ];
+
+        if($props['bg_filter'])
+            $atts['class'] .= ' bg-filter';
+
+        if($props['bg_fit'])
+            $atts['class'] .= ' bg-contain';
+
+        if($props['bg_fixed'])
+            $atts['class'] .= ' bg-fixed';
+
+        if($props['bg_lazy'] && !is_admin()) {
+            $atts['class'] .= ' lazy-bg';
+            $atts['data-bg'] = $hero;
+            $atts['style'] = 'background-image: url(\''. $lazy .'\');';
+        }
+
+        if($props['bg_opacity'])
+            $atts['style'] .= " opacity: " . $props['bg_opacity'] * 0.01 . ";";
+
+        if((int)$props['bg_width'] < 100)
+            $atts['style'] .= " width: " . $props['bg_width'] . "%;";
+
+        if($props['bg_focal'])
+            $atts['style'] .= " background-position: " . str_replace('-', ' ', $props['bg_focal']) . ";";
+
+        if($props['bg_focal'] && (int)$props['bg_width'] < 100) {
+            if(in_array($props['bg_focal'], $centerFocals)) {
+                $atts['style'] .= " left: auto; right: calc(50% - " . (int)$props['bg_width'] * 0.5 . "%);";
+
+            } elseif(in_array($props['bg_focal'], $leftFocals)) {
+                $atts['style'] .= " right: auto;";
+
+            } elseif(in_array($props['bg_focal'], $rightFocals)) {
+                $atts['style'] .= " left: auto;";
+            }
+        }
+
+        return $atts;
     }
 }

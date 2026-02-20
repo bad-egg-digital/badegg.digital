@@ -22,7 +22,7 @@
         },
         {
             "key": "field_699700be05d8f",
-            "label": "Source",
+            "label": "Testimonial selection",
             "name": "source",
             "aria-label": "",
             "type": "radio",
@@ -48,18 +48,18 @@
         },
         {
             "key": "field_6997012ad5746",
-            "label": "Select a testimonial",
+            "label": "",
             "name": "select",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
                         "field": "field_699700be05d8f",
                         "operator": "==",
-                        "value": "specific"
+                        "value": "select"
                     }
                 ]
             ],
@@ -125,5 +125,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771504318
+    "modified": 1771521175
 }

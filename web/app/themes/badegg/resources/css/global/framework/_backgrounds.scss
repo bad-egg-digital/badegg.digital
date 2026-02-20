@@ -1,6 +1,6 @@
 @use "../variables";
 
-.bg-blur {
+.has-bg-image {
   position: relative;
 
   > .container {
@@ -8,13 +8,28 @@
     z-index: 10;
   }
 
-  &-image {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    background-size: cover;
-    background-attachment: fixed;
-    mix-blend-mode: multiply;
+  .bg {
+    &-image {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &-fixed {
+      background-attachment: fixed;
+    }
+
+    &-filter {
+      mix-blend-mode: multiply;
+      filter: grayscale(100);
+    }
+
+    &-contain {
+      background-size: contain;
+    }
   }
 }
 
