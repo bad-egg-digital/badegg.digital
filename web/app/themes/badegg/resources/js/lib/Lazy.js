@@ -6,7 +6,7 @@ export default function LazyLoadInit()
 function LazyLoad() {
 
   const lazyElements = [].slice.call(
-    document.querySelectorAll('img.lazy, .lazy-bg')
+    document.querySelectorAll('.lazy, .lazy-bg')
   );
 
   if ('IntersectionObserver' in window) {
@@ -14,6 +14,9 @@ function LazyLoad() {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
+
+        console.log(el.tagName);
+
         loadLazyElement(el);
         observer.unobserve(el);
       });
@@ -38,6 +41,15 @@ function loadLazyElement(el, cache = false) {
     if (el.dataset.srcset) el.srcset = el.dataset.srcset;
 
     el.classList.remove('lazy');
+
+  } else if (el.dataset.svg) {
+    fetch(el.dataset.svg)
+      .then( (response) => response.text())
+      .then( (data) => {
+        el.innerHTML = data;
+        el.classList.remove('lazy');
+        el.classList.add('lazy-svg-loaded');
+      });
 
   } else if (el.dataset.bg) {
     el.style.backgroundImage = `url("${el.dataset.bg}")`;

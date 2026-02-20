@@ -299,7 +299,7 @@
     stroke: white;
   }
 
-  img {
+  &-bg {
     position: absolute;
     inset: 0;
     display: block;
@@ -310,7 +310,7 @@
   }
 
   &:hover {
-    img {
+    .menu-item-logo-footer-bg {
       transform: scale(1.2);
       opacity: 0.8;
     }
