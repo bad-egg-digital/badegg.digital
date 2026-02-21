@@ -49,12 +49,49 @@ class Testimonial
 
                         },
                     ],
+                    'services' => [
+                        'title' => __('Services', $td),
+                        'function' => function(){
+                            $services = get_field('testimonial_service');
+
+                            $links = [];
+
+                            if($services){
+                                foreach($services as $service) {
+                                    $links[] = '<a href="' . admin_url('post.php?post=' . $service . '&action=edit') . '">' . get_the_title($service) . '</a>';
+                                }
+                            }
+
+                            echo implode(', ', $links);
+                        }
+                    ],
+                    'Projects' => [
+                        'title' => __('Projects', $td),
+                        'function' => function(){
+                            $projects = get_field('testimonial_project');
+
+                            $links = [];
+
+                            if($projects){
+                                foreach($projects as $project) {
+                                    $links[] = '<a href="' . admin_url('post.php?post=' . $project . '&action=edit') . '">' . get_the_title($project) . '</a>';
+                                }
+                            }
+
+                            echo implode(', ', $links);
+                        }
+                    ],
                     'intro' => [
                         'title' => __('Intro', $td),
                         'function' => function(){
-                            echo get_the_excerpt();
+                            global $post;
+                        ?>
+                            <strong><?= $post->post_excerpt ?></strong><br/>
+                            <?= apply_filters('the_content', $post->post_content) ?>
+
+                        <?php
                         },
-                    ]
+                    ],
                 ],
             ],
         );
