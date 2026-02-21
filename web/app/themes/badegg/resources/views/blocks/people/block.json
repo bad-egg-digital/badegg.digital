@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
-  "name": "badegg/testimonial",
-  "title": "Testimonial",
+  "name": "badegg/people",
+  "title": "People",
   "category": "badegg",
-  "icon": "format-quote",
-  "description": "Display a random or specific testimonial.",
-  "keywords": ["acf", "testimonial", "review", "feedback"],
+  "icon": "businessperson",
+  "description": "A list of people with photos and short bios",
+  "keywords": ["acf", "person", "people", "staff", "team"],
 
   "acf": {
       "mode": "preview",

@@ -32,6 +32,30 @@ class Testimonial
                 'exclude_from_search' => true,
                 'capability_type' => 'page',
                 'show_in_nav_menus' => false,
+                'admin_cols' => [
+                    'reviewer' => [
+                        'title' => __('Reviewer', $td),
+                        'meta_key' => 'testimonial_author_name',
+                        'function' => function(){
+                            $name = get_field('testimonial_author_name');
+                            $title = get_field('testimonial_author_title');
+
+                            if($name): ?>
+
+                                <strong><?= $name ?></strong><br/>
+                                <?= $title ?>
+
+                            <?php endif;
+
+                        },
+                    ],
+                    'intro' => [
+                        'title' => __('Intro', $td),
+                        'function' => function(){
+                            echo get_the_excerpt();
+                        },
+                    ]
+                ],
             ],
         );
     }
