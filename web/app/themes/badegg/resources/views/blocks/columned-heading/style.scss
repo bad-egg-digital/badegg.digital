@@ -39,16 +39,6 @@
         }
       }
 
-      @container BadEggColumnedHeading (min-width: #{variables.$screen-md}) {
-        flex: auto;
-
-        @for $x from 3 to 7 {
-          &-#{$x * 10} {
-            max-width: #{$x * 1.33 * 10%};
-          }
-        }
-      }
-
       @container BadEggColumnedHeading (min-width: #{variables.$screen-lg}) {
         flex: auto;
 
