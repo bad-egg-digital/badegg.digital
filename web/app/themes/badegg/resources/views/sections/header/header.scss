@@ -1,15 +1,14 @@
 @use "../../../css/global/variables";
 
 .menu-fixed {
-  position: relative;
-  z-index: 1000;
   transition: all 300ms ease;
-  background: linear-gradient(0deg, variables.$white, rgba(variables.$white, 0.4));
-  backdrop-filter: blur(1em);
 
   @media (min-width: #{variables.$screen-md}) {
     position: sticky;
     top: 0;
+    z-index: 1000;
+    background: linear-gradient(0deg, variables.$white, rgba(variables.$white, 0.4));
+    backdrop-filter: blur(1em);
   }
 
   @media (max-width: #{variables.$screen-sm-max}) {
@@ -19,24 +18,36 @@
   }
 
   &-progress {
-    position: absolute;
+    position: fixed;
     inset: 0;
-    top: auto;
-    height: 0.125em;
+    bottom: auto;
+    z-index: 1000;
+    height: 0.25em;
     transition: all 300ms ease;
-
-    .scrolled & {
-      background: variables.$grey-lightest;
-    }
 
     &::after {
       content: '';
       display: block;
       width: 0;
       height: 100%;
-      background: variables.$secondary-lighter;
+      background: variables.$tertiary;
       animation: grow linear forwards;
       animation-timeline: scroll();
+    }
+
+    @media (min-width: #{variables.$screen-md}) {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      height: 0.125em;
+
+      .scrolled & {
+        background: variables.$grey-lightest;
+      }
+
+      &::after {
+        background: variables.$secondary-lighter;
+      }
     }
   }
 }
@@ -138,7 +149,7 @@
         img,
         svg {
           display: block;
-          width: 7.5em;
+          width: 5em;
         }
 
         a {
@@ -146,12 +157,19 @@
         }
 
         @media (min-width: #{variables.$screen-md}) {
+          .placeholder,
+          img,
+          svg {
+            width: 7.5em;
+          }
+
           a {
             padding: 0 1em 0 3em;
           }
         }
 
         @media (min-width: #{variables.$screen-lg}) {
+          .placeholder,
           img,
           svg {
             width: 10em;
