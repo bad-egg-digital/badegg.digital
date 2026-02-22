@@ -62,12 +62,17 @@
 
     &-editor {
       @container BadEggColumnedHeading (min-width: #{variables.$screen-sm}) {
-        padding-top: 1.5em;
+        .has-tiny-title & {
+          padding-top: 1.5em;
+        }
       }
 
       @container BadEggColumnedHeading (min-width: #{variables.$screen-md}) {
         flex: 1;
-        padding-top: 1.75em;
+
+        .has-tiny-title & {
+          padding-top: 1.75em;
+        }
       }
     }
   }
