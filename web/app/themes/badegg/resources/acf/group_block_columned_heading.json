@@ -82,6 +82,27 @@
             "append": "&gt;"
         },
         {
+            "key": "field_699a4ae1c866a",
+            "label": "Display tiny page title as <h1>",
+            "name": "tiny_title",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_6995ce869c189",
             "label": "Scale",
             "name": "heading_scale",
@@ -295,5 +316,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771425588
+    "modified": 1771719458
 }

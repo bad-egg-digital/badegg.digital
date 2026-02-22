@@ -27,24 +27,28 @@ class BlockColumnedHeading extends Composer
             'headingClasses' => $this->headingClasses(),
             'hClasses' => $this->hClasses(),
             'editorClasses' => $this->editorClasses(),
+            'hSizeTiny' => ((int)get_field('hsize') - 1),
         ];
     }
 
     public function classes()
     {
-        // $fields = [
-        //     'columned-heading-cols',
-        // ];
+        $fields = [
+            'tiny_title',
+        ];
 
-        // $props = [];
+        $props = [];
 
-        // foreach($fields as $field):
-        //     $props[$field] = get_field($field);
-        // endforeach;
+        foreach($fields as $field):
+            $props[$field] = get_field($field);
+        endforeach;
 
         $classes = [
             'columned-heading-cols',
         ];
+
+        if($props['tiny_title'])
+            $classes[] = 'has-tiny-title';
 
         return $classes;
     }
@@ -77,6 +81,7 @@ class BlockColumnedHeading extends Composer
         $fields = [
             'colour',
             'tint',
+            'tiny_title',
         ];
 
         $props = [];
@@ -99,6 +104,9 @@ class BlockColumnedHeading extends Composer
 
         if($colourClass)
             $classes[] = $colourClass;
+
+        if($props['tiny_title'])
+            $classes[] = 'subhead';
 
         return $classes;
     }
