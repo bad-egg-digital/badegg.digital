@@ -15,6 +15,7 @@ class CssClasses {
             'bg_gradient' => false,
             'angle_top_colour' => 0,
             'angle_bottom_colour' => 0,
+            'section_size' => 2,
         ];
 
         $props = wp_parse_args($props, $defaults);
@@ -22,8 +23,14 @@ class CssClasses {
         $Colour = new Colour;
         $hex = $Colour->name2hex($props['bg_colour'], $props['bg_tint']);
 
+        $section_sizes = [
+            1 => 'small',
+            2 => 'medium',
+            3 => 'large',
+        ];
+
         $classes = [
-            'section',
+            'section-' . $section_sizes[$props['section_size']],
             'section-' . str_replace('/', '-', $name),
         ];
 

@@ -118,7 +118,7 @@
         },
         {
             "key": "field_67350f526abf1",
-            "label": "Text Contrast",
+            "label": "Dark BG?",
             "name": "contrast",
             "aria-label": "",
             "type": "true_false",
@@ -133,8 +133,8 @@
             "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
-            "ui_on_text": "Light",
-            "ui_off_text": "Dark",
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
             "ui": 1
         },
         {
@@ -412,5 +412,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771588251
+    "modified": 1771883209
 }
