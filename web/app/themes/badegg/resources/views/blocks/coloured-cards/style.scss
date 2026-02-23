@@ -11,7 +11,7 @@
   flex-direction: column;
 
   &-heading {
-    flex: 1;
+    flex: 1 1 auto;
     background: rgba(variables.$black, 0.15);
 
     @container Card (min-width: 22em) {
@@ -20,6 +20,6 @@
   }
 
   &-text {
-    flex: 1 1 2em;
+    flex-grow: 1;
   }
 }

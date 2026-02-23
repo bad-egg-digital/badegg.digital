@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/coloured-list",
+  "title": "Coloured List",
+  "category": "badegg",
+  "icon": "menu-alt3",
+  "description": "A list shown in coloured bars",
+  "keywords": ["acf", "colour", "list"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}

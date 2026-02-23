@@ -12,10 +12,10 @@
         @foreach($cards as $card)
 
         <div class="{{ implode(' ', \App\View\Composers\BlockColouredCards::cardClasses($card)) }}">
-          <div class="card-coloured-heading inner inner-small wysiwyg">
+          <div class="card-coloured-heading inner wysiwyg">
             <h3>{{ $card['heading'] }}</h3>
           </div>
-          <div class="card-coloured-text inner inner-small">
+          <div class="card-coloured-text inner">
             {!! apply_filters('the_content', $card['text']) !!}
           </div>
 

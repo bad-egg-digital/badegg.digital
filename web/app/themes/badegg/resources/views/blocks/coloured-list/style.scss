@@ -1,0 +1,66 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-coloured-list {
+  container-name: BadEggColouredList;
+  container-type: inline-size;
+  position: relative;
+
+  .fire-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('@images/bad-egg-digital-fire-bg.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    opacity: 0.3;
+
+    @container BadEggColouredList (min-width: #{variables.$screen-sm}) {
+      width: 50%;
+      left: auto;
+    }
+
+    @container BadEggColouredList (min-width: #{variables.$screen-lg}) {
+      width: 40%;
+      opacity: 1;
+    }
+  }
+}
+
+.coloured-list {
+  position: relative;
+  z-index: 2;
+
+  &-item {
+    position: relative;
+    margin: 1em 0;
+    transition: all 300ms ease;
+
+    &:hover {
+      transform: translateX(1em);
+    }
+
+    .inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(variables.$white, 0.15),
+      );
+      // opacity: 0.3;
+      // background-attachment: fixed;
+    }
+
+    // &.knockout::before { mix-blend-mode: screen; }
+
+    &:first-of-type { margin-top: 0; }
+    &:last-of-type { margin-bottom: 0; }
+  }
+}

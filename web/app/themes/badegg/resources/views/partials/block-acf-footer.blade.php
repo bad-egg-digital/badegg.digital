@@ -19,11 +19,11 @@
       {!! apply_filters('the_content', $props['blurb']) !!}
 
       @if(@$props['links'])
-        <div class="btn-wrap">
+        <p class="btn-wrap">
           @foreach($props['links'] as $link)
             @include('components.button', $link)
           @endforeach
-        </div>
+        </p>
       @endif
 
     </div>
