@@ -41,6 +41,11 @@ html :where(.wp-block) {
     max-width: 90%;
     margin: 1em auto;
   }
+
+  .card {
+    border-width: 0;
+    box-shadow: none;
+  }
 }
 
 .wp-block-post-title {

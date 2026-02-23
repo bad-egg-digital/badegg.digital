@@ -1,0 +1,78 @@
+@use "../global/variables";
+
+.card-service {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    flex: 1;
+  }
+
+  &-heading {
+    h2, h3 {
+      margin: 0;
+      font-style: italic;
+    }
+
+    h2 {
+      font-size: 3.33em;
+    }
+
+    h3 {
+      margin-top: 0.25em;
+      max-width: 20ch;
+    }
+
+    p {
+      font-size: 1em;
+    }
+
+    @container Card (min-width: 20em) {
+      h2 { font-size: 4em; }
+      h3 { font-size: 1.5em; }
+    }
+  }
+
+  &-content {
+    flex: auto;
+
+    @container Card (min-width: 20em) {
+      p { font-size: 1.25em; }
+    }
+  }
+
+  &-rotate {
+    transform: rotate(-10deg);
+    transform-origin: 0 100%;
+    display: inline-block;
+  }
+
+  &-quote {
+    background-color: rgba(variables.$black, 0.15);
+
+    p {
+      position: relative;
+      font-size: 0.75em;
+
+      &::before {
+        content: '\201c';
+        position: absolute;
+        top: 0.125em;
+        left:  -0.65em;
+        opacity: 0.5;
+        font-weight: 700;
+        font-size: 1.25em;
+      }
+    }
+
+    @container Card (min-width: 20em) {
+      p { font-size: 1em; }
+    }
+  }
+
+  .btn {
+    @container Card (min-width: 20em) {
+      font-size: 1.25em;
+    }
+  }
+}

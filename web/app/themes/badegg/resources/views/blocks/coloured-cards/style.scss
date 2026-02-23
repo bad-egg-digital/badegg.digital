@@ -4,23 +4,6 @@
 .wp-block-badegg-coloured-cards {
   container-name: BadEggColouredCards;
   container-type: inline-size;
-
-  .card {
-    @container BadEggColouredCards (min-width: #{variables.$screen-sm}) {
-      flex: 0 0 calc(50% - variables.$gap);
-    }
-
-    @container BadEggColouredCards (min-width: #{variables.$screen-lg}) {
-      margin: math.div(variables.$gapLarge, 2);
-      flex: 0 0 calc(33.33% - variables.$gapLarge);
-    }
-
-    &-wrap {
-      @container BadEggColouredCards (min-width: #{variables.$screen-lg}) {
-        margin: math.div(variables.$gapLarge, 2) * -1;
-      }
-    }
-  }
 }
 
 .card-coloured {
@@ -31,7 +14,7 @@
     flex: 1;
     background: rgba(variables.$black, 0.15);
 
-    @container BadEggColouredCards (min-width: #{variables.$screen-md}) {
+    @container Card (min-width: 22em) {
       h3 { font-size: 2em; }
     }
   }

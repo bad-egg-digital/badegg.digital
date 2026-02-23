@@ -22,6 +22,7 @@ class Service
                 'supports' => [
                     'title',
                     'editor',
+                    'excerpt',
                     'page-attributes',
                 ],
                 'menu_icon' => 'dashicons-editor-code',
@@ -31,7 +32,22 @@ class Service
                 'has_archive' => false,
                 'capability_type' => 'page',
                 'admin_cols' => [
-                    'services' => [
+                    'service_card_name' => [
+                        'title' => __('Short Name', $td),
+                        'meta_key' => 'service_card_name',
+                        'sortable' => false,
+                    ],
+                    'service_card_quote' => [
+                        'title' => __('User story', $td),
+                        'meta_key' => 'service_card_quote',
+                        'sortable' => false,
+                    ],
+                    'service_card_cta' => [
+                        'title' => __('Call to action', $td),
+                        'meta_key' => 'service_card_cta',
+                        'sortable' => false,
+                    ],
+                    'projects' => [
                         'title' => __('Projects', $td),
                         'function' => function(){
                             $projects = get_field('service_project');
@@ -47,7 +63,7 @@ class Service
                             echo implode(', ', $links);
                         }
                     ],
-                    'Projects' => [
+                    'testimonials' => [
                         'title' => __('Reviewers', $td),
                         'function' => function(){
                             $services = get_field('testimonial_service');

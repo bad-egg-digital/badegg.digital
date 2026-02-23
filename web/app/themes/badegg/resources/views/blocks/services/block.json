@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/services",
+  "title": "Services",
+  "category": "badegg",
+  "icon": "editor-code",
+  "description": "A grid of services.",
+  "keywords": ["acf", "service", "grid"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}

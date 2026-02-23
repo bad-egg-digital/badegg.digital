@@ -3,11 +3,11 @@
     "title": "Settings",
     "fields": [
         {
-            "key": "field_69962509e2ca6",
-            "label": "Testimonials",
-            "name": "testimonial_service",
+            "key": "field_699c3252c96eb",
+            "label": "Card",
+            "name": "",
             "aria-label": "",
-            "type": "post_object",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,20 +16,218 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "testimonial"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 1,
-            "allow_null": 1,
+            "open": 1,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_699c32b9c96ee",
+            "label": "Short Name",
+            "name": "service_card_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_69962589c14eb"
-            ],
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_699c3286c96ed",
+            "label": "Quote",
+            "name": "service_card_quote",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_699c325cc96ec",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The card's text is defined in the excerpt.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_699c3237c96ea",
+            "label": "CTA Text",
+            "name": "service_card_cta",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_699c3112c96e7",
+            "label": "Colours",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_699c3367d4cfd",
+            "label": "Colour",
+            "name": "colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "None",
+                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
+                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
+                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
+                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
+                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
+                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
+                "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
+                "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
+                "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_699c3387d4cfe",
+            "label": "Tint",
+            "name": "tint",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lightest": "Lightest",
+                "lighter": "Lighter",
+                "light": "Light",
+                "0": "None",
+                "dark": "Dark",
+                "darker": "Darker",
+                "darkest": "Darkest"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_699c334ad4cfc",
+            "label": "Contrast",
+            "name": "contrast",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
             "ui": 1
+        },
+        {
+            "key": "field_699c3100c96e6",
+            "label": "Relationships",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
         },
         {
             "key": "field_69962509e2cf8",
@@ -59,6 +257,35 @@
                 "field_69962348f4df9"
             ],
             "ui": 1
+        },
+        {
+            "key": "field_69962509e2ca6",
+            "label": "Testimonials",
+            "name": "testimonial_service",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "testimonial"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 1,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_69962589c14eb"
+            ],
+            "ui": 1
         }
     ],
     "location": [
@@ -80,5 +307,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771448709
+    "modified": 1771844551
 }

@@ -6,21 +6,8 @@
   container-type: inline-size;
 
   .card {
-    @container BadEggContactCards (min-width: #{variables.$screen-sm}) {
-      flex: 0 0 calc(50% - variables.$gap);
-    }
-
-    @container BadEggContactCards (min-width: #{variables.$screen-lg}) {
-      margin: math.div(variables.$gapLarge, 2);
-      flex: 0 0 calc(33.33% - variables.$gapLarge);
-    }
-
-    &-wrap {
+    &-flex {
       justify-content: center;
-
-      @container BadEggContactCards (min-width: #{variables.$screen-lg}) {
-        margin: math.div(variables.$gapLarge, 2) * -1;
-      }
     }
   }
 
@@ -40,5 +27,9 @@
 
   .socials {
     font-size: 1.5em;
+
+    @container Card (min-width: 25em) {
+      font-size: 2em;
+    }
   }
 }
