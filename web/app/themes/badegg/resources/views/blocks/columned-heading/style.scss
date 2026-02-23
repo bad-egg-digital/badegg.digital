@@ -37,6 +37,10 @@
         h1, h2, h3 {
            transform: translateY(-0.25em);
         }
+
+        .mini {
+          margin-bottom: 1em;
+        }
       }
 
       @container BadEggColumnedHeading (min-width: #{variables.$screen-lg}) {

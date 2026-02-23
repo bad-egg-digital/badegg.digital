@@ -51,4 +51,9 @@
   &-top-right    { mask-image: url("@images/angle-top-right.svg");    mask-position: calc(100% + 1px) calc(100% + 1px); }
   &-bottom-left  { mask-image: url("@images/angle-bottom-left.svg");  mask-position: calc(0% - 1px) calc(0% - 1px);     }
   &-bottom-right { mask-image: url("@images/angle-bottom-right.svg"); mask-position: calc(100% + 1px) calc(0% - 1px);    }
+
+  &.tall {
+    height: 5.55555556vw;
+    mask-image: url("@images/angle-bottom-left-tall.svg"); mask-position: calc(100% + 1px) calc(0% - 1px);
+  }
 }

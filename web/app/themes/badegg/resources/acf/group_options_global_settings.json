@@ -551,6 +551,51 @@
             "append": ""
         },
         {
+            "key": "field_699c616e7537e",
+            "label": "Archives",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_699c61897537f",
+            "label": "Page for Projects",
+            "name": "page_for_project",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_676594565ead1",
             "label": "Integrations",
             "name": "",
@@ -629,5 +674,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771275603
+    "modified": 1771857078
 }

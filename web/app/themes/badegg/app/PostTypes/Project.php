@@ -26,7 +26,7 @@ class Project
                 ],
                 'menu_icon' => 'dashicons-art',
                 'rewrite' => [
-                    'slug' => 'work',
+                    'slug' => 'projects',
                 ],
                 'has_archive' => true,
                 'capability_type' => 'page',

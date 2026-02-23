@@ -225,9 +225,9 @@ class CssClasses {
             $filter = ' bg-filter';
 
             if($props['contrast']) {
-                $filter .= '-screen';
-            } else {
                 $filter .= '-multiply';
+            } else {
+                $filter .= '-screen';
             }
 
             $atts['class'] .= $filter;
