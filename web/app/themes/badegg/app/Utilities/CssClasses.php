@@ -279,4 +279,25 @@ class CssClasses {
 
         return $atts;
     }
+
+    public function ColourTintClass($props = [])
+    {
+        $default_props = [
+            'colour' => null,
+            'tint' => 0,
+        ];
+
+        $props = wp_parse_args($props, $default_props);
+
+        $colour = '';
+
+        if($props['colour']) {
+            $colour = $props['colour'];
+
+            if($props['tint'] && !in_array($props['tint'], ['0', 0, 'white', 'black']))
+                $colour .= '-' . $props['tint'];
+        }
+
+        return $colour;
+    }
 }
