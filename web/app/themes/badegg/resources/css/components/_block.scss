@@ -1,16 +1,23 @@
 @use "../global/variables";
 
-.is-root-container,
 .wp-block-list {
   container-name: wpBlockList;
   container-type: inline-size;
 
-  > div {
+  > * {
     &:first-of-type {
       &.section-zero-top {
         @media (max-width: variables.$screen-xs-max) {
           padding-top: variables.$sectionSmall;
         }
+      }
+    }
+
+    &:last-of-type {
+      &::after {
+        content: '';
+        display: block;
+        height: variables.$angleHeight;
       }
     }
   }
