@@ -62,14 +62,11 @@ class Menus
 
         $dom = new \DomDocument();
         $dom->strictErrorChecking = false;
-        @$dom->loadHTML($items);
+        @$dom->loadHTML($items, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
-        $finder = new \DomXPath($dom);
-
-        $wrapper = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' footer-nav ')]");
         $listItems = @$dom->getElementsByTagName('li');
 
-        if(!$wrapper || !$listItems) return $Items;
+        if(!$listItems) return $Items;
 
         $footerBrand = $dom->createDocumentFragment();
         $footerBrand->appendXML(\Roots\view("sections.footer.footer-brand")->render());
@@ -97,6 +94,14 @@ class Menus
         $lastItem->setAttribute('class', $lastItemClass . ' menu-item-has-children');
         $lastItem->appendChild($contactInfo);
 
-        return $dom->saveHTML($wrapper[0]);
+        $html = '';
+
+        foreach($listItems as $listItem) {
+            if(!empty($listItem->parentNode->tagName)) continue;
+
+            $html .= $dom->saveHTML($listItem);
+        }
+
+        return $html;
     }
 }
