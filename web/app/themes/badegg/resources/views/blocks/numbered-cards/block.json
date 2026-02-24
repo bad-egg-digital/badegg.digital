@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/numbered-cards",
+  "title": "Numbered Cards",
+  "category": "badegg",
+  "icon": "excerpt-view",
+  "description": "Little cards containing a heading and short description that are automatically numbered.",
+  "keywords": ["acf", "number", "list", "card"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}
