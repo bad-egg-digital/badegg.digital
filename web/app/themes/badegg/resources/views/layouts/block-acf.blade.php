@@ -27,7 +27,7 @@
   ])
 
   @if(@get_field('settings')['bg_image'])
-    <div @foreach($CssClasses->backgroundAtts(get_field('settings')) as $att => $value) {{ $att }}="{{ $value }}" @endforeach /></div>
+    <div @foreach($CssClasses->backgroundAtts(get_field('settings')) as $att => $value) {{ $att }}="{{ $value }}" @endforeach ></div>
   @endif
 
   @if(@get_field('settings')['bg_fire'])

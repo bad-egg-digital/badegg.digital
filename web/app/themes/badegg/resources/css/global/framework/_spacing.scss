@@ -156,6 +156,10 @@ figure {
   overflow: hidden;
   border-radius: variables.$borderRadius;
 
+  &-small {
+    border-radius: (variables.$borderRadius * 0.75);
+  }
+
   &-top {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

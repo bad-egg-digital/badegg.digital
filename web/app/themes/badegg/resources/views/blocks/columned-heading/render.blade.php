@@ -12,9 +12,9 @@
         <h{{ $hSizeTiny }} class="mini"><span class="tertiary-lighter">{{ get_field('tiny_title') }}</span></h{{ $hSizeTiny }}>
       @endif
       <div style="font-size: {{ get_field('heading_scale') }}em;">
-        <h{{ get_field('hsize') ?: 2 }} class="{{ implode(' ', $hClasses) }}">
+        <h{{ $hSize }} class="{{ implode(' ', $hClasses) }}">
           {!! get_field('heading') !!}
-        </h{{ get_field('hsize') ?: 2 }}>
+        </h{{ $hSize }}>
       </div>
     </div>
     <div class="{{ implode(' ', $editorClasses) }}">

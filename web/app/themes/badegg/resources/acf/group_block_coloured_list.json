@@ -265,27 +265,6 @@
             "ui": 1
         },
         {
-            "key": "field_699cdb2455662",
-            "label": "Fire BG",
-            "name": "fire_bg",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
             "key": "field_699cce3cad0e7",
             "label": "Footer",
             "name": "clone_footer",
@@ -349,5 +328,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771887735
+    "modified": 1771933703
 }

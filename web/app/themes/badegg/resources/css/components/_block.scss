@@ -13,14 +13,6 @@
         }
       }
     }
-
-    &:last-of-type {
-      &::after {
-        content: '';
-        display: block;
-        height: variables.$angleHeight;
-      }
-    }
   }
 }
 

@@ -95,8 +95,8 @@
                 "id": ""
             },
             "default_value": 2,
-            "min": 2,
-            "max": 3,
+            "min": 1,
+            "max": 2,
             "allow_in_bindings": 0,
             "step": "",
             "prepend": "&lt;h",
@@ -316,5 +316,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771721529
+    "modified": 1771953463
 }

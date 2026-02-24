@@ -7,7 +7,7 @@
 
 @section('block-content')
   @if($people)
-    <div class="person-wrap">
+    <div class="person-wrap container-large">
       @foreach($people as $person)
         @include('partials.content-person', ['post' => $person, 'hcolour' => $hcolour])
       @endforeach

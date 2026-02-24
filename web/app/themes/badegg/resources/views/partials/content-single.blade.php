@@ -1,4 +1,4 @@
-<article @php(post_class())>
+<div @php(post_class())>
   <div class="wp-block-list">
     @php(the_content())
   </div>
@@ -11,5 +11,7 @@
     </footer>
   @endif
 
-  @php(comments_template())
-</article>
+  @if(comments_open() || have_comments())
+    @php(comments_template())
+  @endif
+</div>

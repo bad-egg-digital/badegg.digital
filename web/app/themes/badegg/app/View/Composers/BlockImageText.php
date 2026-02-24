@@ -26,7 +26,29 @@ class BlockImageText extends Composer
             'classes' => $this->classes(),
             'textClasses' => $this->textClasses(),
             'imageClasses' => $this->imageClasses(),
+            'hSizeTiny' => $this->hSizeTiny(),
+            'hSize' => $this->hSize(),
         ];
+    }
+
+    public function hSizeTiny()
+    {
+        $hsize = (int) get_field('hsize') ?: 2;
+
+        return $hsize;
+
+    }
+
+    public function hSize()
+    {
+        $hSize = (int) get_field('hsize') ?: 2;
+        $tinyTitle = get_field('h1');
+
+        if($tinyTitle) {
+            return ($hSize + 1);
+        } else {
+            return $hSize;
+        }
     }
 
     public function classes()

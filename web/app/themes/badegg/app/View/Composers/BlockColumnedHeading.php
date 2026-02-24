@@ -27,8 +27,29 @@ class BlockColumnedHeading extends Composer
             'headingClasses' => $this->headingClasses(),
             'hClasses' => $this->hClasses(),
             'editorClasses' => $this->editorClasses(),
-            'hSizeTiny' => ((int)get_field('hsize') - 1),
+            'hSizeTiny' => $this->hSizeTiny(),
+            'hSize' => $this->hSize(),
         ];
+    }
+
+    public function hSizeTiny()
+    {
+        $hsize = (int) get_field('hsize') ?: 2;
+
+        return $hsize;
+
+    }
+
+    public function hSize()
+    {
+        $hSize = (int) get_field('hsize') ?: 2;
+        $tinyTitle = get_field('tiny_title');
+
+        if($tinyTitle) {
+            return ($hSize + 1);
+        } else {
+            return $hSize;
+        }
     }
 
     public function classes()

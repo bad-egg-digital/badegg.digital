@@ -15,7 +15,7 @@
 
   <div class="{{ implode(' ', $CssClasses->container($containerProps, @$settings)) }}">
     <div class="{{ implode(' ', $CssClasses->container($innerContainerProps)) }}">
-      @if($props['heading']) <h2>{{ $props['heading'] }}</h3> @endif
+      @if($props['heading']) <h2>{{ $props['heading'] }}</h2> @endif
       {!! apply_filters('the_content', $props['blurb']) !!}
     </div>
   </div>
