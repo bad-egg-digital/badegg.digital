@@ -1,5 +1,30 @@
+@use "../global/variables";
 
+.is-root-container,
+.wp-block-list {
+  container-name: wpBlockList;
+  container-type: inline-size;
 
+  > div {
+    &:first-of-type {
+      &.section-zero-top {
+        @media (max-width: variables.$screen-xs-max) {
+          padding-top: variables.$sectionSmall;
+        }
+      }
+    }
+
+    &:last-of-type {
+      &::after {
+        content: '';
+        display: block;
+        height: variables.$angleHeight;
+      }
+    }
+  }
+}
+
+.is-on-fire,
 .has-bg-image {
   position: relative;
 
@@ -13,6 +38,26 @@
     position: absolute;
     z-index: 1;
     inset: 0;
+  }
+
+  .fire-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('@images/bad-egg-digital-fire-bg.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    opacity: 0.3;
+
+    @container wpBlockList (min-width: #{variables.$screen-sm}) {
+      width: 50%;
+      left: auto;
+    }
+
+    @container wpBlockList (min-width: #{variables.$screen-lg}) {
+      width: 40%;
+      opacity: 1;
+    }
   }
 }
 

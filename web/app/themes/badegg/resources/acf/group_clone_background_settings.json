@@ -138,6 +138,27 @@
             "ui": 1
         },
         {
+            "key": "field_699d7c7423656",
+            "label": "Fire BG",
+            "name": "bg_fire",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
             "key": "field_699744d896ebb",
             "label": "Background Image",
             "name": "bg_image",
@@ -412,5 +433,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771883209
+    "modified": 1771929446
 }

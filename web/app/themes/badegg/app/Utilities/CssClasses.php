@@ -13,6 +13,7 @@ class CssClasses {
             'contrast' => null,
             'bg_image' => null,
             'bg_gradient' => false,
+            'bg_fire' => false,
             'angle_top_colour' => 0,
             'angle_bottom_colour' => 0,
             'section_size' => 2,
@@ -63,6 +64,9 @@ class CssClasses {
 
         if($props['bg_image'])
             $classes[] = 'has-bg-image';
+
+        if($props['bg_fire'])
+            $classes[] = 'is-on-fire';
 
         return $classes;
     }

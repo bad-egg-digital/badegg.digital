@@ -4,26 +4,6 @@
   container-name: BadEggColouredList;
   container-type: inline-size;
   position: relative;
-
-  .fire-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('@images/bad-egg-digital-fire-bg.svg');
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
-    opacity: 0.3;
-
-    @container BadEggColouredList (min-width: #{variables.$screen-sm}) {
-      width: 50%;
-      left: auto;
-    }
-
-    @container BadEggColouredList (min-width: #{variables.$screen-lg}) {
-      width: 40%;
-      opacity: 1;
-    }
-  }
 }
 
 .coloured-list {

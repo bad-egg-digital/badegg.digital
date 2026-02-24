@@ -18,9 +18,4 @@
       @endwhile
     </div>
   @endif
-
-  @if(get_field('fire_bg'))
-    <div class="fire-bg"></div>
-  @endif
-
 @overwrite

@@ -1,15 +1,11 @@
-<article @php(post_class('h-entry'))>
-  <div class="e-content">
-    @php(the_content())
-  </div>
+<div class="wp-block-list">
+  @php(the_content())
+</div>
 
-  @if ($pagination())
-    <footer>
-      <nav class="page-nav" aria-label="Page">
-        {!! $pagination !!}
-      </nav>
-    </footer>
-  @endif
+@if ($pagination())
+  <nav class="page-nav" aria-label="Page">
+    {!! $pagination !!}
+  </nav>
+@endif
 
-  @php(comments_template())
-</article>
+@php(comments_template())
