@@ -28,6 +28,7 @@ class App extends Composer
     {
         return [
             'Colour' => new Utilities\Colour,
+            'CssClasses' => new Utilities\CssClasses,
             'VideoSrcset' => new Utilities\VideoSrcset,
             'ImageSrcset' => new Utilities\ImageSrcset,
             'siteName' => $this->siteName(),
