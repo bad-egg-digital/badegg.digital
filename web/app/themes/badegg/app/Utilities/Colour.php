@@ -64,15 +64,9 @@ class Colour
       ];
     }
 
-    public function is_dark($colour = '#FFFFF', $tint = null, $override = null)
+    public function is_dark($colour = '#FFFFF', $threshold = 200)
     {
-
-        if($override == 'light') return true;
-        if($override == 'dark') return false;
-
         // https://css-tricks.com/snippets/php/convert-hex-to-rgb/
-
-        if($tint) $colour = $this->adjustBrightness($colour, $this->tints()[$tint]);
 
         if ( @$colour[0] == '#' ) {
             $colour = substr( $colour, 1 );
@@ -107,16 +101,16 @@ class Colour
             0.114 * ($b * $b)
         );
 
-        if($hsp > 200) {
+        if($hsp > $threshold) {
             return false;
         } else {
             return true;
         }
     }
 
-    public function is_light($colour = '#000000', $tint = null)
+    public function is_light($colour = '#000000', $threshold = 200)
     {
-        if($this->is_dark($colour, $tint)) {
+        if($this->is_dark($colour, $threshold)) {
             return false;
         } else {
             return true;
