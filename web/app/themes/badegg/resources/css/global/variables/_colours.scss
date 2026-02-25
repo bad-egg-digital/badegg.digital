@@ -38,9 +38,9 @@ $secondary-lighter: #C3BAD8;
 $secondary-lightest: #EBE9F2;
 
 //== Tertiary Tints
-$tertiary-darkest: color.adjust($tertiary, $lightness: -40%);
-$tertiary-darker: color.adjust($tertiary, $lightness: -25%);
-$tertiary-dark: color.adjust($tertiary, $lightness: -10%);
+$tertiary-darkest: #6b1d08;
+$tertiary-darker: #b2300d;
+$tertiary-dark: #ef4a1d;
 $tertiary-light: #f58762;
 $tertiary-lighter: #f6a380;
 $tertiary-lightest: #f8b79b;
