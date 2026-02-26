@@ -1,9 +1,9 @@
 {
   "apiVersion": 3,
-  "name": "badegg/coloured-list",
-  "title": "Coloured List",
+  "name": "badegg/accordion",
+  "title": "Accordion",
   "category": "badegg",
-  "icon": "list-view",
+  "icon": "menu-alt3",
   "description": "A list shown in coloured bars",
   "keywords": ["acf", "colour", "list"],
 

@@ -1,0 +1,41 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-accordion {
+  container-name: BadEggAccordion;
+  container-type: inline-size;
+}
+
+.accordions {
+  position: relative;
+  z-index: 2;
+
+  &-list-item {
+    margin-bottom: 1em;
+
+    summary {
+      position: relative;
+      display: block;
+      padding-right: 3em;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 0.5em);
+        right: 0.5em;
+        width: 1em;
+        height: 1em;
+        mask-image: url('@images/triangle.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        background: variables.$white;
+        transition: all 300ms ease;
+      }
+    }
+
+    &[open] summary::after { transform: rotate(90deg); }
+
+    &:last-of-type {
+      margin-bottom: unset;
+    }
+  }
+}
