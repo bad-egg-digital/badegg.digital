@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/service-pricing",
+  "title": "Pricing",
+  "category": "badegg",
+  "icon": "tickets",
+  "description": "Display a random or specific testimonial.",
+  "keywords": ["acf", "testimonial", "review", "feedback"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}

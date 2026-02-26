@@ -1,6 +1,3 @@
-const screenWidth = window.innerWidth;
-const restURL = window.App.restURL;
-
 export async function bgSrcset()
 {
   let resizeTimeout;
@@ -34,6 +31,7 @@ export async function loadOptimalSrc(el)
   if(!id) return;
 
   const size = el.dataset.size;
+  const elementWidth = el.offsetWidth;
 
   const thisImage = el.style.backgroundImage.slice(4, -1).replace(/"/g, "");
   const biggestWidth = Number(el.dataset.width);
@@ -61,7 +59,7 @@ export async function loadOptimalSrc(el)
     const thisWidth = Math.round(multipliers[size] * biggestWidth);
     const prevWidth = (prevKey) ? Math.round(multipliers[prevKey] * biggestWidth) : 0;
 
-    if(prevWidth <= screenWidth && screenWidth <= thisWidth) {
+    if(prevWidth <= elementWidth && elementWidth <= thisWidth) {
       newSizeKey = size;
     }
 
@@ -73,13 +71,14 @@ export async function loadOptimalSrc(el)
   // only swap image url if they do not already match
   if(newSrcset.url !== thisImage) {
     el.style.backgroundImage = `url('${newSrcset.url}')`;
-    console.log(`Image ${id} swapped to ${newSrcset.width}x${newSrcset.height} source.`);
   }
 
 }
 
 export async function get_srcset(id = 0, size = 'hero')
 {
+  const restURL = window.App.restURL;
+
   if(!id || !restURL) return;
 
   const response = await fetch( `${restURL}badegg/v1/image/${id}/srcset/${size}`);
