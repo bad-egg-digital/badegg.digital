@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
   "name": "badegg/service-pricing",
-  "title": "Pricing",
+  "title": "Service Pricing",
   "category": "badegg",
   "icon": "tickets",
   "description": "Display a random or specific testimonial.",
-  "keywords": ["acf", "testimonial", "review", "feedback"],
+  "keywords": ["acf", "service", "pricing"],
 
   "acf": {
       "mode": "preview",

@@ -284,24 +284,17 @@ class CssClasses {
         return $atts;
     }
 
-    public function ColourTintClass($props = [])
+    public function ColourTintClass($colour = null, $tint = null)
     {
-        $default_props = [
-            'colour' => null,
-            'tint' => 0,
-        ];
+        $class = '';
 
-        $props = wp_parse_args($props, $default_props);
+        if($colour) {
+            $class = $colour;
 
-        $colour = '';
-
-        if($props['colour']) {
-            $colour = $props['colour'];
-
-            if($props['tint'] && !in_array($props['tint'], ['0', 0, 'white', 'black']))
-                $colour .= '-' . $props['tint'];
+            if($tint && !in_array($tint, ['0', 0, 'white', 'black']))
+                $class .= '-' . $tint;
         }
 
-        return $colour;
+        return $class;
     }
 }

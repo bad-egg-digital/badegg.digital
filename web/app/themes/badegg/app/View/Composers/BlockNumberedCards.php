@@ -28,10 +28,7 @@ class BlockNumberedCards extends Composer
         return [
             'list' => get_field('list'),
             'listItemClasses' => $this->listItemClasses(),
-            'headingColour' => $CssClasses->ColourTintClass([
-                'colour' => get_field('colour'),
-                'tint' => get_field('tint'),
-            ]),
+            'headingColour' => $CssClasses->ColourTintClass(get_field('colour'), get_field('tint') ),
         ];
     }
 
@@ -39,10 +36,7 @@ class BlockNumberedCards extends Composer
     {
         $CssClasses = new Utilities\CssClasses;
 
-        $accentColour = $CssClasses->ColourTintClass([
-            'colour' => get_field('bg_colour'),
-            'tint' => get_field('bg_tint'),
-        ]);
+        $accentColour = $CssClasses->ColourTintClass( get_field('bg_colour'), get_field('bg_tint') );
 
         $classes = [
             'card-numbered-number',

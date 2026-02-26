@@ -56,4 +56,10 @@
     height: 5.55555556vw;
     mask-image: url("@images/angle-bottom-left-tall.svg"); mask-position: calc(100% + 1px) calc(0% - 1px);
   }
+
+  &.sharp {
+    height: auto;
+    padding-top: variables.$angleSharpHeight;
+    mask-image: url("@images/angle-sharp-bottom-right.svg");
+  }
 }

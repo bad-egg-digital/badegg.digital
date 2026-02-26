@@ -6,5 +6,14 @@
 ])
 
 @section('block-content')
-  pricing
+  @if($pricing_tiers)
+    <div class="card-wrap card-service-tier-wrap">
+      <div class="card-flex card-service-tier-flex">
+        @foreach($pricing_tiers as $x => $props)
+          @php($props['x'] = $x)
+          @include('partials.content-service-tier', $props)
+        @endforeach
+      </div>
+    </div>
+  @endif
 @overwrite

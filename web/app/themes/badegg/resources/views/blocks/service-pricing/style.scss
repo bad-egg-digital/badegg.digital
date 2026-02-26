@@ -1,0 +1,79 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-service-pricing {
+  container-name: BadEggServicePricing;
+  container-type: inline-size;
+}
+
+.card-service-tier {
+  &-flex {
+    justify-content: center;
+  }
+
+  &-heading {
+    position: relative;
+
+    .section-angle {
+      position: absolute;
+      inset: 0;
+      top: auto;
+    }
+
+    .inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    strong,
+    small {
+      display: block;
+    }
+
+    small {
+      opacity: 0.8;
+      margin: 0 0 1em;
+    }
+
+    strong {
+      font-size: 4.2em;
+      margin: 0 0 0.35em;
+    }
+
+    sup {
+      font-size: 0.5em;
+    }
+
+    span {
+      display: inline-block;
+      transform: rotate(-13deg);
+      transform-origin: 0 100%;
+      font-style: italic;
+    }
+  }
+
+  h4 {
+    font-size: 0.75em;
+    color: variables.$tertiary;
+  }
+
+  ul {
+    li {
+      position: relative;
+      font-size: 1em;
+      padding: 0.25em 0;
+
+      &::marker {
+        color: variables.$secondary-lighter;
+      }
+    }
+  }
+
+  @container Card (min-width: 25em) {
+    &-heading {
+      strong { font-size: 5.25em; }
+    }
+
+    h4 { font-size: 1em; }
+    ul li { font-size: 1.25em; }
+  }
+}
