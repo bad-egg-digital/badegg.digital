@@ -1,7 +1,9 @@
 <footer class="content-info">
   <div class="section-angle tall bg-white"></div>
   <div class="section-angle section-angle-bottom-left bg-primary-dark has-bg-image">
-    <div class="bg-image bg-fixed bg-filter-multiply lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-primary.jpg') }}"></div>
+    @if($footer_bg_atts)
+      <div @foreach($footer_bg_atts as $att => $value) {{ $att }}="{{ $value }}" @endforeach></div>
+    @endif
   </div>
   <div class="footer bg-primary-dark knockout has-bg-image">
     <div class="section container container-larger">
@@ -28,6 +30,8 @@
         @endif
       </div>
     </div>
-    <div class="bg-image bg-fixed bg-filter-multiply lazy-bg" data-bg="{{ Vite::asset('resources/images/bg-blur-primary.jpg') }}"></div>
+    @if($footer_bg_atts)
+      <div @foreach($footer_bg_atts as $att => $value) {{ $att }}="{{ $value }}" @endforeach></div>
+    @endif
   </div>
 </footer>

@@ -37,8 +37,7 @@ video {
   height: auto;
 }
 
-.lazy,
-.lazy-bg {
+.lazy {
   filter: blur(0.25em);
   transition: all 300ms ease 200ms;
   background-color: variables.$white;

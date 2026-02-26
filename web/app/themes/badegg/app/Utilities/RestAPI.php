@@ -5,10 +5,13 @@ use ourcodeworld\NameThatColor\ColorInterpreter as NameThatColor;
 
 class RestAPI
 {
+    public $restBase = 'badegg/v1';
+
     public function __construct()
     {
         add_filter( 'wp_prepare_attachment_for_js', [$this, 'image_sizes'], 10, 3 );
         add_action( 'rest_api_init', [$this, 'blocks']);
+        add_action( 'rest_api_init', [$this, 'image']);
     }
 
     public function image_sizes( $response, $attachment, $meta )
@@ -36,11 +39,9 @@ class RestAPI
         return $response;
     }
 
-    public function blocks( )
+    public function blocks()
     {
-        $restBase = 'badegg/v1';
-
-        register_rest_route($restBase, '/blocks/config', [
+        register_rest_route($this->restBase, '/blocks/config', [
             'methods' => 'GET',
             'callback' => [ $this, 'config'],
             'permission_callback' => function(){
@@ -101,5 +102,41 @@ class RestAPI
             ['label' => __('Darker',    'badegg'), 'value' => 'darker'  ],
             ['label' => __('Darkest',   'badegg'), 'value' => 'darkest' ],
         ];
+    }
+
+    public function image()
+    {
+        register_rest_route($this->restBase, '/image/(?P<id>\d+)/size/(?P<size>[a-zA-Z0-9-]+)', [
+            'methods' => 'GET',
+            'callback' => function($request){
+                $image = wp_get_attachment_image_src($request['id'], $request['size']);
+
+                if($image) {
+                    return rest_ensure_response([
+                        'url' => $image[0],
+                        'width' => $image[1],
+                        'height' => $image[2],
+                    ]);
+                } else {
+                    return null;
+                }
+            },
+            'permission_callback' => function(){
+                return true;
+            },
+        ]);
+
+        register_rest_route($this->restBase, '/image/(?P<id>\d+)/srcset/(?P<size>[a-zA-Z0-9-]+)', [
+            'methods' => 'GET',
+            'callback' => function($request){
+                $ImageSrcset = new ImageSrcset;
+                $srcset = $ImageSrcset->srcset(['image' => $request['id'], 'name' => $request['size']]);
+
+                return rest_ensure_response($srcset);
+            },
+            'permission_callback' => function(){
+                return true;
+            },
+        ]);
     }
 }

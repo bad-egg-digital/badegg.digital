@@ -224,12 +224,17 @@ class CssClasses {
         $centerFocals = [ 'center', 'top', 'bottom'];
         $rightFocals = [ 'right-top', 'right', 'right-bottom'];
 
-        $lazy = @wp_get_attachment_image_src($props['bg_image'], 'lazy')[0];
-        $hero = @wp_get_attachment_image_src($props['bg_image'], 'hero')[0];
+        $lazy = @wp_get_attachment_image_src($props['bg_image'], 'lazy');
+        $hero = @wp_get_attachment_image_src($props['bg_image'], 'hero');
+        $small = @wp_get_attachment_image_src($props['bg_image'], 'hero-sm');
 
         $atts = [
-            'class' => 'bg-image',
-            'style' => 'background-image: url(\''. $hero .'\');',
+            'class' => 'bg-image bg-srcset',
+            'style' => 'background-image: url(\''. $small[0] .'\');',
+            'data-id' => $props['bg_image'],
+            'data-size' => 'hero',
+            'data-width' => $hero[1],
+            'data-height' => $hero[2],
         ];
 
         if($props['bg_filter']) {
@@ -251,9 +256,8 @@ class CssClasses {
             $atts['class'] .= ' bg-fixed';
 
         if($props['bg_lazy'] && !is_admin()) {
-            $atts['class'] .= ' lazy-bg';
-            $atts['data-bg'] = $hero;
-            $atts['style'] = 'background-image: url(\''. $lazy .'\');';
+            $atts['class'] .= ' lazy';
+            $atts['style'] = 'background-image: url(\''. $lazy[0] .'\');';
         }
 
         if($props['bg_opacity'])

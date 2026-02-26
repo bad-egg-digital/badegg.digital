@@ -27,6 +27,7 @@ class Blocks extends Composer
     {
         return [
             'CssClasses' => new Utilities\CssClasses,
+            'ImageSrcset' => new Utilities\ImageSrcset,
         ];
     }
 }

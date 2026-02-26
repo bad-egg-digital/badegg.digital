@@ -181,3 +181,17 @@ add_action('after_setup_theme', function(){
     add_image_size('lazy', 50, 50);
     add_image_size('hero', 1920, 1080, true);
 });
+
+add_action('wp_enqueue_scripts', function() {
+    wp_register_script( 'badegg-rest', '' );
+    wp_enqueue_script( 'badegg-rest' );
+
+    wp_add_inline_script(
+        'badegg-rest',
+        'window.App = ' . wp_json_encode([
+            'restURL' => rest_url(),
+            'nonce' => wp_create_nonce('wp_rest'),
+        ]) . ';',
+        'before',
+    );
+});

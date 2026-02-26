@@ -30,7 +30,7 @@ class Integrations
         if($kit): ?>
 
 <!-- FontAwesome Kit -->
-<script src="https://kit.fontawesome.com/<?= $kit ?>.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/<?= $kit ?>.js" defer crossorigin="anonymous"></script>
 <!-- / FontAwesome Kit -->
 
         <?php endif;
