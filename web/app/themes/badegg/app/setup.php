@@ -173,6 +173,13 @@ add_action('wp_head', function(){
     if(file_exists(get_theme_file_path('resources/images/favicon/site.webmanifest'))) {
         echo \Roots\view("partials.favicon")->render();
     }
+
+    ?>
+
+<link rel="preload" href="<?= Vite::asset('resources/fonts/ubuntu-v20-latin-700.woff2') ?>" as="font" type="font/woff2" />
+<link rel="preload" href="<?= Vite::asset('resources/fonts/ubuntu-v20-latin-regular.woff2') ?>" as="font" type="font/woff2" />
+
+    <?php
 });
 
 add_action('after_setup_theme', function(){
