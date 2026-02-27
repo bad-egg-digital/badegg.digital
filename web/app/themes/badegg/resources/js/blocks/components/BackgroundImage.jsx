@@ -21,7 +21,9 @@ export default function BackgroundImage({
   background_lazy,
   background_position = 'center',
   background_fixed = false,
+  background_filter = false,
   background_opacity = 70,
+  background_contrast = false,
   disableLazyBG = false,
 }) {
 
@@ -35,10 +37,22 @@ export default function BackgroundImage({
     }
 
     let attributes = {
-      className: 'badegg-block-background bg-image',
+      className: 'badegg-block-background bg-image bg-srcset',
       style: styles,
       'data-id': background_image,
     };
+
+    if(background_filter) {
+      let bgFilter = ' bg-filter-';
+
+      if(background_contrast) {
+        bgFilter += 'screen';
+      } else {
+        bgFilter += 'multiply';
+      }
+
+      attributes.className += bgFilter;
+    }
 
     if(background_lazy && !disableLazyBG) {
       attributes.style.backgroundImage = `url(${background_url_lazy})`;

@@ -194,7 +194,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_699230db7ba15",
+                        "field": "field_69924cdeaaf36",
                         "operator": "!=",
                         "value": "0"
                     }
@@ -292,5 +292,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772193071
+    "modified": 1772198122
 }

@@ -20,7 +20,7 @@
           </div>
 
           @if($card['texture'])
-            <div class="bg-image bg-filter-multiply lazy" style="opacity: {{ (@$card['texture_opacity'] ?: 50) * 0.01 }}; background-image: url('{{ @wp_get_attachment_image_src($card['texture'], ((is_admin()) ? 'medium' : 'lazy'))[0] }}')" data-id="{{ $card['texture'] }}"></div>
+            <div class="bg-image bg-filter-multiply lazy" style="opacity: {{ (@$card['texture_opacity'] ?: 50) * 0.01 }}; background-image: url('{{ @wp_get_attachment_image_src($card['texture'], ((is_admin()) ? 'large' : 'lazy'))[0] }}')" data-id="{{ $card['texture'] }}"></div>
           @endif
         </div>
 

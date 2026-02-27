@@ -92,6 +92,7 @@ export default function BlockSettings({ attributes, setAttributes }) {
 		background_opacity,
 		background_contrast,
 		background_fixed,
+    background_filter,
 		background_gradient,
     angle_top,
     angle_top_direction,
@@ -360,6 +361,12 @@ export default function BlockSettings({ attributes, setAttributes }) {
                   label={ __('Fixed Position', 'badegg') }
                   checked={ background_fixed }
                   onChange={(value) => setAttributes({ background_fixed: value }) }
+                  __nextHasNoMarginBottom
+                />
+                <ToggleControl
+                  label={ __('Filter Image', 'badegg') }
+                  checked={ background_filter }
+                  onChange={(value) => setAttributes({ background_filter: value }) }
                   __nextHasNoMarginBottom
                 />
                 <ToggleControl

@@ -200,7 +200,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -210,6 +210,61 @@
             "ui_on_text": "On",
             "ui_off_text": "Off",
             "ui": 1
+        },
+        {
+            "key": "field_69a1a44a1d355",
+            "label": "Texture",
+            "name": "texture",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69a1a4f447e1a",
+            "label": "Texture Opacity",
+            "name": "texture_opacity",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69a1a44a1d355",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 10,
+            "max": "",
+            "allow_in_bindings": 0,
+            "step": 10,
+            "prepend": "",
+            "append": "%"
         },
         {
             "key": "field_699c3100c96e6",
@@ -307,5 +362,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771844551
+    "modified": 1772201237
 }

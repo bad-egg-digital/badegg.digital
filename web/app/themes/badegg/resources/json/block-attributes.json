@@ -57,6 +57,10 @@
       "type": "boolean",
       "default": false
   },
+  "background_filter": {
+      "type": "boolean",
+      "default": false
+  },
   "background_contrast": {
       "type": "boolean",
       "default": false

@@ -53,7 +53,7 @@
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -125,5 +125,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771521175
+    "modified": 1772198187
 }

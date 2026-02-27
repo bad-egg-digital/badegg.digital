@@ -214,7 +214,7 @@
                 "darker": "Darker",
                 "darkest": "Darkest"
             },
-            "default_value": "darker",
+            "default_value": 0,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -324,5 +324,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772192778
+    "modified": 1772197953
 }

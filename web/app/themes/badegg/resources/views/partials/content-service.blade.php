@@ -17,8 +17,8 @@
     </a>
   </div>
 
-  @if($textureBG)
-    <div class="bg-image bg-filter-multiply lazy-bg" data-bg="{{ $textureBG }}" style="opacity: 0.5"></div>
+  @if(get_field('texture', get_the_ID()))
+    <div class="bg-image bg-filter-multiply lazy" style="opacity: {{ (get_field('texture_opacity') ?: 50) * 0.01 }}; background-image: url('{{ @wp_get_attachment_image_src(get_field('texture', get_the_ID()), ((is_admin()) ? 'large' : 'lazy'))[0] }}')" data-id="{{ get_field('texture', get_the_ID()) }}"></div>
   @endif
 
 </div>

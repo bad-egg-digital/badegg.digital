@@ -43,7 +43,7 @@ export function sectionClassNames(attributes, defaultClasses = '', extraClasses 
     classNames.push(bg);
   }
 
-  if('background_gradient' in attributes && attributes.background_colour) {
+  if('background_gradient' in attributes && attributes.background_gradient) {
     classNames.push('has-gradient');
   }
 

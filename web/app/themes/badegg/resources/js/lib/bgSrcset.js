@@ -19,7 +19,7 @@ function bgSrcsetInit()
 
   elements.forEach(el => {
     if(!el.classList.contains('lazy')) {
-      loadOptimalSrc(el)
+      loadOptimalSrc(el);
     }
   });
 }
