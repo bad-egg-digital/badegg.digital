@@ -24,7 +24,6 @@ class Service extends Composer
     {
         return [
             'cardClasses' => $this->cardClasses(),
-            'textureBG' => $this->textureBG(),
         ];
     }
 
@@ -60,16 +59,5 @@ class Service extends Composer
 
 
         return $classes;
-    }
-
-    public function textureBG()
-    {
-        $colour = get_field('colour', get_the_ID());
-
-        if($colour) {
-            return \Vite::asset('resources/images/bg-blur-' . $colour . '.jpg');
-        } else {
-            return;
-        }
     }
 }

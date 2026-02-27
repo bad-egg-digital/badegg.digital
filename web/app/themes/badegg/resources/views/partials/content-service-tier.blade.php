@@ -11,7 +11,7 @@
   <div class="card-service-tier-content inner  wysiwyg">
     @if($for)
       <h4>{{ __('for', 'badegg')}}</h4>
-      {{ apply_filters('the_content', $for) }}
+      {!! apply_filters('the_content', $for) !!}
     @endif
 
     @if($includes)

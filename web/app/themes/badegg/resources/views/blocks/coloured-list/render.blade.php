@@ -12,7 +12,7 @@
         <div class="{{ implode(' ', $listItemClasses) }}">
           <div class="inner inner-small wysiwyg">
             <h3>{{ get_sub_field('heading') }}</h3>
-            <p>{{ get_sub_field('text') }}</p>
+            {!! apply_filters('the_content', get_sub_field('text')) !!}
           </div>
         </div>
       @endwhile

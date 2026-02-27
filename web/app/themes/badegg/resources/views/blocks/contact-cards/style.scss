@@ -9,27 +9,29 @@
     &-flex {
       justify-content: center;
     }
-  }
 
-  h4 {
-    color: variables.$grey;
-    text-transform: lowercase;
-    font-size: 0.8em;
+    h4 {
+      color: variables.$grey;
+      text-transform: lowercase;
+      font-size: 0.8em;
+    }
 
-    @media (min-width: variables.$screen-md) {
+    p {
       font-size: 1em;
     }
-  }
 
-  a {
-    color: variables.$secondary-darker;
-  }
+    a {
+      color: variables.$secondary-darker;
+    }
 
-  .socials {
-    font-size: 1.5em;
+    .socials {
+      font-size: 1.5em;
+    }
 
     @container Card (min-width: 25em) {
-      font-size: 2em;
+      h4 { font-size: 1em; }
+      p { font-size: 1.25em; }
+      .socials { font-size: 2em; }
     }
   }
 }

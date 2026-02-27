@@ -11,7 +11,7 @@
   <div class="card-wrap">
     <div class="card-flex">
       <div class="card card-contact bg-white rounded">
-        <div class="inner-small wysiwyg">
+        <div class="inner wysiwyg">
           <h3>{{ __('Ways to get in touch', 'badegg') }}</h3>
 
           <h4>{{ __('give us a call', 'badegg') }}</h4>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="card card-contact bg-white rounded">
-        <div class="inner-small wysiwyg">
+        <div class="inner wysiwyg">
           <h3>{{ __('Where to find us', 'badegg') }}</h3>
 
           <h4>{{ __('our location', 'badegg') }}</h4>
@@ -38,7 +38,7 @@
           @while(have_rows('badegg_company_meetings', 'option')) @php(the_row())
             <h4>{{ get_sub_field('heading') }}</h4>
             <p>{{ get_sub_field('description') }}</p>
-            <p><a href="{{ get_sub_field('link')['url'] }}" class="btn tertiary full" target="{{ get_sub_field('link')['target'] }}">{{ get_sub_field('link')['title'] }}</a></p>
+            <p><a href="{{ get_sub_field('link')['url'] }}" class="btn tertiary" target="{{ get_sub_field('link')['target'] }}">{{ get_sub_field('link')['title'] }}</a></p>
           @endwhile
 
         </div>
@@ -46,7 +46,7 @@
 
       @if($company_mailing_list)
         <div class="card card-contact bg-white rounded">
-          <div class="inner-small wysiwyg">
+          <div class="inner wysiwyg">
             {!! apply_filters('the_content', $company_mailing_list) !!}
           </div>
         </div>
