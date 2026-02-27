@@ -172,7 +172,7 @@
                 "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
                 "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
             },
-            "default_value": "secondary",
+            "default_value": 0,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -191,7 +191,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6995b2d968b67",
+                        "operator": "!=",
+                        "value": "0"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -316,5 +324,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771953463
+    "modified": 1772192778
 }
