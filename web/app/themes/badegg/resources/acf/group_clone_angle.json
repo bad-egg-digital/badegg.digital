@@ -65,7 +65,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_699230db7ba15",
+                        "operator": "!=",
+                        "value": "0"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -183,7 +191,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_699230db7ba15",
+                        "operator": "!=",
+                        "value": "0"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -276,5 +292,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771195942
+    "modified": 1772193071
 }
