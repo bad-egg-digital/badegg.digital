@@ -28,8 +28,8 @@ class BlockPeople extends Composer
         return [
             'people' => $this->get_people(),
             'hcolour' => $CssClasses->colourTint([
-                'colour' => get_field('settings')['bg_colour'],
-                'tint' => get_field('settings')['bg_tint'],
+                'colour' => @get_field('settings')['bg_colour'],
+                'tint' => @get_field('settings')['bg_tint'],
             ]),
         ];
     }
