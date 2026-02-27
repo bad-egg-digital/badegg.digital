@@ -3,7 +3,7 @@
 .wrapper {
   container-name: Wrapper;
   container-type: inline-size;
-  transition: all 300ms ease;
+  transition: transform 300ms ease;
 
   @media (max-width: variables.$screen-sm-max) {
     .menu-open & {

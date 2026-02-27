@@ -3,6 +3,15 @@
 * {
   box-sizing: border-box;
   backface-visibility: hidden; // removes jagged edges on rotated elements
+
+  &:focus-visible {
+    outline: 0.125rem solid variables.$black;
+    outline-offset: 0.125rem;
+
+    .knockout & {
+      outline-color: variables.$white;
+    }
+  }
 }
 
 html {

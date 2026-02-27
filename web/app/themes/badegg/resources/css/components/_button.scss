@@ -31,7 +31,8 @@ input[type="submit"] {
   text-decoration: none;
   white-space: normal;
   cursor: pointer;
-  transition: 300ms ease all;
+  transition: none 300ms ease;
+  transition-property: background-color, color, border-color;
 
   .knockout & {
     background-color: colours.$white;
@@ -40,8 +41,7 @@ input[type="submit"] {
     text-decoration: none;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: colours.$white;
     text-decoration: none;
     background-color: rgba(colours.$black, 0.5);
