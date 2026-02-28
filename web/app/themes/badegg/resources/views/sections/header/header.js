@@ -9,9 +9,9 @@ export default function Header() {
     if(!header) return;
 
     if (scrolled > position + header.offsetHeight) {
-      body.classList.add("scrolled");
+      header.classList.add("scrolled");
     } else {
-      body.classList.remove("scrolled");
+      header.classList.remove("scrolled");
     }
   });
 }
