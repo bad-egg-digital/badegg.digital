@@ -4,6 +4,11 @@ namespace App\Utilities;
 
 class ImageSrcset
 {
+    public function __construct()
+    {
+        add_filter('wp_generate_attachment_metadata', [$this, 'generate_filenames'], 10, 2);
+    }
+
     public function add($args = [])
     {
         $args = wp_parse_args($args, $this->default_args());
@@ -28,7 +33,7 @@ class ImageSrcset
             'name' => 'hero',
             'width' => 1920,
             'height' => null,
-            'crop' => true,
+            'crop' => false,
             'sizes' => 5,
         ];
     }
@@ -161,5 +166,55 @@ class ImageSrcset
         }
 
         return $string;
+    }
+
+    public function srcset_string($image, $name = 'hero', $sizes = 5)
+    {
+        if(!$image) return;
+
+        $args = [
+            'image' => $image,
+            'name' => $name,
+            'sizes' => $sizes,
+        ];
+
+        $srcsets = $this->srcset($args);
+        $string = $this->srcset_stringify($srcsets);
+
+        return $string;
+    }
+
+    public function generate_filenames($metadata, $attachment_id) {
+        $upload_dir = wp_upload_dir();
+        $base_dir   = trailingslashit($upload_dir['basedir']);
+        $base_path  = trailingslashit(dirname($metadata['file']));
+
+        if (!empty($metadata['sizes'])) {
+
+            foreach ($metadata['sizes'] as $size_name => &$size_data) {
+
+                $old_relative_path = $base_path . $size_data['file'];
+                $old_full_path     = $base_dir . $old_relative_path;
+
+                if (!file_exists($old_full_path)) {
+                    continue;
+                }
+
+                $original_name = pathinfo($metadata['file'], PATHINFO_FILENAME);
+                $extension     = pathinfo($size_data['file'], PATHINFO_EXTENSION);
+
+                // New filename: original + size name
+                $new_filename = $original_name . '-' . $size_name . '.' . $extension;
+                $new_full_path = $base_dir . $base_path . $new_filename;
+
+                // Rename file
+                if (rename($old_full_path, $new_full_path)) {
+                    $size_data['file'] = $new_filename;
+                }
+            }
+        }
+
+        return $metadata;
+
     }
 }
