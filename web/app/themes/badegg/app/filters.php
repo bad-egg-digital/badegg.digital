@@ -55,3 +55,30 @@ function remove_postClasses($classes, $class, $post_id) {
 
     return $classes;
 }
+
+add_filter('body_class', __NAMESPACE__ . '\\firstBlockContrast');
+function firstBlockContrast($classes)
+{
+    $post = get_post();
+
+    if(is_archive()) {
+        $postType = @get_queried_object()->name;
+        $postID = get_field('page_for_' . $postType, 'option');
+        $post = get_post($postID);
+    } elseif(is_home()) {
+        $postID = get_option('page_for_posts');
+        $post = get_post($postID);
+    }
+
+    if($post) {
+        $blocks = parse_blocks($post->post_content);
+        $firstBlock = @$blocks[0];
+        $contrast = @$firstBlock['attrs']['data']['settings_contrast'];
+
+        if($contrast) {
+            $classes[] = 'has-first-block-knockout';
+        }
+    }
+
+    return $classes;
+}
