@@ -30,7 +30,8 @@ export async function loadOptimalSrc(el)
 
   if(!id) return;
 
-  const size = el.dataset.size;
+  const name = el.dataset.name;
+  const cropSizes = el.dataset.sizes;
   const elementWidth = el.offsetWidth;
 
   const thisImage = el.style.backgroundImage.slice(4, -1).replace(/"/g, "");
@@ -44,14 +45,18 @@ export async function loadOptimalSrc(el)
     xl: 1,
   };
 
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
-  const sizeCount = sizes.length;
+  let sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+  let sizeCount = sizes.length;
 
-  const srcsets = await get_srcset(id, size).then( srcset => {
+  if(cropSizes < sizeCount) {
+    sizes = sizes.slice(sizeCount - cropSizes);
+  }
+
+  const srcsets = await get_srcset(id, name, cropSizes).then( srcset => {
     return srcset;
   });
 
-  let newSizeKey = 'xs';
+  let newSizeKey = sizes[0];
   let x = 0;
 
   sizes.forEach( size => {
@@ -75,13 +80,17 @@ export async function loadOptimalSrc(el)
 
 }
 
-export async function get_srcset(id = 0, size = 'hero')
+export async function get_srcset(id = 0, name = 'hero', sizes = null)
 {
   const restURL = window.App.restURL;
 
   if(!id || !restURL) return;
 
-  const response = await fetch( `${restURL}badegg/v1/image/${id}/srcset/${size}`);
+  let path = `${restURL}badegg/v1/image/${id}/srcset/${name}`;
+
+  if(sizes) path += `?sizes=${sizes}`;
+
+  const response = await fetch(path);
 
   if(!response.ok) {
     throw new Error(`HTTP error. Status: ${response.status}`);

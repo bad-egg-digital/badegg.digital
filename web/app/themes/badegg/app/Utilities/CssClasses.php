@@ -232,7 +232,7 @@ class CssClasses {
             'class' => 'bg-image bg-srcset',
             'style' => 'background-image: url(\''. $small[0] .'\');',
             'data-id' => $props['bg_image'],
-            'data-size' => 'hero',
+            'data-name' => 'hero',
             'data-width' => $hero[1],
             'data-height' => $hero[2],
         ];

@@ -62,7 +62,7 @@ class Footer extends Composer
             'class' => 'bg-image bg-srcset bg-fixed bg-filter-multiply lazy',
             'style' => 'background-image: url(\''. $lazy[0] .'\');',
             'data-id' => $id,
-            'data-size' => 'hero',
+            'data-name' => 'hero',
             'data-width' => $hero[1],
             'data-height' => $hero[2],
         ];

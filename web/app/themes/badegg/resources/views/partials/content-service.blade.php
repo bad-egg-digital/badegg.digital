@@ -18,7 +18,16 @@
   </div>
 
   @if(get_field('texture', get_the_ID()))
-    <div class="bg-image bg-filter-multiply lazy" style="opacity: {{ (get_field('texture_opacity') ?: 50) * 0.01 }}; background-image: url('{{ @wp_get_attachment_image_src(get_field('texture', get_the_ID()), ((is_admin()) ? 'large' : 'lazy'))[0] }}')" data-id="{{ get_field('texture', get_the_ID()) }}"></div>
+    <div
+      class="bg-image bg-srcset bg-filter-multiply lazy"
+      style="
+        opacity: {{ (get_field('texture_opacity') ?: 50) * 0.01 }};
+        background-image: url('{{ @wp_get_attachment_image_src(get_field('texture', get_the_ID()), ((is_admin()) ? 'large' : 'lazy'))[0] }}')
+      "
+      data-id="{{ get_field('texture', get_the_ID()) }}"
+      data-name="natural"
+      data-sizes="5"
+    ></div>
   @endif
 
 </div>

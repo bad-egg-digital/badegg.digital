@@ -18,7 +18,11 @@
     </div>
 
     <div class="{{ implode(' ', $imageClasses) }}">
-      @include('components.image', ['id' => get_field('image'), 'lazy' => get_field('image_lazy')])
+      @include('components.image', [
+        'id' => get_field('image'),
+        'lazy' => get_field('image_lazy'),
+        'srcset' => true,
+      ])
     </div>
   </div>
 @overwrite
