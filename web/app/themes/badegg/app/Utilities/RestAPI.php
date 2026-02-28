@@ -20,7 +20,7 @@ class RestAPI
             return $response;
         }
 
-        $custom_sizes = [ 'hero', 'lazy' ];
+        $custom_sizes = [ 'hero', 'lazy', 'natural' ];
 
         foreach ( $custom_sizes as $size ) {
             if ( ! empty( $meta['sizes'][ $size ] ) ) {
@@ -130,10 +130,28 @@ class RestAPI
             'methods' => 'GET',
             'callback' => function($request){
                 $ImageSrcset = new ImageSrcset;
-                $srcset = $ImageSrcset->srcset(['image' => $request['id'], 'name' => $request['size']]);
+                $srcset = $ImageSrcset->srcset(['image' => $request['id'], 'name' => $request['size'], 'sizes' => $request['sizes']]);
 
                 return rest_ensure_response($srcset);
             },
+            'args' => [
+                'id' => [
+                    'required' => true,
+                    'validate_callback' => function($param) {
+                        return is_numeric($param);
+                    },
+                ],
+                'size' => [
+                    'default' => 'hero',
+                ],
+                'sizes' => [
+                    'required' => false,
+                    'default' => 5,
+                    'validate_callback' => function($param) {
+                        return is_numeric($param);
+                    },
+                ],
+            ],
             'permission_callback' => function(){
                 return true;
             },
