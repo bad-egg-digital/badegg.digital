@@ -1,5 +1,5 @@
 <div class="person inner inner-zero-x">
-  <div class="person-image">
+  <div class="person-image {{ $hcolour }}">
     @include('components.image', [
       'id' => get_post_thumbnail_id($post),
       'lazy' => true,
@@ -7,7 +7,7 @@
       'class' => '',
     ])
 
-    <h3 class="{{ $hcolour }}">{{ get_the_title($post) }}</h3>
+    <h3>{{ get_the_title($post) }}</h3>
   </div>
   <div class="person-content inner-small inner-zero-x">
     <h4 class="person-intro section-title">{{ $post->post_excerpt }}</h4>
