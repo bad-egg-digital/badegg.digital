@@ -11,6 +11,18 @@
           padding-top: variables.$sectionSmall;
         }
       }
+
+      .has-first-block-knockout & {
+        &::before {
+          content: '';
+          display: block;
+          height: 8.25em;
+
+          @media (min-width: variables.$screen-lg) {
+            height: 10.25em;
+          }
+        }
+      }
     }
 
     &:last-of-type {
