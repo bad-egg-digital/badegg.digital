@@ -177,7 +177,7 @@ add_action('wp_head', function(){
 
 add_action('after_setup_theme', function(){
     $image_srcset = new Utilities\ImageSrcset;
-    $image_srcset->add(['name' => 'hero', 'width' => 1920, 'height' => 1080, 'crop' => true]);
+    $image_srcset->add(['name' => 'hero', 'width' => 1920, 'height' => 1080]);
     $image_srcset->add(['name' => 'natural', 'width' => 1600, 'height' => 1600]);
     add_image_size('lazy', 50, 50);
 });

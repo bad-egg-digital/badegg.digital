@@ -1,0 +1,150 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-hero {
+  container-name: BadEggHero;
+  container-type: inline-size;
+
+  > .container {
+    padding: 0 3em;
+
+    @container BadEggHero (min-width: #{variables.$screen-xxl}) {
+      padding: 0;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 9.0278vw;
+    }
+  }
+
+  .section-angle-bottom-right {
+    mask-image: none;
+    background: transparent;
+    height: 9.0278vw;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      mask-position: inherit;
+      mask-repeat: no-repeat;
+      mask-size: inherit;
+    }
+
+    &::before {
+      mask-image: url("@images/angle-4-bottom-right-tall.svg");
+      background: variables.$tertiary-lighter;
+    }
+
+    &::after {
+      top: auto;
+      mask-image: url("@images/angle-5-bottom-right.svg");
+      height: 8.75vw;
+      background: variables.$white;
+    }
+  }
+}
+
+.block-hero {
+  h1.mini {
+    @container BadEggHero (min-width: #{variables.$screen-sm}) {
+      width: 40%;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-md}) {
+      font-size: 1.5em;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-lg}) {
+      font-size: 2.25em;
+    }
+  }
+
+  &-cols {
+    @container BadEggHero (min-width: #{variables.$screen-sm}) {
+      display: flex;
+      align-items: flex-start;
+      gap: variables.$gapLarge;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-md}) {
+      gap: (variables.$gapLarge * 1.5);
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-lg}) {
+      gap: (variables.$gapLarge * 2);
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-xl}) {
+      gap: (variables.$gapLarge * 3);
+    }
+  }
+
+  &-col {
+    flex: 1;
+
+    &-text {
+      @container BadEggHero (min-width: #{variables.$screen-sm}) {
+        padding-top: 1em;
+      }
+
+      @container BadEggHero (min-width: #{variables.$screen-md}) {
+        padding-top: 1.5em;
+      }
+
+      @container BadEggHero (min-width: #{variables.$screen-lg}) {
+        padding-top: 2em;
+      }
+    }
+  }
+
+  &-doodle {
+    width: 7.5em;
+    margin: 1.5em 0 0;
+
+    @container BadEggHero (min-width: #{variables.$screen-sm}) {
+      margin: 0.5em 0 0;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-lg}) {
+      width: 10em;
+    }
+  }
+
+  h2 {
+    position: relative;
+    font-size: 2em;
+
+    @container BadEggHero (min-width: #{variables.$screen-xs}) {
+      font-size: 2.5em;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-sm}) {
+      font-size: 3em;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-md}) {
+      font-size: 3.75em;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-lg}) {
+      font-size: 4.5em;
+    }
+
+    @container BadEggHero (min-width: #{variables.$screen-xl}) {
+      font-size: 5em;
+    }
+
+    svg {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      fill: variables.$secondary-light;
+      opacity: 0.5;
+      transform: translateX(calc(-100% - 0.25em));
+      padding: 0.25em 0;
+    }
+  }
+}

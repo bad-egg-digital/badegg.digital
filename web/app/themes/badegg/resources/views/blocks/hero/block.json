@@ -1,0 +1,33 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/hero",
+  "title": "Hero",
+  "category": "badegg",
+  "icon": "welcome-widgets-menus",
+  "description": "Hero Banner",
+  "keywords": ["acf", "hero"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false,
+      "multiple": false
+  },
+  "attributes": {
+    "data": {
+      "contrast": true
+    }
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}
