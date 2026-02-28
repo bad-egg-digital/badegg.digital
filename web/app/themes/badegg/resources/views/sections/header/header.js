@@ -8,7 +8,7 @@ export default function Header() {
 
     if(!header) return;
 
-    if (scrolled > position + header.offsetHeight) {
+    if (scrolled > position + (header.offsetHeight / 2)) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
