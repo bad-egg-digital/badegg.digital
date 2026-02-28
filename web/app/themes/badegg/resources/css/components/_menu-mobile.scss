@@ -83,3 +83,10 @@
     }
   }
 }
+
+.post-type-archive-project .menu-mobile-container li.menu-projects a,
+.wp-singular-project .menu-mobile-container li.menu-projects a,
+.wp-singular-post .menu-mobile-container li.menu-blog a,
+.wp-singular-service .menu-mobile-container li.menu-services a {
+  color: variables.$tertiary;
+}

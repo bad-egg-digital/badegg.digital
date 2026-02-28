@@ -95,9 +95,16 @@
         > li {
           margin: 0.5em 0 0;
 
+          > a {
+            opacity: 0.8;
+            transition-property: opacity, color;
+          }
+
+          &:hover,
           &.current-menu-item {
             > a {
               color: variables.$tertiary-lighter;
+              opacity: 1;
             }
           }
         }
@@ -272,6 +279,21 @@
       display: inline-block;
     }
   }
+}
+
+.post-type-archive-project .footer-nav-ul > li.menu-projects > a,
+.wp-singular-project .footer-nav-ul > li.menu-projects > a,
+.wp-singular-post .footer-nav-ul > li.menu-blog > a,
+.wp-singular-service .footer-nav-ul > li.menu-services > a {
+  &::before {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.slug-services .footer-nav-ul .sub-menu > li.menu-services-all > a {
+  color: variables.$white;
+  opacity: 0.8;
 }
 
 .menu-item-logo-footer {
