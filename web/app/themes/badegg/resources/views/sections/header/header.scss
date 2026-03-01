@@ -24,11 +24,6 @@
     transition: all 300ms ease;
   }
 
-  .admin-bar & {
-    top: 32px;
-    @media (max-width: 782px) { top: 46px; }
-  }
-
   @media (min-width: #{variables.$screen-md}) {
     position: sticky;
     top: 0;

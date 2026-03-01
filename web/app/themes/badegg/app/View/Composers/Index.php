@@ -32,7 +32,6 @@ class Index extends Composer
         }
 
         $postTypeSlug = $postType->name;
-
         $pageForPosts = ($postTypeSlug == 'post') ? get_option('page_for_posts') : get_field('page_for_' . $postTypeSlug, 'option');
 
         return [
@@ -40,6 +39,37 @@ class Index extends Composer
             'page_for_posts' => $pageForPosts,
             'post' => get_post($pageForPosts),
         ];
+    }
+
+    public function get_latestPostID()
+    {
+        $posts = get_posts([
+            'post_type' => 'post',
+            'order' => 'DESC',
+            'orderby' => 'date',
+            'numberposts' => 1,
+            'post_status' => 'publish',
+            'fields' => 'ids',
+        ]);
+
+        if($posts) {
+            return $posts[0];
+        } else {
+            return 0;
+        }
+    }
+
+    public function get_firstCategory($postID, $tax = 'category')
+    {
+        if(!$postID) return false;
+
+        $terms = wp_get_post_terms($postID, $tax);
+
+        if($terms) {
+            return $terms[0];
+        } else {
+            return false;
+        }
     }
 
 }

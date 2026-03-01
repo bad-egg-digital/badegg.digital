@@ -1,0 +1,86 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-latest-post {
+  container-name: BadEggLatestPost;
+  container-type: inline-size;
+}
+
+.latest-post {
+  &-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: variables.$gapLarge;
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-sm}) {
+      flex-wrap: nowrap;
+    }
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-md}) {
+      gap: (variables.$gapLarge * 1.25);
+    }
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-lg}) {
+      gap: (variables.$gapLarge * 1.5);
+    }
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-xl}) {
+      gap: (variables.$gapLarge * 2);
+    }
+  }
+
+  &-col {
+    @container BadEggLatestPost (min-width: #{variables.$screen-sm}) {
+      flex: 1;
+    }
+  }
+
+  &-image {
+    position: relative;
+
+    img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      width: 100%;
+    }
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-sm}) {
+      img {
+        height: 100%;
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-lg}) {
+      flex: 2;
+    }
+  }
+
+  &-content {
+    &.inner {
+      @container BadEggLatestPost (max-width: #{variables.$screen-xs-max}) {
+        padding: 0;
+      }
+    }
+
+    @container BadEggLatestPost (min-width: #{variables.$screen-sm}) {
+      order: -1;
+    }
+
+    h2.subhead {
+      margin: 0 0 0.25em;
+    }
+
+    p.subtitle {
+      opacity: 0.5;
+      margin: 0 0 1em;
+      font-size: 0.8em;
+
+      @media (min-width: variables.$screen-md) {
+        font-size: 1em;
+      }
+    }
+  }
+}

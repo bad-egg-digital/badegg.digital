@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/latest-post",
+  "title": "Latest Post",
+  "category": "badegg",
+  "icon": "media-document",
+  "description": "Image paired with text",
+  "keywords": ["acf", "post", "latest"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}
