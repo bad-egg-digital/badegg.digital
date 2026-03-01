@@ -125,28 +125,6 @@
             "append": "x"
         },
         {
-            "key": "field_6994f63736eff",
-            "label": "Maximum text width",
-            "name": "heading_width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 50,
-            "min": 30,
-            "max": 70,
-            "allow_in_bindings": 0,
-            "step": 10,
-            "prepend": "",
-            "append": "%"
-        },
-        {
             "key": "field_6995b2d968b67",
             "label": "Colour",
             "name": "colour",
@@ -184,6 +162,28 @@
             "save_options": 0
         },
         {
+            "key": "field_6994f63736eff",
+            "label": "Maximum text width",
+            "name": "heading_width",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 30,
+            "max": 70,
+            "allow_in_bindings": 0,
+            "step": 10,
+            "prepend": "",
+            "append": "%"
+        },
+        {
             "key": "field_6995b304af4dc",
             "label": "Tint",
             "name": "tint",
@@ -197,6 +197,16 @@
                         "field": "field_6995b2d968b67",
                         "operator": "!=",
                         "value": "0"
+                    },
+                    {
+                        "field": "field_6995b2d968b67",
+                        "operator": "!=",
+                        "value": "white"
+                    },
+                    {
+                        "field": "field_6995b2d968b67",
+                        "operator": "!=",
+                        "value": "black"
                     }
                 ]
             ],
@@ -324,5 +334,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772327997
+    "modified": 1772383313
 }

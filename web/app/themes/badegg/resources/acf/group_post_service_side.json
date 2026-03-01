@@ -164,7 +164,25 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_699c3367d4cfd",
+                        "operator": "!=",
+                        "value": "0"
+                    },
+                    {
+                        "field": "field_699c3367d4cfd",
+                        "operator": "!=",
+                        "value": "white"
+                    },
+                    {
+                        "field": "field_699c3367d4cfd",
+                        "operator": "!=",
+                        "value": "black"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -362,5 +380,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772201237
+    "modified": 1772383166
 }

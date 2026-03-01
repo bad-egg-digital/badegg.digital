@@ -53,6 +53,16 @@
                         "field": "field_67325dd23234e",
                         "operator": "!=",
                         "value": "0"
+                    },
+                    {
+                        "field": "field_67325dd23234e",
+                        "operator": "!=",
+                        "value": "white"
+                    },
+                    {
+                        "field": "field_67325dd23234e",
+                        "operator": "!=",
+                        "value": "black"
                     }
                 ]
             ],
@@ -419,5 +429,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772192983
+    "modified": 1772382669
 }
