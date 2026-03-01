@@ -30,7 +30,7 @@
             />
           @endif
 
-          <div class="columned-device-screen bg-black">
+          <div class="columned-device-screen bg-black @if(get_field('device_scrollable')) scrollable @endif">
             @include('components.image', ['id' => get_field('device_screen'), 'size' => 'natural', 'srcset' => true, 'lazy' => false])
           </div>
         </div>

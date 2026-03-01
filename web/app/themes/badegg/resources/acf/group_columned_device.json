@@ -143,6 +143,27 @@
             "selected": 0
         },
         {
+            "key": "field_69a3f8f3efadf",
+            "label": "Scrollable Screen",
+            "name": "device_scrollable",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_69a3942c4e23b",
             "label": "Heading Scale",
             "name": "heading_scale",
@@ -303,5 +324,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772331820
+    "modified": 1772352306
 }

@@ -59,15 +59,21 @@
     z-index: 1;
     width: 80%;
     aspect-ratio: 16 / 9.5;
-    overflow-y: auto;
-
-    scroll-margin-inline-start: 50%;
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    &.scrollable {
+      overflow-y: auto;
+
+      img {
+        height: auto;
+      }
     }
   }
-
 }
