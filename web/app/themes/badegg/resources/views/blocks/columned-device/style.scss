@@ -14,22 +14,16 @@
       align-items: center;
       gap: variables.$gapLarge;
     }
-
-    // @container BadEggColumnedDevice (min-width: #{variables.$screen-md}) {
-    //   gap: (variables.$gapLarge * 1.5);
-    // }
-
-    // @container BadEggColumnedDevice (min-width: #{variables.$screen-lg}) {
-    //   gap: (variables.$gapLarge * 1.5);
-    // }
-
-    // @container BadEggColumnedDevice (min-width: #{variables.$screen-xl}) {
-    //   gap: (variables.$gapLarge * 2);
-    // }
   }
 
   &-col {
     flex: 0 0 50%;
+
+    &-device {
+      @container BadEggColumnedDevice (max-width: #{variables.$screen-xs-max}) {
+        padding-top: variables.$sectionMedium;
+      }
+    }
   }
 
   &-wrap {

@@ -143,28 +143,6 @@
             "selected": 0
         },
         {
-            "key": "field_69a3941c4e23a",
-            "label": "Heading Size",
-            "name": "hsize",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 2,
-            "min": 1,
-            "max": 2,
-            "allow_in_bindings": 0,
-            "step": "",
-            "prepend": "&lt;h",
-            "append": "&gt;"
-        },
-        {
             "key": "field_69a3942c4e23b",
             "label": "Heading Scale",
             "name": "heading_scale",
@@ -325,5 +303,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772328178
+    "modified": 1772331820
 }

@@ -9,7 +9,7 @@
   <div class="columned-device-cols">
     <div class="columned-device-col columned-device-col-text wysiwyg">
       <div style="font-size: {{ get_field('heading_scale') }}em">
-        <h2 class="section-title">{!! get_field('heading') !!}</h2>
+        <h2 class="section-title @if(get_field('colour')) {{ $CssClasses->ColourTintClass(get_field('colour'), get_field('tint')) }} @endif">{!! get_field('heading') !!}</h2>
       </div>
       {!! get_field('editor') !!}
     </div>
