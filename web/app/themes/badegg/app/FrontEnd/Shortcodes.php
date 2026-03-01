@@ -8,6 +8,7 @@ class Shortcodes
     {
         add_shortcode('button', [$this, 'button']);
         add_shortcode('arrow_cta', [$this, 'arrow_cta']);
+        add_shortcode('br', [$this, 'br']);
     }
 
     public function button($atts)
@@ -87,5 +88,10 @@ class Shortcodes
         endif;
 
         return $html;
+    }
+
+    public function br($atts)
+    {
+        return '<br/>';
     }
 }

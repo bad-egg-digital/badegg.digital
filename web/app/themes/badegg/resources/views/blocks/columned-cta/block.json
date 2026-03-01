@@ -1,0 +1,32 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/columned-cta",
+  "title": "Columned CTA",
+  "category": "badegg",
+  "icon": "arrow-left-alt",
+  "description": "Call to action in a column alongside a heading and paragraph.",
+  "keywords": ["acf", "cta", "call to action", "column"],
+
+  "acf": {
+      "mode": "preview",
+      "validate": "false",
+      "renderCallback": "\\App\\Blocks\\render_acf"
+  },
+  "supports": {
+      "anchor": true,
+      "align": false
+  },
+  "attributes": {
+    "data": {
+      "contrast": true
+    }
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "inserter": true
+      }
+    }
+  }
+}

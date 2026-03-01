@@ -1,9 +1,9 @@
 {
-    "key": "group_block_columned_heading",
-    "title": "Block: Columned Heading",
+    "key": "group_columned_device",
+    "title": "Block: Columned Device",
     "fields": [
         {
-            "key": "field_6994f63736a43",
+            "key": "field_69a38f3b5f21b",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -21,8 +21,8 @@
             "endpoint": 0
         },
         {
-            "key": "field_6994f63736a94",
-            "label": "Heading",
+            "key": "field_69a38f3b5f269",
+            "label": "Text",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -39,28 +39,7 @@
             "selected": 0
         },
         {
-            "key": "field_699a4ae1c866a",
-            "label": "Tiny TItle",
-            "name": "tiny_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6994f63736ae6",
+            "key": "field_69a38f3b5f2b3",
             "label": "Heading",
             "name": "heading",
             "aria-label": "",
@@ -81,8 +60,91 @@
             "new_lines": ""
         },
         {
-            "key": "field_6994f63736e6c",
-            "label": "Size",
+            "key": "field_69a38f3b5f2fc",
+            "label": "",
+            "name": "editor",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_69a38f3b5f345",
+            "label": "Device",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69a38f3b5f38e",
+            "label": "Device Screen",
+            "name": "device_screen",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69a3948b3a217",
+            "label": "Options",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69a3941c4e23a",
+            "label": "Heading Size",
             "name": "hsize",
             "aria-label": "",
             "type": "range",
@@ -103,8 +165,8 @@
             "append": "&gt;"
         },
         {
-            "key": "field_6995ce869c189",
-            "label": "Scale",
+            "key": "field_69a3942c4e23b",
+            "label": "Heading Scale",
             "name": "heading_scale",
             "aria-label": "",
             "type": "range",
@@ -125,30 +187,8 @@
             "append": "x"
         },
         {
-            "key": "field_6994f63736eff",
-            "label": "Maximum text width",
-            "name": "heading_width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 50,
-            "min": 30,
-            "max": 70,
-            "allow_in_bindings": 0,
-            "step": 10,
-            "prepend": "",
-            "append": "%"
-        },
-        {
-            "key": "field_6995b2d968b67",
-            "label": "Colour",
+            "key": "field_69a394354e23c",
+            "label": "Heading Colour",
             "name": "colour",
             "aria-label": "",
             "type": "select",
@@ -184,8 +224,8 @@
             "save_options": 0
         },
         {
-            "key": "field_6995b304af4dc",
-            "label": "Tint",
+            "key": "field_69a394384e23d",
+            "label": "Heading Tint",
             "name": "tint",
             "aria-label": "",
             "type": "select",
@@ -194,7 +234,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_6995b2d968b67",
+                        "field": "field_69a394354e23c",
                         "operator": "!=",
                         "value": "0"
                     }
@@ -226,46 +266,7 @@
             "save_options": 0
         },
         {
-            "key": "field_6994f63736bee",
-            "label": "Editor",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_6994f63736c3f",
-            "label": "",
-            "name": "editor",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_6994f6373706b",
+            "key": "field_69a38f3b5f467",
             "label": "",
             "name": "",
             "aria-label": "",
@@ -283,7 +284,7 @@
             "selected": 0
         },
         {
-            "key": "field_6994f637370a3",
+            "key": "field_69a38f3b5f4af",
             "label": "Settings",
             "name": "clone_settings",
             "aria-label": "",
@@ -310,7 +311,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "badegg\/columned-heading"
+                "value": "badegg\/columned-device"
             }
         ]
     ],
@@ -324,5 +325,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772327997
+    "modified": 1772328178
 }

@@ -1,0 +1,64 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-columned-cta {
+  container-name: BadEggColumnedCTA;
+  container-type: inline-size;
+}
+
+.columned-cta {
+  &-cols {
+    @container BadEggColumnedCTA (min-width: #{variables.$screen-sm}) {
+      display: flex;
+      align-items: flex-end;
+      gap: variables.$gapLarge;
+    }
+
+    @container BadEggColumnedCTA (min-width: #{variables.$screen-md}) {
+      gap: (variables.$gapLarge * 1.5);
+    }
+
+    @container BadEggColumnedCTA (min-width: #{variables.$screen-lg}) {
+      gap: (variables.$gapLarge * 1.5);
+    }
+
+    @container BadEggColumnedCTA (min-width: #{variables.$screen-xl}) {
+      gap: (variables.$gapLarge * 2);
+    }
+  }
+
+  &-col {
+    &-text {
+      flex: 2;
+
+      @container BadEggColumnedCTA (min-width: #{variables.$screen-md}) {
+        flex: 1;
+      }
+    }
+
+    &-cta {
+      flex: 1;
+
+      @container BadEggColumnedCTA (max-width: #{variables.$screen-xs-max}) {
+        padding-top: 2em;
+      }
+    }
+
+
+
+    &.cta-align-is-left {
+      text-align: right;
+
+      @container BadEggColumnedCTA (min-width: #{variables.$screen-sm}) {
+        padding-right: 3em;
+      }
+    }
+
+    &.cta-align-is-right {
+      text-align: left;
+
+      @container BadEggColumnedCTA (min-width: #{variables.$screen-sm}) {
+        padding-left: 3em;
+      }
+    }
+  }
+}

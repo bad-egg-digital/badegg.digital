@@ -8,7 +8,7 @@
       wp_reset_postdata();
     @endphp
 
-    <div class="section section-archive section-archive-{{ $post_type }} bg-secondary-lightest has-gradient">
+    <section class="section section-archive section-archive-{{ $post_type }} bg-secondary-lightest has-gradient">
       <div class="card-wrap card-wrap-{{ $post_type }}">
 
         @if(have_posts())
@@ -31,7 +31,7 @@
             {!! get_search_form(false) !!}
           </div>
         @endif
-    </div>
+        </section>
   </div>
 @endsection
 

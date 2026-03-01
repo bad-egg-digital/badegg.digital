@@ -1,0 +1,79 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-columned-device {
+  container-name: BadEggColumnedDevice;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+.columned-device {
+  &-cols {
+
+    @container BadEggColumnedDevice (min-width: #{variables.$screen-sm}) {
+      display: flex;
+      align-items: center;
+      gap: variables.$gapLarge;
+    }
+
+    // @container BadEggColumnedDevice (min-width: #{variables.$screen-md}) {
+    //   gap: (variables.$gapLarge * 1.5);
+    // }
+
+    // @container BadEggColumnedDevice (min-width: #{variables.$screen-lg}) {
+    //   gap: (variables.$gapLarge * 1.5);
+    // }
+
+    // @container BadEggColumnedDevice (min-width: #{variables.$screen-xl}) {
+    //   gap: (variables.$gapLarge * 2);
+    // }
+  }
+
+  &-col {
+    flex: 0 0 50%;
+  }
+
+  &-wrap {
+    position: relative;
+
+    @container BadEggColumnedDevice (min-width: #{variables.$screen-sm}) {
+      width: 80vw;
+    }
+
+    @container BadEggColumnedDevice (min-width: #{variables.$screen-md}) {
+      width: 70vw;
+    }
+
+    @container BadEggColumnedDevice (min-width: #{variables.$screen-lg}) {
+      width: 60vw;
+    }
+
+    .device-img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+  }
+
+  &-screen {
+    position: absolute;
+    top: 5%;
+    right: 50%;
+    transform: translateX(51%);
+    z-index: 1;
+    width: 80%;
+    aspect-ratio: 16 / 9.5;
+    overflow-y: auto;
+
+    scroll-margin-inline-start: 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+}
