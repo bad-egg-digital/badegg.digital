@@ -1,0 +1,27 @@
+@use "../../../css/global/variables";
+
+.wp-block-badegg-post-masthead {
+  .masthead {
+    &-heading {
+      margin: 0;
+    }
+
+    &-subtitle {
+      font-size: 1.125em;
+      font-weight: 700;
+      font-style: italic;
+      margin: 0;
+    }
+
+    &-byline {
+      opacity: 0.6;
+      font-size: 0.8em;
+      margin: 0.25em 0 1em;
+    }
+
+    @media (min-width: variables.$screen-lg) {
+      &-subtitle {font-size: 1.25em;}
+      &-byline {font-size: 1em;}
+    }
+  }
+}

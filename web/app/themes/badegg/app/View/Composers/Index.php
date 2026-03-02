@@ -59,22 +59,4 @@ class Index extends Composer
             return false;
         }
     }
-
-    public function get_latestPostID()
-    {
-        $posts = get_posts([
-            'post_type' => 'post',
-            'order' => 'DESC',
-            'orderby' => 'date',
-            'numberposts' => 1,
-            'post_status' => 'publish',
-            'fields' => 'ids',
-        ]);
-
-        if($posts) {
-            return $posts[0];
-        } else {
-            return 0;
-        }
-    }
 }

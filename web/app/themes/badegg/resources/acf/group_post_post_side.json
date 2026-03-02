@@ -3,8 +3,29 @@
     "title": "Settings",
     "fields": [
         {
+            "key": "field_69a5eb3d02e5f",
+            "label": "Subtitle",
+            "name": "post_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_69a44ecfa0ef6",
-            "label": "Featured Post",
+            "label": "This is a featured post",
             "name": "badegg_featured_post",
             "aria-label": "",
             "type": "true_false",
@@ -43,5 +64,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772375822
+    "modified": 1772481521
 }

@@ -20,6 +20,5 @@
   "core/pullquote",
   "core/verse",
   "core/post-featured-image",
-  "core/post-title",
-  "badegg/post-byline"
+  "badegg/post-masthead"
 ]

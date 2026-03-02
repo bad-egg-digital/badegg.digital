@@ -1,15 +1,23 @@
 {
   "apiVersion": 3,
-  "name": "badegg/post-byline",
-  "title": "Post Byline",
+  "name": "badegg/post-masthead",
+  "title": "Post Masthead",
   "category": "text",
   "icon": {
     "src": "edit",
     "foreground": "#f58762"
   },
-  "description": "Display first category and author name.",
+  "description": "Display the title, first category, and author name.",
+  "keywords": ["title", "author", "category", "meta"],
+
+  "acf": {
+    "mode": "preview",
+    "validate": "false",
+    "renderCallback": "\\App\\Blocks\\render_acf"
+  },
   "supports": {
     "html": true,
+    "multiple": false,
     "color": {
       "background": false,
       "text": false
