@@ -93,6 +93,10 @@ label {
 
 p {
   @media (min-width: variables.$screen-md) {
+    font-size: 1.125em;
+  }
+
+  @media (min-width: variables.$screen-lg) {
     font-size: 1.25em;
   }
 }

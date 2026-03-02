@@ -25,11 +25,7 @@ class Index extends Composer
 
     public function with()
     {
-        if(is_home()) {
-            $postType = get_post_type_object('post');
-        } else {
-            $postType = get_queried_object();
-        }
+        $postType = $this->get_archivePostType();
 
         $postTypeSlug = $postType->name;
         $pageForPosts = ($postTypeSlug == 'post') ? get_option('page_for_posts') : get_field('page_for_' . $postTypeSlug, 'option');
@@ -39,6 +35,17 @@ class Index extends Composer
             'page_for_posts' => $pageForPosts,
             'post' => get_post($pageForPosts),
         ];
+    }
+
+    public function get_archivePostType()
+    {
+        if(is_home()) {
+            $postType = get_post_type_object('post');
+        } else {
+            $postType = get_queried_object();
+        }
+
+        return $postType;
     }
 
     public function get_latestPostID()

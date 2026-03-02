@@ -14,7 +14,8 @@
   },
   "supports": {
       "anchor": true,
-      "align": false
+      "align": false,
+      "multiple": false
   },
   "example": {
     "attributes": {

@@ -6,7 +6,7 @@ class ImageSrcset
 {
     public function __construct()
     {
-        add_filter('wp_generate_attachment_metadata', [$this, 'generate_filenames'], 10, 2);
+        // add_filter('wp_generate_attachment_metadata', [$this, 'generate_filenames'], 10, 2);
     }
 
     public function add($args = [])

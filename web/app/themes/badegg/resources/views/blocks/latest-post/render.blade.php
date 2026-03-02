@@ -31,7 +31,7 @@
           <div class="btn-wrap">
             @include('components.button', [
               'link' => [
-                'title' => get_field('permalink_text'),
+                'title' => get_field('permalink_text') ?: __('continue reading', 'badegg'),
                 'url' => get_the_permalink($latestPostID),
               ],
               'colour' => 'tertiary',
