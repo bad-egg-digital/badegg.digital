@@ -43,6 +43,10 @@ export function sectionClassNames(attributes, defaultClasses = '', extraClasses 
     classNames.push(bg);
   }
 
+  if('sidebar' in attributes && attributes.sidebar) {
+    classNames.push('has-sidebar');
+  }
+
   if('background_gradient' in attributes && attributes.background_gradient) {
     classNames.push('has-gradient');
   }

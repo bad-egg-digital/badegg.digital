@@ -179,7 +179,7 @@ function auto_register() {
         }
 
         if(!property_exists($json, 'acf')) {
-            $props['attributes'] = attributes();
+            $props['attributes'] = attributes((array)@$json->attributes);
         }
 
         register_block_type($block_json, $props);
@@ -194,12 +194,14 @@ function list_inner()
     return $json;
 }
 
-function attributes()
+function attributes($atts = [])
 {
     $file = file_get_contents(get_theme_file_path("resources/json/block-attributes.json"));
     $json = json_decode($file, true);
 
-    return $json;
+    $atts = wp_parse_args($atts, $json);
+
+    return $atts;
 }
 
 function list_all()
