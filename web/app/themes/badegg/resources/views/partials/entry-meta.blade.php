@@ -2,9 +2,6 @@
   {{ get_the_date() }}
 </time>--}}
 
-<p class="entry-meta">
-  <span>{{ __('By', 'sage') }}</span>
-  {{-- <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" class="p-author h-card"> --}}
-    {{ get_the_author() }}
-  {{-- </a> --}}
+<p class="subtitle entry-meta">
+  {{ @$firstTerm->name }} <span>{{ __('by', 'badegg') }}</span> {{ get_the_author() }}
 </p>

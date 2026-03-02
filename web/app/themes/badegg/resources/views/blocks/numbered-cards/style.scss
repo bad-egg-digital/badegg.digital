@@ -3,22 +3,23 @@
 .wp-block-badegg-numbered-cards {
   container-name: BadEggNumberedCards;
   container-type: inline-size;
-}
 
-.card-numbered {
-  display: flex;
+  .card-numbered {
+    display: flex;
+    flex-direction: row;
 
-  &-number {
-    position: relative;
-    // flex: 0 0 3em;
+    &-number {
+      position: relative;
+      // flex: 0 0 3em;
 
-    p {
-      font-size: 2.8em;
-      font-style: italic;
-      font-weight: 700;
-      margin: 0;
-      line-height: 0.7;
-      font-family: variables.$blockquote;
+      p {
+        font-size: 2.8em;
+        font-style: italic;
+        font-weight: 700;
+        margin: 0;
+        line-height: 0.7;
+        font-family: variables.$blockquote;
+      }
     }
   }
 }

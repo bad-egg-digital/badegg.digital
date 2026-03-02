@@ -8,7 +8,7 @@
     ])
   </header>
   <div class="card-content card-{{ get_post_type() }}-content inner wysiwyg">
-    <h2 class="entry-title">{!! $title !!}</h2>
+    <h3 class="entry-title has-subtitle">{!! $title !!}</h3>
 
     @include('partials.entry-meta')
 

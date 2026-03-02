@@ -53,6 +53,16 @@ class Post extends Composer
         return get_the_title();
     }
 
+    public function firstTerm()
+    {
+        $Archives = new \App\Admin\Archives;
+        $EntryMeta = new \App\FrontEnd\EntryMeta;
+
+        $primaryTaxonomy = $Archives->primaryTaxonomy(get_post_type());
+
+        return $EntryMeta->get_firstTerm(get_the_ID(), $primaryTaxonomy);
+    }
+
     /**
      * Retrieve the pagination links.
      */

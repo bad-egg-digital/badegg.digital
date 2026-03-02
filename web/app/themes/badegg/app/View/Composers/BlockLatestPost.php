@@ -22,6 +22,7 @@ class BlockLatestPost extends Composer
      */
     public function with()
     {
+        $EntryMeta = new \App\FrontEnd\EntryMeta;
         $Index = new Index;
 
         $latestPostID = $Index->get_latestPostID();
@@ -30,7 +31,7 @@ class BlockLatestPost extends Composer
         return [
             'latestPostID' => $latestPostID,
             'latestPost' => $latestPost,
-            'latestPostCategory' => $Index->get_firstCategory($latestPostID, 'category'),
+            'latestPostCategory' => $EntryMeta->get_firstTerm($latestPostID, 'category'),
         ];
     }
 }

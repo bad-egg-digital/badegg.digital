@@ -8,11 +8,14 @@
       wp_reset_postdata();
     @endphp
 
-    <section class="section section-archive section-archive-{{ $post_type }} bg-secondary-lightest has-gradient">
-      <div class="card-wrap card-wrap-{{ $post_type }}">
+    <section class="section section-archive section-archive-{{ $postType->name }} bg-secondary-lightest has-gradient">
+      <div class="container container-larger">
+        <div class="section-small section-zero-top wysiwyg">
+          <h2>{{ __('All ' . $postType->label, 'badegg') }}</h2>
+        </div>
 
         @if(have_posts())
-          <div class="container container-larger">
+          <div class="card-wrap card-wrap-{{ $postType->name }}">
             <div class="card-flex">
               @while(have_posts()) @php(the_post())
                 @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
@@ -20,7 +23,6 @@
             </div>
 
             {!! get_the_posts_navigation() !!}
-
           </div>
         @else
           <div class="container container-narrow align-centre">
@@ -31,7 +33,8 @@
             {!! get_search_form(false) !!}
           </div>
         @endif
-        </section>
+      </div>
+    </section>
   </div>
 @endsection
 

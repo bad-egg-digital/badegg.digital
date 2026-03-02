@@ -1,9 +1,6 @@
 @use "../global/variables";
 
 .card-service {
-  display: flex;
-  flex-direction: column;
-
   > * {
     flex: 1;
   }
@@ -35,10 +32,6 @@
 
   &-content {
     flex: auto;
-
-    @container Card (min-width: 20em) {
-      p { font-size: 1.25em; }
-    }
   }
 
   &-rotate {

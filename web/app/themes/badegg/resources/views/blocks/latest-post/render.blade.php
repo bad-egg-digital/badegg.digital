@@ -23,7 +23,7 @@
         <h1 class="mini {{ $CssClasses->ColourTintClass(get_field('colour'), get_field('tint')) }}">{{ get_field('h1') }}</h1>
       @endif
       <h2 class="subhead subhead-big">{{ $latestPost->post_title }}</h2>
-      <p class="subtitle">@if($latestPostCategory) {{ $latestPostCategory->name }}  @endif by {{ get_the_author_meta('display_name', $latestPost->post_author) }}</p>
+      <p class="subtitle">@if($latestPostCategory) {{ $latestPostCategory->name }}  @endif <span>{{ __('by', 'badegg') }}</span> {{ get_the_author_meta('display_name', $latestPost->post_author) }}</p>
       @if($latestPost->post_excerpt)
         <div class="blurb wysiwyg">
           {!! apply_filters('the_content', $latestPost->post_excerpt) !!}

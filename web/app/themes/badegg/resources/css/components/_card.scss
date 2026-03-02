@@ -2,6 +2,8 @@
 @use "../global/variables";
 
 .card {
+  display: flex;
+  flex-direction: column;
   container-name: Card;
   container-type: inline-size;
   position: relative;
@@ -21,6 +23,38 @@
 
     @container CardWrap (min-width: #{variables.$screen-lg}) {
       margin: math.div(variables.$gapLarge, 2) * -1;
+    }
+  }
+
+  &-header {
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    flex: auto;
+  }
+
+  p {
+    font-size: 1em;
+
+    &.subtitle {
+      font-size: 0.8em;
+      opacity: 0.5;
+    }
+
+    @container Card (min-width: 20em) {
+      font-size: 1.125em;
+    }
+
+    @container Card (min-width: 25em) {
+      font-size: 1.25em;
+
+      &.subtitle { font-size: 1em; }
     }
   }
 

@@ -16,10 +16,6 @@
       font-size: 0.8em;
     }
 
-    p {
-      font-size: 1em;
-    }
-
     a {
       color: variables.$secondary-darker;
     }
@@ -30,7 +26,6 @@
 
     @container Card (min-width: 25em) {
       h4 { font-size: 1em; }
-      p { font-size: 1.25em; }
       .socials { font-size: 2em; }
     }
   }
