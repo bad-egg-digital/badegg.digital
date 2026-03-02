@@ -73,7 +73,8 @@
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "laravel/pint": "^1.18",
-    "wpackagist-plugin/ajax-thumbnail-rebuild": "^1.14"
+    "wpackagist-plugin/ajax-thumbnail-rebuild": "^1.14",
+    "wpackagist-plugin/user-switching": "^1.11"
   },
   "config": {
     "optimize-autoloader": true,
