@@ -1,0 +1,26 @@
+{
+  "apiVersion": 3,
+  "name": "badegg/post-byline",
+  "title": "Post Byline",
+  "category": "text",
+  "icon": {
+    "src": "edit",
+    "foreground": "#f58762"
+  },
+  "description": "Display first category and author name.",
+  "supports": {
+    "html": true,
+    "color": {
+      "background": false,
+      "text": false
+    }
+  },
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}
