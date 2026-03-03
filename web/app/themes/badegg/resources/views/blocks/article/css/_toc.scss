@@ -19,8 +19,22 @@
     padding: 0.5em 0;
     font-size: 1.25em;
 
+    &.active,
     &:hover {
       color: variables.$tertiary;
+    }
+  }
+
+  @media screen {
+    .knockout & {
+      a {
+        color: variables.$white;
+
+        &.active,
+        &:hover {
+          color: variables.$tertiary-lighter;
+        }
+      }
     }
   }
 }

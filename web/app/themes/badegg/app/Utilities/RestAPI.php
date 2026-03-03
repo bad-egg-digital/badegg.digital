@@ -67,6 +67,7 @@ class RestAPI
             [ 'label' => __('Small', 'badegg'),         'value' => 'small'  ],
             [ 'label' => __('Medium', 'badegg'),        'value' => 'medium' ],
             [ 'label' => __('Large', 'badegg'),         'value' => 'large'  ],
+            [ 'label' => __('Larger', 'badegg'),         'value' => 'larger'  ],
             [ 'label' => __('Edge to edge', 'badegg'),  'value' => 'full'   ],
         ];
     }
