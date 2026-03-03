@@ -25,8 +25,8 @@
               class="device-img lazy"
               width="600"
               height="374"
-              data-src="{{ Vite::asset('resources/images/laptop-air-1x.png') }}"
-              data-srcset="{{ Vite::asset('resources/images/laptop-air-1x.png') }} 1x, {{ Vite::asset('resources/images/laptop-air-2x.png') }} 2x, {{ Vite::asset('resources/images/laptop-air-3x.png') }} 3x"
+              data-src="{{ Vite::asset('resources/images/laptop-air-300.png') }}"
+              data-srcset="{{ Vite::asset('resources/images/laptop-air-300.png') }} 300w, {{ Vite::asset('resources/images/laptop-air-600.png') }} 600w, {{ Vite::asset('resources/images/laptop-air-900.png') }} 900w, {{ Vite::asset('resources/images/laptop-air-1200.png') }} 1200w"
             />
           @endif
 
