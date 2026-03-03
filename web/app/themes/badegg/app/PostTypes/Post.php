@@ -36,6 +36,7 @@ class Post
                         'move' => true,
                         'remove' => true,
                     ],
+                    'sidebar' => true,
                 ],
                 [
                     [

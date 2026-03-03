@@ -28,15 +28,15 @@ registerBlockType(metadata.name, {
   edit({ attributes, setAttributes, clientId }) {
     const blockProps = useBlockProps();
 
+    blockProps.className = sectionClassNames(attributes, blockProps.className).join(' ');
+
     const {
       alignment,
       sidebar,
     } = attributes;
 
-    blockProps.className += ' wysiwyg';
-
     return (
-      <div className={ sectionClassNames(attributes, 'wp-block-badegg-article').join(' ') }>
+      <section { ...blockProps }>
         <BlockControls>
           <AlignmentToolbar
             value={ alignment }
@@ -71,46 +71,56 @@ registerBlockType(metadata.name, {
           <span className="visually-hidden">Select Block</span>
         </button>
 
-        <div className={ containerClassNames(attributes, [ 'wysiwyg' ]).join(' ') }>
-          <div { ...blockProps }>
-            <InnerBlocks
-              allowedBlocks={ allowedBlocks }
-              defaultBlock={
-                {
-                  name: "core/paragraph",
-                  attributes: {
-                    placeholder: "start typing",
+        <div className={ containerClassNames(attributes, []).join(' ') }>
+          <div className="article-layout">
+
+            <div className="article-main wysiwyg">
+              <InnerBlocks
+                allowedBlocks={ allowedBlocks }
+                defaultBlock={
+                  {
+                    name: "core/paragraph",
+                    attributes: {
+                      placeholder: "start typing",
+                    }
                   }
                 }
-              }
-            />
+              />
+            </div>
+
+            { sidebar ? (
+              <div className="article-sidebar">
+                <div className="article-toc js-article-toc"></div>
+              </div>
+            ) : null }
+
           </div>
-          { sidebar ? (
-            <div className="article-sidebar"></div>
-          ) : null }
         </div>
 
 
         <BackgroundImage { ...attributes } />
         <BlockAngle attributes={ attributes } position="top" />
         <BlockAngle attributes={ attributes } position="bottom" />
-      </div>
+      </section>
     );
   },
   save({ attributes }) {
     const blockProps = useBlockProps.save();
-
-    blockProps.className += ' wysiwyg';
+    blockProps.className = sectionClassNames(attributes, blockProps.className).join(' ');
 
     return (
-      <div className={ sectionClassNames(attributes, 'wp-block-badegg-article').join(' ') }>
+      <div { ...blockProps }>
         <div className={ containerClassNames(attributes).join(' ') } >
-          <div { ...blockProps }>
-            <InnerBlocks.Content />
+          <div className="article-layout">
+            <div className="article-main wysiwyg">
+              <InnerBlocks.Content />
+            </div>
+            { attributes.sidebar ? (
+              <div className="article-sidebar">
+                <div className="article-toc js-article-toc"></div>
+              </div>
+            ) : null }
           </div>
-          { attributes.sidebar ? (
-            <div className="article-sidebar"></div>
-          ) : null }
         </div>
 
         <BackgroundImage { ...attributes } />

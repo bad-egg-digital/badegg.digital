@@ -8,9 +8,11 @@ import MenuMobile from './components/MenuMobile.js';
 import LazyLoad from './lib/Lazy.js';
 import { bgSrcset } from './lib/bgSrcset.js';
 import BadEggLightbox from './lib/BadEggLightbox';
+import ArticleTOC from './components/ArticleTOC.js';
 
 Header();
 MenuMobile();
 bgSrcset();
 LazyLoad();
 BadEggLightbox();
+ArticleTOC();

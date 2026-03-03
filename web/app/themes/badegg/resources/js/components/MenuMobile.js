@@ -2,6 +2,7 @@ export default function MenuMobile()
 {
   const body = document.querySelector("body");
   const menuToggle = document.querySelector(".js-menu-toggle");
+  const offCanvas = document.querySelector(".menu-off-canvas");
   const wrapper = document.querySelector(".wrapper");
 
   if(!menuToggle) return;
@@ -9,6 +10,12 @@ export default function MenuMobile()
   menuToggle.addEventListener("click", (e) => {
     e.preventDefault();
     body.classList.toggle("menu-open");
+
+    if(body.classList.contains("menu-open")) {
+      offCanvas.setAttribute("aria-hidden", false);
+    } else {
+      offCanvas.setAttribute("aria-hidden", true);
+    }
   });
 
   addEventListener("resize", () => offset());
@@ -16,11 +23,13 @@ export default function MenuMobile()
 
   wrapper.addEventListener("click", (e) => {
     body.classList.remove("menu-open");
+    offCanvas.setAttribute("aria-hidden", true);
   });
 
   document.addEventListener("keyup", function (event) {
     if (event.key === "Escape") {
       body.classList.remove("menu-open");
+      offCanvas.setAttribute("aria-hidden", true);
     }
   });
 
