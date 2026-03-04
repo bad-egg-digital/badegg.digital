@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f9034b72cf926093d76579a772083e8",
+    "content-hash": "537eb6738a11bb6e356d3589f9bd012d",
     "packages": [
         {
             "name": "badegguk/bad-egg-digital-login-page",
@@ -1733,6 +1733,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/hard-boiled-security/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "5.7.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/5.7.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.7.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/resizable-editor-sidebar",
