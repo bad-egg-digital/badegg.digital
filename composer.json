@@ -68,7 +68,8 @@
     "wpengine/advanced-custom-fields-pro": "^6.7",
     "ourcodeworld/name-that-color": "dev-master",
     "wpackagist-plugin/resizable-editor-sidebar": "1.0.6",
-    "wpackagist-plugin/hard-boiled-security": "^1.0"
+    "wpackagist-plugin/hard-boiled-security": "^1.0",
+    "wpackagist-plugin/redirection": "^5.7"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
