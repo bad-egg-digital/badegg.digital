@@ -23,6 +23,7 @@ class Project
                     'title',
                     'editor',
                     'page-attributes',
+                    'thumbnail',
                 ],
                 'menu_icon' => 'dashicons-art',
                 'rewrite' => [

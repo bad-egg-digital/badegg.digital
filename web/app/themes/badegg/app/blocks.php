@@ -96,6 +96,10 @@ function add_categories( $categories ) {
                 'slug'  => 'badegg',
                 'title' => __('Provided by Bad Egg Digital'),
             ],
+            [
+                'slug' => 'badegg-projects',
+                'title' => __('Project Blocks'),
+            ],
         ], $categories);
 
         return $categories;
