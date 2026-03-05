@@ -61,7 +61,7 @@
         },
         {
             "key": "field_6994f63736ae6",
-            "label": "Heading",
+            "label": "Large Heading",
             "name": "heading",
             "aria-label": "",
             "type": "textarea",
@@ -125,95 +125,6 @@
             "append": "x"
         },
         {
-            "key": "field_6995b2d968b67",
-            "label": "Colour",
-            "name": "colour",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "0": "None",
-                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
-                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
-                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
-                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
-                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
-                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
-                "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
-                "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
-                "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
-            },
-            "default_value": 0,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 1,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
-        },
-        {
-            "key": "field_69a8593a90979",
-            "label": "Tint",
-            "name": "tint",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6995b2d968b67",
-                        "operator": "!=",
-                        "value": "0"
-                    },
-                    {
-                        "field": "field_6995b2d968b67",
-                        "operator": "!=",
-                        "value": "white"
-                    },
-                    {
-                        "field": "field_6995b2d968b67",
-                        "operator": "!=",
-                        "value": "black"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "lightest": "Lightest",
-                "lighter": "Lighter",
-                "light": "Light",
-                "0": "None",
-                "dark": "Dark",
-                "darker": "Darker",
-                "darkest": "Darkest"
-            },
-            "default_value": 0,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 1,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
-        },
-        {
             "key": "field_6994f63736eff",
             "label": "Maximum text width",
             "name": "heading_width",
@@ -275,6 +186,274 @@
             "delay": 0
         },
         {
+            "key": "field_69a9a8585e5b1",
+            "label": "Options",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69a9a9d8d807f",
+            "label": "Tiny Title",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_699a4ae1c866a",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_69a9a8165e5af",
+            "label": "Colour",
+            "name": "bg_colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_699a4ae1c866a",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "None",
+                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
+                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
+                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
+                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
+                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
+                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
+                "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
+                "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
+                "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
+            },
+            "default_value": "tertiary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69a9a9585e5b2",
+            "label": "Tint",
+            "name": "bg_tint",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69a9a8165e5af",
+                        "operator": "!=",
+                        "value": "0"
+                    },
+                    {
+                        "field": "field_69a9a8165e5af",
+                        "operator": "!=",
+                        "value": "white"
+                    },
+                    {
+                        "field": "field_69a9a8165e5af",
+                        "operator": "!=",
+                        "value": "black"
+                    },
+                    {
+                        "field": "field_699a4ae1c866a",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lightest": "Lightest",
+                "lighter": "Lighter",
+                "light": "Light",
+                "0": "None",
+                "dark": "Dark",
+                "darker": "Darker",
+                "darkest": "Darkest"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69a9aab3a12d0",
+            "label": "Large Heading",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6994f63736ae6",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6995b2d968b67",
+            "label": "Colour",
+            "name": "colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6994f63736ae6",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "None",
+                "primary": "<i class=\"fas fa-circle\" style=\"color: #395786\"><\/i> Chambray",
+                "secondary": "<i class=\"fas fa-circle\" style=\"color: #a094b1\"><\/i> Amethyst Smoke",
+                "tertiary": "<i class=\"fas fa-circle\" style=\"color: #f2704d\"><\/i> Jaffa",
+                "quaternary": "<i class=\"fas fa-circle\" style=\"color: #6f0000\"><\/i> Lonestar",
+                "quinary": "<i class=\"fas fa-circle\" style=\"color: #0880ac\"><\/i> Deep Cerulean",
+                "senary": "<i class=\"fas fa-circle\" style=\"color: #118360\"><\/i> Genoa",
+                "white": "<i class=\"fas fa-circle\" style=\"color: #FFFFFF\"><\/i> White",
+                "grey": "<i class=\"fas fa-circle\" style=\"color: #808080\"><\/i> Gray",
+                "black": "<i class=\"fas fa-circle\" style=\"color: #000000\"><\/i> Black"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69a8593a90979",
+            "label": "Tint",
+            "name": "tint",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6995b2d968b67",
+                        "operator": "!=",
+                        "value": "0"
+                    },
+                    {
+                        "field": "field_6995b2d968b67",
+                        "operator": "!=",
+                        "value": "white"
+                    },
+                    {
+                        "field": "field_6995b2d968b67",
+                        "operator": "!=",
+                        "value": "black"
+                    },
+                    {
+                        "field": "field_6994f63736ae6",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lightest": "Lightest",
+                "lighter": "Lighter",
+                "light": "Light",
+                "0": "None",
+                "dark": "Dark",
+                "darker": "Darker",
+                "darkest": "Darkest"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
             "key": "field_6994f6373706b",
             "label": "",
             "name": "",
@@ -334,5 +513,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772640739
+    "modified": 1772727013
 }

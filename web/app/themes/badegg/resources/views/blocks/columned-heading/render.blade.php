@@ -9,7 +9,7 @@
   <div class="{{ implode(' ', $classes) }}">
     <div class="{{ implode(' ', $headingClasses) }}">
       @if(get_field('tiny_title'))
-        <h{{ $hSizeTiny }} class="mini {{ $CssClasses->ColourTintClass(get_field('colour'), get_field('tint')) }}">{!! get_field('tiny_title') !!}</h{{ $hSizeTiny }}>
+        <h{{ $hSizeTiny }} class="mini {{ $CssClasses->ColourTintClass(get_field('bg_colour'), get_field('bg_tint')) }}">{!! get_field('tiny_title') !!}</h{{ $hSizeTiny }}>
       @endif
       <div style="font-size: {{ get_field('heading_scale') }}em;">
         <h{{ $hSize }} class="{{ implode(' ', $hClasses) }}">
