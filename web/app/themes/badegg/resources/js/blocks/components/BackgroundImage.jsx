@@ -16,6 +16,8 @@ import { select } from '@wordpress/data';
  */
 export default function BackgroundImage({
   background_image,
+  background_image_width,
+  background_image_height,
   background_url,
   background_url_lazy,
   background_lazy,
@@ -40,6 +42,9 @@ export default function BackgroundImage({
       className: 'badegg-block-background bg-image bg-srcset',
       style: styles,
       'data-id': background_image,
+      'data-name': 'hero',
+      'data-width': background_image_width,
+      'data-height': background_image_height,
     };
 
     if(background_filter) {

@@ -79,6 +79,8 @@ export default function BlockSettings({ attributes, setAttributes }) {
 		background_hex,
 		background_tint,
 		background_image,
+		background_image_width,
+		background_image_height,
     background_url,
     background_lazy,
     background_position,
@@ -383,11 +385,17 @@ export default function BlockSettings({ attributes, setAttributes }) {
         <PanelRow>
           <MediaUploadCheck>
             <MediaUpload
-              onSelect={ (media) => setAttributes({
-                background_image: media.id,
-                background_url: media.sizes.hero.url,
-                background_url_lazy: media.sizes.lazy.url,
-              })}
+              onSelect={ (media) => {
+                console.log(media);
+
+                setAttributes({
+                  background_image: media.id,
+                  background_url: media.sizes.medium.url,
+                  background_url_lazy: media.sizes.lazy.url,
+                  background_image_width: media.width,
+                  background_image_height: media.height,
+                })
+              }}
               allowedTypes={ ['image'] }
               value={ background_image }
               render={ ({ open }) => (
