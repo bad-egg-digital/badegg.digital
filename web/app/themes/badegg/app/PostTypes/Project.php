@@ -22,7 +22,6 @@ class Project
                 'supports' => [
                     'title',
                     'editor',
-                    'page-attributes',
                     'thumbnail',
                 ],
                 'menu_icon' => 'dashicons-art',

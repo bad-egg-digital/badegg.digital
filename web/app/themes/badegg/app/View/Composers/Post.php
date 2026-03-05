@@ -75,4 +75,14 @@ class Post extends Composer
             'after' => '</p>',
         ]);
     }
+
+    public function metaTitle(): string
+    {
+        return get_post_meta(get_the_ID(), '_genesis_title', true);
+    }
+
+    public function metaDescription(): string
+    {
+        return get_post_meta(get_the_ID(), '_genesis_description', true);
+    }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "537eb6738a11bb6e356d3589f9bd012d",
+    "content-hash": "e64e5bb33194b1690e4f192720678138",
     "packages": [
         {
             "name": "badegguk/bad-egg-digital-login-page",
@@ -2912,6 +2912,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ajax-thumbnail-rebuild/"
+        },
+        {
+            "name": "wpackagist-plugin/enable-media-replace",
+            "version": "4.1.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/enable-media-replace/",
+                "reference": "tags/4.1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/enable-media-replace.4.1.8.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/enable-media-replace/"
         },
         {
             "name": "wpackagist-plugin/user-switching",

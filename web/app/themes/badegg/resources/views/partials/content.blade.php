@@ -8,17 +8,19 @@
     ])
   </header>
   <div class="card-content card-{{ get_post_type() }}-content inner wysiwyg">
-    <h3 class="entry-title has-subtitle">{!! $title !!}</h3>
+    <h3 class="entry-title has-subtitle">{!! $metaTitle ?: $title !!}</h3>
 
-    @include('partials.entry-meta')
+    @if(get_post_type() == 'post')
+      @include('partials.entry-meta')
+    @endif
 
-    @php(the_excerpt())
+    @if($metaDescription) {!! apply_filters('the_content', $metaDescription) !!} @else @php(the_excerpt()) @endif
   </div>
   <footer class="card-footer card-{{ get_post_type() }}-footer inner inner-unset-top wysiwyg">
     @include('components.button', [
       'link' => [
         'url' => get_the_permalink(),
-        'title' => __('continue reading', 'badegg'),
+        'title' => (get_post_type() == 'post') ? __('continue reading', 'badegg') : __('view ' . get_post_type(), ''),
       ],
       'colour' => 'tertiary',
     ])
