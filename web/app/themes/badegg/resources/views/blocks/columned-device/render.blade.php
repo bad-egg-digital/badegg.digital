@@ -17,7 +17,7 @@
       @if(get_field('device_screen'))
         <div class="columned-device-wrap">
           @if($is_preview)
-            <img src="{{ Vite::asset('resources/images/laptop-air-2x.png') }}" class="device-img" width="600" height="374" alt="Macbook Air" />
+            <img src="{{ Vite::asset('resources/images/laptop-air-600.png') }}" class="device-img" width="600" height="374" alt="Macbook Air" />
           @else
             <img
               src="{{ Vite::asset('resources/images/laptop-air-lazy.png') }}"
