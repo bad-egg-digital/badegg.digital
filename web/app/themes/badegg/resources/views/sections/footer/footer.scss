@@ -1,0 +1,196 @@
+@use "../../../css/global/variables";
+
+.content-info {
+  margin-top: variables.$angleHeight * -1;
+}
+
+.footer {
+  container-name: Footer;
+  container-type: inline-size;
+  padding-bottom: 1em;
+
+  > .container {
+      @media (min-width: #{variables.$screen-lg}) {
+        display: flex;
+        gap: 2em;
+
+        .footer-nav {
+          flex: 1 1 10em;
+        }
+      }
+  }
+
+  &-nav {
+    container-name: FooterNav;
+    container-type: inline-size;
+
+    &-ul {
+      text-align: center;
+
+      @media (min-width: #{variables.$screen-md}) {
+        display: grid;
+        grid-auto-columns: auto;
+        grid-template-columns: minmax(7.5em, 16em) minmax(auto, 20em) auto minmax(15em, 20em);
+        gap: 0.5em 2em;
+        text-align: unset;
+      }
+
+      @media (min-width: #{ variables.$screen-md}) {
+        gap: 0.5em 5em;
+      }
+
+      @media (min-width: #{ variables.$screen-lg}) {
+        gap: 1.5em 5em;
+      }
+
+      .sub-menu {
+        list-style: none;
+        margin: 0.5em 0 2em;
+        padding: 0 0 0 0.25em;
+
+        > li {
+          margin: 0.5em 0 0;
+        }
+      }
+
+      > li {
+        margin: 1em 0 0;
+
+        &:first-of-type {
+          margin-top: unset;
+
+          .footer-brand {
+            display: block;
+          }
+        }
+
+        &:last-of-type {
+          .sub-menu {
+            margin-bottom: unset;
+          }
+        }
+
+        @media (min-width: #{variables.$screen-md}) {
+          margin: unset;
+
+          &:first-of-type {
+            width: unset;
+          }
+
+          &:last-of-type {
+            grid-column: 4;
+          }
+
+          &.menu-item-has-children {
+            grid-row: 1 / span 5;
+          }
+        }
+      }
+
+      > .menu-item {
+        @media (max-width: #{variables.$screen-sm-max}) {
+          display: none;
+
+          &:first-of-type,
+          &:last-of-type {
+            display: block;
+
+            > a:not(.footer-brand) {
+              display: none;
+            }
+          }
+
+          &:first-of-type {
+            width: 7.5em;
+            margin: auto;
+          }
+        }
+
+        &:first-of-type {
+          a:first-of-type {
+            display: none;
+          }
+        }
+
+        > a {
+          font-weight: 700;
+          font-style: italic;
+          font-size: 1.25em;
+
+          @media (min-width: #{variables.$screen-lg}) {
+            font-size: 1.875em;
+          }
+        }
+      }
+
+      li {
+        &.current-menu-item {
+          > a {
+            color: variables.$tertiary-light;
+          }
+        }
+      }
+    }
+  }
+
+  .socials {
+    font-size: 1.25em;
+    margin-top: 1em;
+  }
+
+  &-copyright {
+    position: relative;
+    z-index: 10;
+    background: rgba(black, 0.2);
+
+    @media (max-width: #{variables.$screen-sm-max}) {
+      text-align: center;
+    }
+
+    .container {
+      @media (min-width: #{variables.$screen-md}) {
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+      }
+    }
+
+    .menu-legal-container {
+      margin-top: 1em;
+
+      @media (min-width: #{variables.$screen-md}) {
+        margin-top: unset;
+      }
+    }
+
+    ul,
+    &-col {
+      margin: -0.25em;
+      font-size: 0.8em;
+    }
+
+    p,
+    li {
+      display: inline-block;
+      margin: 0.25em;
+
+      @media (min-width: #{variables.$screen-md}) {
+        &::before {
+          content: '|';
+          margin: 0 0.75em 0 0.125em;
+          opacity: 0.5;
+        }
+
+        &:first-of-type {
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+}

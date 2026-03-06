@@ -1,0 +1,12 @@
+.socials {
+  white-space: nowrap;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      padding: 0.125em;
+    }
+  }
+}

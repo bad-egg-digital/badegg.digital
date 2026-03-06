@@ -1,0 +1,84 @@
+@use "../global/variables";
+
+.menu-mobile-container {
+  position: fixed;
+  inset: 0;
+  top: auto;
+  z-index: 1000;
+  border-top: 1px solid variables.$grey-lightest;
+  background: variables.$white;
+
+  @media print {
+    display: none;
+  }
+
+  @media (min-width: #{variables.$screen-md}) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    border-left: 1px solid variables.$grey-lightest;
+    user-select: none;
+
+    @media (max-width: (variables.$screen-xs - 7)) {
+      font-size: 0.8em;
+    }
+
+    a {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.0625em;
+      line-height: 1.1;
+      color: variables.$grey-light;
+      padding: 0.5em 1em;
+    }
+
+    i,
+    svg,
+    span {
+      display: block;
+      line-height: 1;
+    }
+
+    i,
+    svg {
+      font-size: 1.5em;
+      margin: auto;
+    }
+
+    span {
+      font-size: 0.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.125em;
+      margin: 1em 0 0;
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      color: variables.$grey-dark;
+    }
+
+    &.current-menu-item,
+    &:hover {
+      a {
+        color: variables.$tertiary;
+      }
+    }
+  }
+
+  .activated-nav-side & {
+    .menu-open {
+      a {
+        color: variables.$tertiary;
+      }
+    }
+  }
+}
