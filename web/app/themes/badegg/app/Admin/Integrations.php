@@ -26,14 +26,14 @@ class Integrations
 
     public function PlausibleAnalytics()
     {
-        $plausible = get_field('badegg_plausible', 'option');
+        $plausible = get_field('badegg_plausible_analytics', 'option');
         $host = @$plausible['host'];
         $id = @$plausible['id'];
 
         if(filter_var($host, FILTER_VALIDATE_URL) && $host && $id && WP_ENV == 'production'): ?>
 
 <!-- Privacy-friendly analytics by Plausible -->
-<script async src="<?= $host ?>/js/pa-<?= $id ?>js"></script>
+<script async src="<?= rtrim($host, '/') ?>/js/pa-<?= $id ?>js"></script>
 <script>
 window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
 plausible.init()
