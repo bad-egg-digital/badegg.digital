@@ -12,8 +12,17 @@
   &-list-item {
     margin-bottom: 1em;
 
+    &::details-content {
+      opacity: 0;
+      max-height: 0;
+      overflow-y: auto;
+      transform: translate3d(0, -1em, 0) rotateX(30deg);
+      transition: all 300ms ease 150ms;
+    }
+
     summary {
       position: relative;
+      z-index: 1;
       display: block;
       padding-right: 3em;
 
@@ -32,7 +41,14 @@
       }
     }
 
-    &[open] summary::after { transform: rotate(90deg); }
+    &[open] {
+      summary::after { transform: rotate(90deg); }
+      &::details-content {
+        opacity: 1;
+        transform: none;
+        max-height: 30em;
+      }
+    }
 
     &:last-of-type {
       margin-bottom: unset;
