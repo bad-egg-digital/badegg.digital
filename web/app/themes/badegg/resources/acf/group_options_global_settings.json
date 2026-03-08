@@ -679,6 +679,63 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_69adace0b0d65",
+            "label": "Plausible Analytics",
+            "name": "badegg_plausible_analytics",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_69adab0eb0d63",
+                    "label": "Host",
+                    "name": "host",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "https:\/\/magic.badegg.digital",
+                    "allow_in_bindings": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_69adaca4b0d64",
+                    "label": "Tracking ID",
+                    "name": "id",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "XXXXXX-XXXXXXXXXXXXXXX",
+                    "prepend": "\/js\/pa-",
+                    "append": ".js"
+                }
+            ]
         }
     ],
     "location": [
@@ -700,5 +757,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772123667
+    "modified": 1772989775
 }
